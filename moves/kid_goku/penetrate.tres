@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Move" load_steps=6 format=3 uid="uid://dale8gs16x56r"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_itd1b"]
+[ext_resource type="Script" uid="uid://by1thnikov8sl" path="res://effects/damage_effect.gd" id="2_kv1xp"]
+[ext_resource type="Texture2D" uid="uid://dxhw05olgwp7d" path="res://images/character_images/kid_goku/Kid-Goku - Penetrate!.png" id="2_yowm3"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="3_kv1xp"]
+
+[sub_resource type="Resource" id="Resource_k42gy"]
+script = ExtResource("2_kv1xp")
+amount = 25
+metadata/_custom_type_script = "uid://by1thnikov8sl"
+
+[resource]
+script = ExtResource("3_kv1xp")
+pic = ExtResource("2_yowm3")
+move_name = "Penetrate!"
+description = "Kid Goku smashes right through 1 marked enemy dealing 25 damage to them. This skill ignores invulnerability.
+"
+cost = Dictionary[int, int]({
+2: 1,
+4: 1
+})
+target = 1
+effects = Array[ExtResource("1_itd1b")]([SubResource("Resource_k42gy")])
+ignore_invulnerable = true
+needs_mark = true
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

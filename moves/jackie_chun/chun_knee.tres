@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="Move" load_steps=10 format=3 uid="uid://bmt064lot8hvi"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_pykpk"]
+[ext_resource type="Texture2D" uid="uid://d3wuks0ayqgah" path="res://images/character_images/jackie_chun/Jackie Chun - Chun Knee.png" id="2_sc8j6"]
+[ext_resource type="Script" uid="uid://c2ybrmd13277n" path="res://buffs/alter_outgoing_damage.gd" id="2_sj8u8"]
+[ext_resource type="Script" uid="uid://iq6j758keyb0" path="res://effects/apply_buff.gd" id="3_cgh3x"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="3_it5go"]
+[ext_resource type="Script" uid="uid://by1thnikov8sl" path="res://effects/damage_effect.gd" id="4_cgh3x"]
+
+[sub_resource type="Resource" id="Resource_p8igj"]
+script = ExtResource("2_sj8u8")
+amount = -5
+turns = 1
+show_active = true
+target = 1
+stack_id = "chun_knee"
+metadata/_custom_type_script = "uid://c2ybrmd13277n"
+
+[sub_resource type="Resource" id="Resource_65tk5"]
+script = ExtResource("3_cgh3x")
+buff = SubResource("Resource_p8igj")
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[sub_resource type="Resource" id="Resource_3mj03"]
+script = ExtResource("4_cgh3x")
+amount = 15
+metadata/_custom_type_script = "uid://by1thnikov8sl"
+
+[resource]
+script = ExtResource("3_it5go")
+pic = ExtResource("2_sc8j6")
+move_name = "Chun Knee"
+description = "Jackie Chun knees one enemy, dealing 15 damage and reducing their damage by 5 for 1 turn."
+classes = Array[int]([0, 4, 7])
+cost = Dictionary[int, int]({
+0: 1
+})
+target = 1
+effects = Array[ExtResource("1_pykpk")]([SubResource("Resource_65tk5"), SubResource("Resource_3mj03")])
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

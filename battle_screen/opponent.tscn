@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxd7oq8xd4nab"]
+
+[ext_resource type="PackedScene" uid="uid://bmu2ye3a06fqi" path="res://battle_screen/character_pic.tscn" id="1_2ho0l"]
+[ext_resource type="Script" uid="uid://dg70ig1t0otjy" path="res://battle_screen/opponent.gd" id="1_7yvek"]
+
+[node name="Opponent" type="Control"]
+custom_minimum_size = Vector2(170, 120)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -188.0
+offset_right = -88.0
+offset_bottom = 100.0
+script = ExtResource("1_7yvek")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ActiveEffects" type="GridContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(120, 120)
+layout_direction = 3
+layout_mode = 2
+columns = 3
+
+[node name="CharacterPic" parent="HBoxContainer" instance=ExtResource("1_2ho0l")]
+custom_minimum_size = Vector2(100, 120)
+layout_mode = 2

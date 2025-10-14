@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ban3u8nl3y7cp"]
+
+[ext_resource type="Texture2D" uid="uid://dcerwwqwuw72s" path="res://images/character_images/jackie_chun/Jackie Chun - Afterimage.png" id="1_28jqj"]
+[ext_resource type="Script" uid="uid://dkeyckr4xr6qr" path="res://battle_screen/active_buff.gd" id="2_28jqj"]
+
+[node name="TextureRect" type="TextureRect"]
+custom_minimum_size = Vector2(40, 40)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_28jqj")
+expand_mode = 1
+script = ExtResource("2_28jqj")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="Move" load_steps=8 format=3 uid="uid://cmu4dwyurpruu"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_1lyxp"]
+[ext_resource type="Script" uid="uid://by1thnikov8sl" path="res://effects/damage_effect.gd" id="2_g0s4w"]
+[ext_resource type="Script" uid="uid://d1toe0l28s2ne" path="res://effects/recoil.gd" id="3_8b2a6"]
+[ext_resource type="Texture2D" uid="uid://bn1jojbfwwfj0" path="res://images/character_images/tien/Tien - Tri-Beam.png" id="4_qvuod"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="5_5r2nc"]
+
+[sub_resource type="Resource" id="Resource_msd8u"]
+script = ExtResource("2_g0s4w")
+amount = 15
+damage_type = 1
+metadata/_custom_type_script = "uid://by1thnikov8sl"
+
+[sub_resource type="Resource" id="Resource_2g1hr"]
+script = ExtResource("3_8b2a6")
+amount = 5
+damage_type = 2
+metadata/_custom_type_script = "uid://d1toe0l28s2ne"
+
+[resource]
+script = ExtResource("5_5r2nc")
+pic = ExtResource("4_qvuod")
+move_name = "Tri Beam"
+description = "Tien uses his forbidden technique Tri-Beam, dealing 15 piercing damage to one enemy and 5 affliction damage to himself. This skill will increase its damage by 5 with each use. This effect stacks."
+classes = Array[int]([1, 5, 7])
+target = 1
+effects = Array[ExtResource("1_1lyxp")]([SubResource("Resource_msd8u"), SubResource("Resource_2g1hr")])
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://g3fbq27pwigv"]
+
+[ext_resource type="Script" uid="uid://cpbvkjgmpwrgi" path="res://battle_screen/skill_panel.gd" id="1_t5hfg"]
+[ext_resource type="Texture2D" uid="uid://5fhncrx1pepv" path="res://images/battle_scene/skill_panel.png" id="1_uo18l"]
+[ext_resource type="PackedScene" uid="uid://bmu2ye3a06fqi" path="res://battle_screen/character_pic.tscn" id="3_t5hfg"]
+
+[node name="SkillPanel" type="Control"]
+custom_minimum_size = Vector2(0, 118)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -1.0
+offset_top = -4.0
+offset_right = 596.0
+offset_bottom = 114.0
+script = ExtResource("1_t5hfg")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 87.0
+offset_top = 5.0
+offset_right = 597.0
+offset_bottom = 123.0
+texture = ExtResource("1_uo18l")
+
+[node name="SkillContainer" type="HBoxContainer" parent="TextureRect"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 11.0
+offset_right = 524.0
+offset_bottom = 107.0
+theme_override_constants/separation = 20
+
+[node name="ActiveSkills" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 102.0
+offset_top = -15.0
+offset_right = 197.0
+offset_bottom = 5.0
+theme_override_constants/separation = 5
+
+[node name="CharacterPic" parent="." instance=ExtResource("3_t5hfg")]
+custom_minimum_size = Vector2(100, 120)
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -3.0
+offset_top = 5.0
+offset_right = 97.0
+offset_bottom = 125.0
+grow_horizontal = 1
+grow_vertical = 1

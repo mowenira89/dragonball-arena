@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Move" load_steps=6 format=3 uid="uid://ct41u7vxepbbl"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_dl0bc"]
+[ext_resource type="Script" uid="uid://by1thnikov8sl" path="res://effects/damage_effect.gd" id="2_o1ab4"]
+[ext_resource type="Texture2D" uid="uid://kedcv5knas8p" path="res://images/character_images/kid_krillin/Kid Krillin - Krillin Kamehameha!.png" id="3_8fi8h"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="4_jkkr5"]
+
+[sub_resource type="Resource" id="Resource_8cm82"]
+script = ExtResource("2_o1ab4")
+amount = 20
+metadata/_custom_type_script = "uid://by1thnikov8sl"
+
+[resource]
+script = ExtResource("4_jkkr5")
+pic = ExtResource("3_8fi8h")
+move_name = "Krillin Kamehameha!"
+description = "Kid Krillin launches his Kamehameha at one opponent dealing 20 damage."
+classes = Array[int]([1, 5, 7])
+cost = Dictionary[int, int]({
+2: 1,
+4: 1
+})
+target = 1
+effects = Array[ExtResource("1_dl0bc")]([SubResource("Resource_8cm82")])
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

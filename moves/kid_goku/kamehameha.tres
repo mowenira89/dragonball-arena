@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="Move" load_steps=11 format=3 uid="uid://dk3v15uqcer2j"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_n1t4p"]
+[ext_resource type="Texture2D" uid="uid://ddp4hboitehn2" path="res://images/character_images/kid_goku/Kid-Goku - Kamehameha.png" id="2_jftxq"]
+[ext_resource type="Script" uid="uid://by1thnikov8sl" path="res://effects/damage_effect.gd" id="2_ullqa"]
+[ext_resource type="Resource" uid="uid://dale8gs16x56r" path="res://moves/kid_goku/penetrate.tres" id="3_gitpo"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="3_ullqa"]
+[ext_resource type="Script" uid="uid://36hem8uuqs8x" path="res://buffs/mark.gd" id="4_c5yii"]
+[ext_resource type="Script" uid="uid://iq6j758keyb0" path="res://effects/apply_buff.gd" id="5_20grc"]
+
+[sub_resource type="Resource" id="Resource_jftxq"]
+script = ExtResource("2_ullqa")
+amount = 15
+metadata/_custom_type_script = "uid://by1thnikov8sl"
+
+[sub_resource type="Resource" id="Resource_cu283"]
+script = ExtResource("4_c5yii")
+marked_move = ExtResource("3_gitpo")
+turns = 1
+show_active = true
+target = 1
+stack_id = "penetrate mark"
+metadata/_custom_type_script = "uid://36hem8uuqs8x"
+
+[sub_resource type="Resource" id="Resource_gm2nf"]
+script = ExtResource("5_20grc")
+buff = SubResource("Resource_cu283")
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[resource]
+script = ExtResource("3_ullqa")
+pic = ExtResource("2_jftxq")
+move_name = "Kamehameha"
+description = "Kid Goku blasts 1 enemy with his new Kamehameha wave dealing 15 damage to them, and marking them for 1 turn.
+"
+classes = Array[int]([1, 5, 7])
+cost = Dictionary[int, int]({
+2: 1
+})
+target = 1
+effects = Array[ExtResource("1_n1t4p")]([SubResource("Resource_jftxq"), SubResource("Resource_gm2nf")])
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

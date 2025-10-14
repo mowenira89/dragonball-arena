@@ -1,0 +1,218 @@
+[gd_scene load_steps=16 format=3 uid="uid://m3qfcceh6b1s"]
+
+[ext_resource type="Script" uid="uid://dbpa6qknripe2" path="res://battle_screen/exchange_window.gd" id="1_hesa6"]
+[ext_resource type="Texture2D" uid="uid://ds025vngr3lnn" path="res://images/exchange_window/exchange_panel.png" id="1_jtivj"]
+[ext_resource type="Texture2D" uid="uid://cotoyaxxecyla" path="res://images/Energy/green energy.png" id="2_hesa6"]
+[ext_resource type="Texture2D" uid="uid://cfo5ckfnyjhd4" path="res://images/Energy/yellow energy.png" id="3_5fl0k"]
+[ext_resource type="ButtonGroup" uid="uid://doculb61d4mnj" path="res://battle_screen/exchange_window_button_group.tres" id="3_6wwcg"]
+[ext_resource type="Texture2D" uid="uid://brcbvi6ttlwor" path="res://images/Energy/blue energy.png" id="4_6wwcg"]
+[ext_resource type="Texture2D" uid="uid://cwruf2nkrn0r3" path="res://images/Energy/purple energy.png" id="5_6hnt1"]
+[ext_resource type="Texture2D" uid="uid://js5wkjrwbrdf" path="res://images/exchange_window/green_selected.png" id="5_22cfv"]
+[ext_resource type="Texture2D" uid="uid://dnpfndjtg76ck" path="res://images/exchange_window/add_button.png" id="6_hq8qb"]
+[ext_resource type="Texture2D" uid="uid://dgngusho6hwsg" path="res://images/exchange_window/yellow_selected.png" id="7_5vwhx"]
+[ext_resource type="Texture2D" uid="uid://cl3dxxjkl822n" path="res://images/exchange_window/minus_button.png" id="7_22cfv"]
+[ext_resource type="Texture2D" uid="uid://c1pfdiegip5c6" path="res://images/exchange_window/confirm_button.png" id="8_5vwhx"]
+[ext_resource type="Texture2D" uid="uid://3g43yak51487" path="res://images/exchange_window/cancel_button.png" id="9_4lc1m"]
+[ext_resource type="Texture2D" uid="uid://bwn3usvcnmef" path="res://images/exchange_window/blue_selected.png" id="9_hidcu"]
+[ext_resource type="Texture2D" uid="uid://baqtwfgc3wh7l" path="res://images/exchange_window/purple_selected.png" id="11_8n0r3"]
+
+[node name="ExchangeWindow" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hesa6")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_jtivj")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 90
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Green" type="TextureButton" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("3_6wwcg")
+texture_normal = ExtResource("2_hesa6")
+texture_pressed = ExtResource("5_22cfv")
+
+[node name="Yellow" type="TextureButton" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("3_6wwcg")
+texture_normal = ExtResource("3_5fl0k")
+texture_pressed = ExtResource("7_5vwhx")
+
+[node name="Blue" type="TextureButton" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("3_6wwcg")
+texture_normal = ExtResource("4_6wwcg")
+texture_pressed = ExtResource("9_hidcu")
+
+[node name="Purple" type="TextureButton" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("3_6wwcg")
+texture_normal = ExtResource("5_6hnt1")
+texture_pressed = ExtResource("11_8n0r3")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 18
+
+[node name="GreenHave" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "0"
+
+[node name="GreenTake" type="TextureButton" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("6_hq8qb")
+
+[node name="GreenGive" type="TextureButton" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("7_22cfv")
+
+[node name="GreenUsed" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "0"
+
+[node name="MarginContainer2" type="MarginContainer" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 7
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 18
+
+[node name="YellowHave" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "0"
+
+[node name="YellowTake" type="TextureButton" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+texture_normal = ExtResource("6_hq8qb")
+
+[node name="YellowGive" type="TextureButton" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+texture_normal = ExtResource("7_22cfv")
+
+[node name="YellowUsed" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "0"
+
+[node name="MarginContainer3" type="MarginContainer" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 7
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 18
+
+[node name="BlueHave" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "0"
+
+[node name="BlueTake" type="TextureButton" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+texture_normal = ExtResource("6_hq8qb")
+
+[node name="BlueGive" type="TextureButton" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+texture_normal = ExtResource("7_22cfv")
+
+[node name="BlueUsed" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "0"
+
+[node name="MarginContainer4" type="MarginContainer" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 18
+
+[node name="PurpleHave" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+text = "0"
+
+[node name="PurpleTake" type="TextureButton" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+texture_normal = ExtResource("6_hq8qb")
+
+[node name="PurpleGive" type="TextureButton" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+texture_normal = ExtResource("7_22cfv")
+
+[node name="PurpleUsed" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+text = "0"
+
+[node name="confirm" type="TextureButton" parent="TextureRect"]
+layout_mode = 0
+offset_left = 95.5
+offset_top = 335.0
+offset_right = 223.5
+offset_bottom = 375.0
+texture_normal = ExtResource("8_5vwhx")
+
+[node name="cancel" type="TextureButton" parent="TextureRect"]
+layout_mode = 0
+offset_left = 482.5
+offset_top = 337.0
+offset_right = 610.5
+offset_bottom = 377.0
+texture_normal = ExtResource("9_4lc1m")
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="TextureRect/MarginContainer/VBoxContainer/HBoxContainer2/GreenTake" to="." method="_on_green_take_pressed"]
+[connection signal="pressed" from="TextureRect/MarginContainer/VBoxContainer/HBoxContainer2/GreenGive" to="." method="_on_green_give_pressed"]
+[connection signal="pressed" from="TextureRect/MarginContainer/VBoxContainer/HBoxContainer3/YellowTake" to="." method="_on_yellow_take_pressed"]
+[connection signal="pressed" from="TextureRect/MarginContainer/VBoxContainer/HBoxContainer3/YellowGive" to="." method="_on_yellow_give_pressed"]
+[connection signal="pressed" from="TextureRect/MarginContainer/VBoxContainer/HBoxContainer4/BlueTake" to="." method="_on_blue_take_pressed"]
+[connection signal="pressed" from="TextureRect/MarginContainer/VBoxContainer/HBoxContainer4/BlueGive" to="." method="_on_blue_give_pressed"]
+[connection signal="pressed" from="TextureRect/MarginContainer/VBoxContainer/HBoxContainer5/PurpleTake" to="." method="_on_purple_take_pressed"]
+[connection signal="pressed" from="TextureRect/MarginContainer/VBoxContainer/HBoxContainer5/PurpleGive" to="." method="_on_purple_give_pressed"]
+[connection signal="pressed" from="TextureRect/confirm" to="." method="_on_confirm_pressed"]
+[connection signal="pressed" from="TextureRect/cancel" to="." method="_on_cancel_pressed"]

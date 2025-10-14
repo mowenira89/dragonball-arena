@@ -1,0 +1,243 @@
+[gd_scene load_steps=15 format=3 uid="uid://w33su1h1nix5"]
+
+[ext_resource type="Texture2D" uid="uid://brkkcpd0mq6pc" path="res://images/battle_scene/battle_bg.png" id="1_0qo23"]
+[ext_resource type="Script" uid="uid://vsg3ehk7xpoq" path="res://battle_screen/battle_screen.gd" id="1_gkcfa"]
+[ext_resource type="Theme" uid="uid://bpgysnls8w7bw" path="res://themes/title_font.tres" id="2_bqrpb"]
+[ext_resource type="Texture2D" uid="uid://cotoyaxxecyla" path="res://images/Energy/green energy.png" id="2_ocvip"]
+[ext_resource type="Texture2D" uid="uid://cfo5ckfnyjhd4" path="res://images/Energy/yellow energy.png" id="3_bqrpb"]
+[ext_resource type="Texture2D" uid="uid://brcbvi6ttlwor" path="res://images/Energy/blue energy.png" id="4_gbv0o"]
+[ext_resource type="Texture2D" uid="uid://cwruf2nkrn0r3" path="res://images/Energy/purple energy.png" id="5_6lu2v"]
+[ext_resource type="Texture2D" uid="uid://dieeue2ngd4v2" path="res://images/Energy/black energy.png" id="6_jxrew"]
+[ext_resource type="Texture2D" uid="uid://deq1mue5mos82" path="res://images/battle_scene/button_end_turn.png" id="8_6lu2v"]
+[ext_resource type="Texture2D" uid="uid://c6qll5xvql1du" path="res://images/battle_scene/button_exchange_energy.png" id="9_jxrew"]
+[ext_resource type="PackedScene" uid="uid://g3fbq27pwigv" path="res://battle_screen/skill_panel.tscn" id="10_jxrew"]
+[ext_resource type="PackedScene" uid="uid://bmu2ye3a06fqi" path="res://battle_screen/character_pic.tscn" id="12_buo1e"]
+[ext_resource type="Texture2D" uid="uid://cx0bdx651fjqf" path="res://images/battle_scene/button_surrender.png" id="13_obs7w"]
+[ext_resource type="Texture2D" uid="uid://bqxs7f4q8sncm" path="res://images/battle_scene/button_volume.png" id="14_ylh1x"]
+
+[node name="BattleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gkcfa")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_0qo23")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="PlayerData" type="VBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="PlayerName" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer/PlayerData"]
+layout_mode = 2
+theme = ExtResource("2_bqrpb")
+text = "Username"
+horizontal_alignment = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer/PlayerData"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 12
+text = "Level:
+Rank:
+Ratio:
+Clan:"
+horizontal_alignment = 2
+
+[node name="PlayerPic" type="TextureRect" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="TimeLeft" type="ColorRect" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(230, 80)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/TimeLeft"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -38.5
+offset_right = 38.5
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Time Left:"
+horizontal_alignment = 1
+
+[node name="Time" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/TimeLeft"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "00"
+
+[node name="Energies" type="ColorRect" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Energies"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GreenEnergy" type="TextureRect" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Energies/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_ocvip")
+
+[node name="GreenAmt" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Energies/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "x0"
+
+[node name="YellowEnergy" type="TextureRect" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Energies/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_bqrpb")
+
+[node name="YellowAmt" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Energies/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "x0"
+
+[node name="BlueEnergy" type="TextureRect" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Energies/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_gbv0o")
+
+[node name="BlueAmt" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Energies/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "x0"
+
+[node name="PurpleEnergy" type="TextureRect" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Energies/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_6lu2v")
+
+[node name="PurpleAmt" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Energies/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "x0"
+
+[node name="BlackEnergy" type="TextureRect" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Energies/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("6_jxrew")
+
+[node name="BlackAmt" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Energies/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "x0"
+
+[node name="OpponentData" type="VBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="OppName" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer/OpponentData"]
+layout_mode = 2
+theme = ExtResource("2_bqrpb")
+text = "Username"
+
+[node name="OppData" type="RichTextLabel" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer/OpponentData"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 12
+text = "Level:
+Rank:
+Ratio:
+Clan:"
+
+[node name="EndTurnButton2" type="TextureButton" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("8_6lu2v")
+
+[node name="ExchangeEnergyButton" type="TextureButton" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("9_jxrew")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 20
+
+[node name="PlayerCharacters" type="VBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 10
+
+[node name="SkillPanel" parent="TextureRect/MarginContainer/VBoxContainer/MarginContainer/PlayerCharacters" instance=ExtResource("10_jxrew")]
+layout_mode = 2
+
+[node name="SkillPanel2" parent="TextureRect/MarginContainer/VBoxContainer/MarginContainer/PlayerCharacters" instance=ExtResource("10_jxrew")]
+layout_mode = 2
+
+[node name="SkillPanel3" parent="TextureRect/MarginContainer/VBoxContainer/MarginContainer/PlayerCharacters" instance=ExtResource("10_jxrew")]
+layout_mode = 2
+
+[node name="Opponents" type="VBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="Opponent" parent="TextureRect/MarginContainer/VBoxContainer/MarginContainer/Opponents" instance=ExtResource("12_buo1e")]
+layout_mode = 2
+
+[node name="Opponent2" parent="TextureRect/MarginContainer/VBoxContainer/MarginContainer/Opponents" instance=ExtResource("12_buo1e")]
+layout_mode = 2
+
+[node name="Opponent3" parent="TextureRect/MarginContainer/VBoxContainer/MarginContainer/Opponents" instance=ExtResource("12_buo1e")]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+
+[node name="Surrender" type="TextureButton" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("13_obs7w")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+
+[node name="Volume" type="TextureButton" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("14_ylh1x")

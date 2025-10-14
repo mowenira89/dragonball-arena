@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Move" load_steps=6 format=3 uid="uid://c5nnc3n1snd4p"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_ljgpj"]
+[ext_resource type="Script" uid="uid://by1thnikov8sl" path="res://effects/damage_effect.gd" id="2_1w47p"]
+[ext_resource type="Texture2D" uid="uid://cnv1ig83hk3mi" path="res://images/character_images/kid_krillin/Kid Krillin - Power Punch.png" id="3_u6kb1"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="4_urrwx"]
+
+[sub_resource type="Resource" id="Resource_14grb"]
+script = ExtResource("2_1w47p")
+amount = 15
+metadata/_custom_type_script = "uid://by1thnikov8sl"
+
+[resource]
+script = ExtResource("4_urrwx")
+pic = ExtResource("3_u6kb1")
+move_name = "Power Punch"
+description = "Kid Krillin punches 1 enemy dealing 15 damage to them."
+classes = Array[int]([0, 4, 7])
+cost = Dictionary[int, int]({
+0: 1
+})
+target = 1
+effects = Array[ExtResource("1_ljgpj")]([SubResource("Resource_14grb")])
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

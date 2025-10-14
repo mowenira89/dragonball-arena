@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Character" load_steps=7 format=3 uid="uid://c3gicfkxe0isc"]
+
+[ext_resource type="Resource" uid="uid://c3wf4v61erc78" path="res://moves/jackie_chun/afterimage.tres" id="1_jkig4"]
+[ext_resource type="Texture2D" uid="uid://di1k0f8jkwjwk" path="res://images/character_images/jackie_chun/Jackie Chun - Face Picture.png" id="1_tqr7w"]
+[ext_resource type="Script" uid="uid://dafn65t8p7eec" path="res://characters/character.gd" id="2_rniel"]
+[ext_resource type="Resource" uid="uid://dmcwdmagy15xp" path="res://moves/jackie_chun/chun_block.tres" id="2_w7a04"]
+[ext_resource type="Resource" uid="uid://cil8u04jxmse3" path="res://moves/jackie_chun/chun_kamehameha.tres" id="3_up1gp"]
+[ext_resource type="Resource" uid="uid://bmt064lot8hvi" path="res://moves/jackie_chun/chun_knee.tres" id="4_v65lp"]
+
+[resource]
+script = ExtResource("2_rniel")
+pic = ExtResource("1_tqr7w")
+name = "Jackie Chun"
+moves = [ExtResource("1_jkig4"), ExtResource("2_w7a04"), ExtResource("3_up1gp"), ExtResource("4_v65lp")]
+metadata/_custom_type_script = "uid://dafn65t8p7eec"

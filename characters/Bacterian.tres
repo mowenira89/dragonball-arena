@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Character" load_steps=8 format=3 uid="uid://4clljeapiv3d"]
+
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="1_ctwm3"]
+[ext_resource type="Texture2D" uid="uid://phlams0vgrx1" path="res://images/character_images/bacterian/Bacterian - Face Picture.png" id="1_wsvcx"]
+[ext_resource type="Resource" uid="uid://cafv8k7xsr1fy" path="res://moves/bacterian/choke.tres" id="2_2wr8n"]
+[ext_resource type="Script" uid="uid://dafn65t8p7eec" path="res://characters/character.gd" id="2_ctwm3"]
+[ext_resource type="Resource" uid="uid://dn0x8ib57hlrr" path="res://moves/bacterian/stench.tres" id="3_kgej7"]
+[ext_resource type="Resource" uid="uid://dpd7y50uh316i" path="res://moves/bacterian/smelly_finger.tres" id="4_swts3"]
+[ext_resource type="Resource" uid="uid://cy75vd8fpd1pp" path="res://moves/bacterian/bacteria_belch.tres" id="5_ku1sg"]
+
+[resource]
+script = ExtResource("2_ctwm3")
+pic = ExtResource("1_wsvcx")
+name = "Bacterian"
+moves = Array[ExtResource("1_ctwm3")]([ExtResource("2_2wr8n"), ExtResource("3_kgej7"), ExtResource("4_swts3"), ExtResource("5_ku1sg")])
+desc = " Bacterian is a filthy, giant and dirty Earthling that competed in the 21st World Martial Arts Tournament. He has the reputation of never taking a bath or brushing his teeth in his entire life. He uses this stench he has gained as a tactical advantage in fighting, making his opponents only fight with one hand, since they have to use their other one to hold their nose.
+"
+metadata/_custom_type_script = "uid://dafn65t8p7eec"

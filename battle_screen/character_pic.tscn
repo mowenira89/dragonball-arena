@@ -1,0 +1,129 @@
+[gd_scene load_steps=8 format=3 uid="uid://bmu2ye3a06fqi"]
+
+[ext_resource type="Script" uid="uid://c3hkn2era22ui" path="res://battle_screen/character_pic.gd" id="1_ci17h"]
+[ext_resource type="Texture2D" uid="uid://di1k0f8jkwjwk" path="res://images/character_images/jackie_chun/Jackie Chun - Face Picture.png" id="2_v0n5k"]
+[ext_resource type="Theme" uid="uid://cd6hvvcs1myn6" path="res://themes/hp_bar.tres" id="3_7ymi7"]
+[ext_resource type="Texture2D" uid="uid://cidmgf16ujm0w" path="res://images/battle_scene/dead.png" id="4_v0n5k"]
+
+[sub_resource type="Animation" id="Animation_v0n5k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pic/Overlay:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.654902, 0.043137256, 0.49019608)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pic/Overlay:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_ci17h"]
+resource_name = "blink"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pic/Overlay:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pic/Overlay:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0.654902, 0.043137256, 0.49019608), Color(1, 0.654902, 0.043137256, 0.2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7ymi7"]
+_data = {
+&"RESET": SubResource("Animation_v0n5k"),
+&"blink": SubResource("Animation_ci17h")
+}
+
+[node name="CharacterPic" type="Control"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -49.0
+offset_top = -56.0
+offset_right = -1180.0
+offset_bottom = -597.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ci17h")
+
+[node name="Pic" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.0
+offset_top = -58.0
+offset_right = 49.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_v0n5k")
+
+[node name="Overlay" type="ColorRect" parent="Pic"]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 101.0
+color = Color(1, 0.654902, 0.043137256, 0.49019608)
+
+[node name="ProgressBar" type="ProgressBar" parent="Pic"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 90.0
+offset_right = 99.0
+offset_bottom = 117.0
+theme = ExtResource("3_7ymi7")
+value = 100.0
+
+[node name="Dead" type="TextureRect" parent="Pic"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_v0n5k")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_7ymi7")
+}
+
+[connection signal="gui_input" from="Pic/Overlay" to="." method="_on_overlay_gui_input"]

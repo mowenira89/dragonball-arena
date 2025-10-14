@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://7g8ju5oehvsg"]
+
+[ext_resource type="Script" uid="uid://25nbc3lp820h" path="res://selection_screen/character_choice_box.gd" id="1_32it0"]
+[ext_resource type="Texture2D" uid="uid://cwllm83tugvfd" path="res://images/selection_screen/choice_box.png" id="1_xps2x"]
+
+[node name="CharacterChoiceBox" type="TextureButton"]
+modulate = Color(1, 1, 1, 0)
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture_normal = ExtResource("1_xps2x")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("1_32it0")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Character" load_steps=8 format=3 uid="uid://b638ninfu0uku"]
+
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="1_052am"]
+[ext_resource type="Resource" uid="uid://h2rlnm471a2l" path="res://moves/kid_krillin/high_jump.tres" id="2_2ks1d"]
+[ext_resource type="Resource" uid="uid://ct41u7vxepbbl" path="res://moves/kid_krillin/krillin_kamehameha.tres" id="3_d5nj4"]
+[ext_resource type="Resource" uid="uid://c5nnc3n1snd4p" path="res://moves/kid_krillin/power_punch.tres" id="4_mafen"]
+[ext_resource type="Resource" uid="uid://bn7mxr3pwsiik" path="res://moves/kid_krillin/rush.tres" id="5_tpa6e"]
+[ext_resource type="Texture2D" uid="uid://diwhygnqljht7" path="res://images/character_images/kid_krillin/Kid Krillin - Face Picture.png" id="6_ttssa"]
+[ext_resource type="Script" uid="uid://dafn65t8p7eec" path="res://characters/character.gd" id="7_6nnxp"]
+
+[resource]
+script = ExtResource("7_6nnxp")
+pic = ExtResource("6_ttssa")
+name = "Kid Krillin"
+moves = Array[ExtResource("1_052am")]([ExtResource("2_2ks1d"), ExtResource("3_d5nj4"), ExtResource("4_mafen"), ExtResource("5_tpa6e")])
+desc = "Krillin is Goku's ally and who is short in height and bald.
+"
+metadata/_custom_type_script = "uid://dafn65t8p7eec"

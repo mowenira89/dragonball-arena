@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Character" load_steps=8 format=3 uid="uid://co7ptrui6apfd"]
+
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="1_8aquo"]
+[ext_resource type="Resource" uid="uid://dale8gs16x56r" path="res://moves/kid_goku/penetrate.tres" id="2_5u5tr"]
+[ext_resource type="Resource" uid="uid://dk3v15uqcer2j" path="res://moves/kid_goku/kamehameha.tres" id="3_nqmgm"]
+[ext_resource type="Resource" uid="uid://b54gfxpku55ck" path="res://moves/kid_goku/power_pole.tres" id="4_spfed"]
+[ext_resource type="Resource" uid="uid://cue773tlgkk8q" path="res://moves/kid_goku/flying_nimbus.tres" id="5_rtrd5"]
+[ext_resource type="Texture2D" uid="uid://cyb2rd5mnjwal" path="res://images/character_images/kid_goku/Kid-Goku - Face-Picture.png" id="6_14f8d"]
+[ext_resource type="Script" uid="uid://dafn65t8p7eec" path="res://characters/character.gd" id="7_vl0s8"]
+
+[resource]
+script = ExtResource("7_vl0s8")
+pic = ExtResource("6_14f8d")
+name = "Kid Goku"
+moves = Array[ExtResource("1_8aquo")]([ExtResource("2_5u5tr"), ExtResource("3_nqmgm"), ExtResource("4_spfed"), ExtResource("5_rtrd5")])
+desc = "Originally sent to Earth as an infant, Kakarot was adopted by Grandpa Gohan and given the name Son Goku. A head injury at an early age altered Goku's memory, ridding him of his initial destructive nature."
+metadata/_custom_type_script = "uid://dafn65t8p7eec"

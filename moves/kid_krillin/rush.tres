@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="Move" load_steps=11 format=3 uid="uid://bn7mxr3pwsiik"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_hcj0a"]
+[ext_resource type="Script" uid="uid://c2ybrmd13277n" path="res://buffs/alter_outgoing_damage.gd" id="2_qqbbp"]
+[ext_resource type="Script" uid="uid://iq6j758keyb0" path="res://effects/apply_buff.gd" id="3_a5032"]
+[ext_resource type="Script" uid="uid://rsh7af6ssr6x" path="res://buffs/shield.gd" id="4_68fso"]
+[ext_resource type="Texture2D" uid="uid://be40lv8spvlg" path="res://images/character_images/kid_krillin/Kid Krillin - Rush.png" id="5_mww0a"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="6_0vga8"]
+
+[sub_resource type="Resource" id="Resource_bdlg1"]
+script = ExtResource("2_qqbbp")
+amount = 5
+turns = 3
+end = true
+show_active = true
+metadata/_custom_type_script = "uid://c2ybrmd13277n"
+
+[sub_resource type="Resource" id="Resource_ugi5g"]
+script = ExtResource("3_a5032")
+buff = SubResource("Resource_bdlg1")
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[sub_resource type="Resource" id="Resource_apu6y"]
+script = ExtResource("4_68fso")
+shield_amount = 5
+turns = 3
+start = true
+show_active = true
+metadata/_custom_type_script = "uid://rsh7af6ssr6x"
+
+[sub_resource type="Resource" id="Resource_b18hb"]
+script = ExtResource("3_a5032")
+buff = SubResource("Resource_apu6y")
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[resource]
+script = ExtResource("6_0vga8")
+pic = ExtResource("5_mww0a")
+move_name = "Rush"
+description = "Kid Krillin rushes into the battlefield increasing his damage by 5 and granting Kid Krillin 5 points of destructible damage for the next 3 turns.
+"
+classes = Array[int]([0, 4, 7])
+cost = Dictionary[int, int]({
+4: 1
+})
+effects = Array[ExtResource("1_hcj0a")]([SubResource("Resource_ugi5g"), SubResource("Resource_b18hb")])
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

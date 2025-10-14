@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=3 uid="uid://cj7lfclvqg33n"]
+
+[ext_resource type="Script" uid="uid://c6h0co7wimul5" path="res://battle_screen/battle_skill_button.gd" id="1_wdsvo"]
+[ext_resource type="Texture2D" uid="uid://d2yifnqpcij55" path="res://images/battle_scene/skill_used.png" id="2_ov12w"]
+[ext_resource type="Texture2D" uid="uid://cidmgf16ujm0w" path="res://images/battle_scene/dead.png" id="3_1a0m4"]
+
+[node name="BattleSkillButton" type="TextureButton"]
+custom_minimum_size = Vector2(75, 75)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("1_wdsvo")
+
+[node name="InUse" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_ov12w")
+
+[node name="Cooldown" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.59607846)
+
+[node name="CooldownLabel" type="Label" parent="Cooldown"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Stunned" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_1a0m4")
+expand_mode = 1
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="gui_input" from="InUse" to="." method="_on_in_use_gui_input"]

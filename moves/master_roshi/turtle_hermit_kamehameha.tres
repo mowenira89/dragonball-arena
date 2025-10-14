@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="Move" load_steps=10 format=3 uid="uid://c0i2eo6dw2b6j"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_f24mr"]
+[ext_resource type="Script" uid="uid://by1thnikov8sl" path="res://effects/damage_effect.gd" id="2_fi4oc"]
+[ext_resource type="Script" uid="uid://8vyvnx2tdcrq" path="res://buffs/no_block.gd" id="3_yud3r"]
+[ext_resource type="Script" uid="uid://iq6j758keyb0" path="res://effects/apply_buff.gd" id="4_b0dwe"]
+[ext_resource type="Texture2D" uid="uid://41ilvw8gq2ut" path="res://images/character_images/master_roshi/Master Roshi - Turtle Hermit Kamehameha.png" id="5_kxlda"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="6_ksqv4"]
+
+[sub_resource type="Resource" id="Resource_vdy6p"]
+script = ExtResource("2_fi4oc")
+amount = 35
+damage_type = 1
+metadata/_custom_type_script = "uid://by1thnikov8sl"
+
+[sub_resource type="Resource" id="Resource_m13ow"]
+script = ExtResource("3_yud3r")
+turns = 1
+show_active = true
+target = 1
+stack_id = "turtle_hermit_kamehameha"
+metadata/_custom_type_script = "uid://8vyvnx2tdcrq"
+
+[sub_resource type="Resource" id="Resource_yeakg"]
+script = ExtResource("4_b0dwe")
+buff = SubResource("Resource_m13ow")
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[resource]
+script = ExtResource("6_ksqv4")
+pic = ExtResource("5_kxlda")
+move_name = "Turtle Hermit Kamehameha"
+description = "This skill deals 35 piercing damage to one enemy and prevents them from reducing damage or becoming invulnerable for 1 turn.
+"
+classes = Array[int]([1, 5, 7])
+cost = Dictionary[int, int]({
+1: 1,
+3: 1
+})
+cooldown = 1
+target = 1
+effects = Array[ExtResource("1_f24mr")]([SubResource("Resource_vdy6p"), SubResource("Resource_yeakg")])
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="Move" load_steps=11 format=3 uid="uid://c3wf4v61erc78"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_whxn5"]
+[ext_resource type="Texture2D" uid="uid://dcerwwqwuw72s" path="res://images/character_images/jackie_chun/Jackie Chun - Afterimage.png" id="2_jp6mr"]
+[ext_resource type="Script" uid="uid://2m2eda2eudn1" path="res://buffs/afterimage_buff.gd" id="2_vo5c0"]
+[ext_resource type="Script" uid="uid://iq6j758keyb0" path="res://effects/apply_buff.gd" id="3_mys2g"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="3_ub2ej"]
+[ext_resource type="Script" uid="uid://b4fevvbgecg2d" path="res://buffs/aoe.gd" id="4_mys2g"]
+
+[sub_resource type="Resource" id="Resource_pwv5b"]
+script = ExtResource("2_vo5c0")
+turns = 3
+show_active = true
+stack_id = "afterimage_1"
+metadata/_custom_type_script = "uid://2m2eda2eudn1"
+
+[sub_resource type="Resource" id="Resource_jbal7"]
+script = ExtResource("3_mys2g")
+buff = SubResource("Resource_pwv5b")
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[sub_resource type="Resource" id="Resource_nr7jy"]
+script = ExtResource("4_mys2g")
+turns = 3
+stack_id = "afterimage"
+metadata/_custom_type_script = "uid://b4fevvbgecg2d"
+
+[sub_resource type="Resource" id="Resource_5f7th"]
+script = ExtResource("3_mys2g")
+buff = SubResource("Resource_nr7jy")
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[resource]
+script = ExtResource("3_ub2ej")
+pic = ExtResource("2_jp6mr")
+move_name = "Afterimage"
+description = "Jackie Chun uses his afterimage technique, causing his attacks to target the entire enemy team for 3 turns. During this time, his skills will deal 5 less damage, and \"Chun Knee\" will have a 1-turn cooldown.
+"
+classes = Array[int]([0, 1, 7])
+cost = Dictionary[int, int]({
+4: 1
+})
+cooldown = 4
+effects = Array[ExtResource("1_whxn5")]([SubResource("Resource_jbal7"), SubResource("Resource_5f7th")])
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

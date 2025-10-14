@@ -1,0 +1,294 @@
+[gd_scene load_steps=19 format=3 uid="uid://brr1rpquahlat"]
+
+[ext_resource type="Script" uid="uid://dynrowwa6hi0w" path="res://selection_screen/selection_screen.gd" id="1_4i4ps"]
+[ext_resource type="Texture2D" uid="uid://bwwgkkxc8gyq8" path="res://images/selection_screen/Selection Screen Background.png" id="2_4i4ps"]
+[ext_resource type="Texture2D" uid="uid://bb7my15l3psvf" path="res://images/selection_screen/button_play.png" id="3_gjrwj"]
+[ext_resource type="Texture2D" uid="uid://gbqpienkxkyp" path="res://images/selection_screen/button_news.png" id="4_egub1"]
+[ext_resource type="Texture2D" uid="uid://bwvaacs2dj6ap" path="res://images/selection_screen/button_quests.png" id="5_8x55n"]
+[ext_resource type="Texture2D" uid="uid://bt57cuesxiwj8" path="res://images/selection_screen/button_clan.png" id="6_3mduk"]
+[ext_resource type="Texture2D" uid="uid://bwv3p8q3y4nvg" path="res://images/selection_screen/button_settings.png" id="7_3xr65"]
+[ext_resource type="Texture2D" uid="uid://b278vuem7v348" path="res://images/selection_screen/button_ladder_game.png" id="8_yo7x8"]
+[ext_resource type="Texture2D" uid="uid://bbuw6y7w1xtdt" path="res://images/selection_screen/button_quick_game.png" id="9_hn1be"]
+[ext_resource type="Texture2D" uid="uid://c5mdxr0ad7m65" path="res://images/selection_screen/button_private_game.png" id="10_oyqe2"]
+[ext_resource type="Texture2D" uid="uid://cr4xc5vlw5dfy" path="res://images/selection_screen/username_panel.png" id="11_svc1x"]
+[ext_resource type="Texture2D" uid="uid://c04xo5mrn60da" path="res://images/selection_screen/character_skill_panel.png" id="12_6sh05"]
+[ext_resource type="Texture2D" uid="uid://crkfqq5vgqj38" path="res://images/selection_screen/button_logout.png" id="12_egub1"]
+[ext_resource type="Texture2D" uid="uid://dukesr5ghcjyb" path="res://images/selection_screen/character_panel.png" id="13_5lfgh"]
+[ext_resource type="Texture2D" uid="uid://deb6ksyu7t858" path="res://icon.svg" id="13_8x55n"]
+[ext_resource type="PackedScene" uid="uid://7g8ju5oehvsg" path="res://selection_screen/character_choice_box.tscn" id="14_3mduk"]
+[ext_resource type="Texture2D" uid="uid://b06r0fuvsgunw" path="res://images/selection_screen/left.png" id="15_8x55n"]
+[ext_resource type="Texture2D" uid="uid://h4hyotb8y7cd" path="res://images/selection_screen/right.png" id="16_3mduk"]
+
+[node name="SelectionScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4i4ps")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_4i4ps")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="PlayButton" type="TextureButton" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_gjrwj")
+
+[node name="NewsButton" type="TextureButton" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_egub1")
+
+[node name="QuestsButton" type="TextureButton" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_8x55n")
+
+[node name="ProfileButton" type="TextureButton" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="ClanButton" type="TextureButton" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("6_3mduk")
+
+[node name="SettingsButton" type="TextureButton" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("7_3xr65")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="StartButtonsVBox" type="VBoxContainer" parent="MarginContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="LadderButton" type="TextureButton" parent="MarginContainer/HBoxContainer2/StartButtonsVBox"]
+layout_mode = 2
+texture_normal = ExtResource("8_yo7x8")
+
+[node name="QuickGameButton" type="TextureButton" parent="MarginContainer/HBoxContainer2/StartButtonsVBox"]
+layout_mode = 2
+texture_normal = ExtResource("9_hn1be")
+
+[node name="PrivateGameButton" type="TextureButton" parent="MarginContainer/HBoxContainer2/StartButtonsVBox"]
+layout_mode = 2
+texture_normal = ExtResource("10_oyqe2")
+
+[node name="CharacterSelectionVBox" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="UserPanel" type="TextureRect" parent="MarginContainer/CharacterSelectionVBox"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture = ExtResource("11_svc1x")
+
+[node name="LogOut" type="TextureButton" parent="MarginContainer/CharacterSelectionVBox/UserPanel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 29.0
+offset_right = 38.0
+offset_bottom = 56.0
+texture_normal = ExtResource("12_egub1")
+
+[node name="ProfilePic" type="Sprite2D" parent="MarginContainer/CharacterSelectionVBox/UserPanel"]
+visible = false
+position = Vector2(91.5, 46.5)
+scale = Vector2(0.5859375, 0.5859375)
+texture = ExtResource("13_8x55n")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CharacterSelectionVBox/UserPanel"]
+layout_mode = 0
+offset_left = 142.0
+offset_top = 2.0
+offset_right = 242.0
+offset_bottom = 95.0
+
+[node name="Username" type="Label" parent="MarginContainer/CharacterSelectionVBox/UserPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9764706, 0.7254902, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Username"
+
+[node name="UserStats" type="Label" parent="MarginContainer/CharacterSelectionVBox/UserPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 9
+text = "Level:
+Rank:
+Ratio
+Clan"
+
+[node name="box1" parent="MarginContainer/CharacterSelectionVBox/UserPanel" instance=ExtResource("14_3mduk")]
+layout_mode = 0
+offset_left = 318.0
+offset_top = 28.0
+offset_right = 376.0
+offset_bottom = 87.0
+
+[node name="box2" parent="MarginContainer/CharacterSelectionVBox/UserPanel" instance=ExtResource("14_3mduk")]
+layout_mode = 0
+offset_left = 382.0
+offset_top = 28.0
+offset_right = 440.0
+offset_bottom = 87.0
+
+[node name="box3" parent="MarginContainer/CharacterSelectionVBox/UserPanel" instance=ExtResource("14_3mduk")]
+layout_mode = 0
+offset_left = 449.0
+offset_top = 29.0
+offset_right = 507.0
+offset_bottom = 88.0
+
+[node name="CharacterSkillPanel" type="TextureRect" parent="MarginContainer/CharacterSelectionVBox"]
+layout_mode = 2
+texture = ExtResource("12_6sh05")
+
+[node name="SkillContainer" type="MarginContainer" parent="MarginContainer/CharacterSelectionVBox/CharacterSkillPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CharacterSelectionVBox/CharacterSkillPanel/SkillContainer"]
+layout_mode = 2
+
+[node name="CharacterName" type="Label" parent="MarginContainer/CharacterSelectionVBox/CharacterSkillPanel/SkillContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/CharacterSelectionVBox/CharacterSkillPanel/SkillContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="FacePic" type="TextureRect" parent="MarginContainer/CharacterSelectionVBox/CharacterSkillPanel/SkillContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/CharacterSelectionVBox/CharacterSkillPanel/SkillContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+
+[node name="MoveIcons" type="HBoxContainer" parent="MarginContainer/CharacterSelectionVBox/CharacterSkillPanel/SkillContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/CharacterSelectionVBox/CharacterSkillPanel/SkillContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="MoveName" type="Label" parent="MarginContainer/CharacterSelectionVBox/CharacterSkillPanel/SkillContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="Cost" type="Label" parent="MarginContainer/CharacterSelectionVBox/CharacterSkillPanel/SkillContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 10
+horizontal_alignment = 2
+
+[node name="EnergyContainer" type="HBoxContainer" parent="MarginContainer/CharacterSelectionVBox/CharacterSkillPanel/SkillContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="Description" type="RichTextLabel" parent="MarginContainer/CharacterSelectionVBox/CharacterSkillPanel/SkillContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/CharacterSelectionVBox/CharacterSkillPanel/SkillContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 5
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/CharacterSelectionVBox/CharacterSkillPanel/SkillContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Classes" type="Label" parent="MarginContainer/CharacterSelectionVBox/CharacterSkillPanel/SkillContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+
+[node name="Cooldown" type="Label" parent="MarginContainer/CharacterSelectionVBox/CharacterSkillPanel/SkillContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="CharacterPanel" type="TextureRect" parent="MarginContainer/CharacterSelectionVBox"]
+layout_mode = 2
+texture = ExtResource("13_5lfgh")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/CharacterSelectionVBox/CharacterPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CharacterSelectionVBox/CharacterPanel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TextEdit" type="TextEdit" parent="MarginContainer/CharacterSelectionVBox/CharacterPanel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(400, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 12
+placeholder_text = "Search for Character"
+
+[node name="CharactersContainer" type="GridContainer" parent="MarginContainer/CharacterSelectionVBox/CharacterPanel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 200)
+layout_mode = 2
+size_flags_horizontal = 0
+columns = 8
+
+[node name="CharacterScreenLeft" type="TextureButton" parent="MarginContainer/CharacterSelectionVBox/CharacterPanel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -27.5
+offset_right = 49.0
+offset_bottom = 27.5
+grow_vertical = 2
+texture_normal = ExtResource("15_8x55n")
+
+[node name="CharacterScreenRight" type="TextureButton" parent="MarginContainer/CharacterSelectionVBox/CharacterPanel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -49.0
+offset_top = -27.5
+offset_right = 10.0
+offset_bottom = 27.5
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("16_3mduk")
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer2/StartButtonsVBox/QuickGameButton" to="." method="_on_quick_game_button_pressed"]

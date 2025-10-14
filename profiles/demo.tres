@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Profile" load_steps=3 format=3 uid="uid://dfasx203t65nw"]
+
+[ext_resource type="Texture2D" uid="uid://deb6ksyu7t858" path="res://icon.svg" id="1_d42kr"]
+[ext_resource type="Script" uid="uid://c8gtb78pbwu7y" path="res://profiles/profile.gd" id="2_7p1ne"]
+
+[resource]
+script = ExtResource("2_7p1ne")
+profile_pic = ExtResource("1_d42kr")
+name = "kadmylos"
+clan = "gucci"
+metadata/_custom_type_script = "uid://c8gtb78pbwu7y"

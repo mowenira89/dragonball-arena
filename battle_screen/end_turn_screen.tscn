@@ -1,0 +1,191 @@
+[gd_scene load_steps=7 format=3 uid="uid://c31wct5735560"]
+
+[ext_resource type="Texture2D" uid="uid://emg2mtldtcgp" path="res://images/end_turn_window/end_turn_panel.png" id="1_2hxcw"]
+[ext_resource type="Script" uid="uid://dquoa2vcm1dtm" path="res://battle_screen/end_turn_screen.gd" id="1_r5hjn"]
+[ext_resource type="Texture2D" uid="uid://cl3dxxjkl822n" path="res://images/exchange_window/minus_button.png" id="2_r5hjn"]
+[ext_resource type="Texture2D" uid="uid://dnpfndjtg76ck" path="res://images/exchange_window/add_button.png" id="3_spodc"]
+[ext_resource type="Texture2D" uid="uid://b3woyqmwof6ta" path="res://images/end_turn_window/cancel_button.png" id="5_njhhl"]
+[ext_resource type="Texture2D" uid="uid://cp6x7kilyuqxy" path="res://images/end_turn_window/confirm_button.png" id="6_nu6p2"]
+
+[node name="EndTurnBox" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r5hjn")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_2hxcw")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 18
+theme_override_constants/margin_bottom = 60
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Select X Energy to Use"
+horizontal_alignment = 1
+
+[node name="MarginContainer5" type="MarginContainer" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 30
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 18
+
+[node name="GreenHave" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "0"
+
+[node name="GreenGive" type="TextureButton" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("2_r5hjn")
+
+[node name="GreenTake" type="TextureButton" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("3_spodc")
+
+[node name="GreenUsed" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "0"
+
+[node name="MarginContainer2" type="MarginContainer" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 7
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 18
+
+[node name="YellowHave" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "0"
+
+[node name="YellowGive" type="TextureButton" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+texture_normal = ExtResource("2_r5hjn")
+
+[node name="YellowTake" type="TextureButton" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+texture_normal = ExtResource("3_spodc")
+
+[node name="YellowUsed" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "0"
+
+[node name="MarginContainer3" type="MarginContainer" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 7
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 18
+
+[node name="BlueHave" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "0"
+
+[node name="BlueGive" type="TextureButton" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+texture_normal = ExtResource("2_r5hjn")
+
+[node name="BlueTake" type="TextureButton" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+texture_normal = ExtResource("3_spodc")
+
+[node name="BlueUsed" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "0"
+
+[node name="MarginContainer4" type="MarginContainer" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 18
+
+[node name="PurpleHave" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+text = "0"
+
+[node name="PurpleGive" type="TextureButton" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+texture_normal = ExtResource("2_r5hjn")
+
+[node name="PurpleTake" type="TextureButton" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+texture_normal = ExtResource("3_spodc")
+
+[node name="PurpleUsed" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+text = "0"
+
+[node name="SkillOrder" type="HBoxContainer" parent="TextureRect/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="Cancel" type="TextureButton" parent="TextureRect/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_njhhl")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+
+[node name="Confirm" type="TextureButton" parent="TextureRect/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("6_nu6p2")
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="TextureRect/MarginContainer/VBoxContainer/HBoxContainer2/GreenGive" to="." method="_on_green_give_pressed"]
+[connection signal="pressed" from="TextureRect/MarginContainer/VBoxContainer/HBoxContainer2/GreenTake" to="." method="_on_green_take_pressed"]
+[connection signal="pressed" from="TextureRect/MarginContainer/VBoxContainer/HBoxContainer3/YellowGive" to="." method="_on_yellow_give_pressed"]
+[connection signal="pressed" from="TextureRect/MarginContainer/VBoxContainer/HBoxContainer3/YellowTake" to="." method="_on_yellow_take_pressed"]
+[connection signal="pressed" from="TextureRect/MarginContainer/VBoxContainer/HBoxContainer4/BlueGive" to="." method="_on_blue_give_pressed"]
+[connection signal="pressed" from="TextureRect/MarginContainer/VBoxContainer/HBoxContainer4/BlueTake" to="." method="_on_blue_take_pressed"]
+[connection signal="pressed" from="TextureRect/MarginContainer/VBoxContainer/HBoxContainer5/PurpleGive" to="." method="_on_purple_give_pressed"]
+[connection signal="pressed" from="TextureRect/MarginContainer/VBoxContainer/HBoxContainer5/PurpleTake" to="." method="_on_purple_take_pressed"]
+[connection signal="pressed" from="TextureRect/MarginContainer/HBoxContainer/Cancel" to="." method="_on_cancel_pressed"]
+[connection signal="pressed" from="TextureRect/MarginContainer/HBoxContainer/Confirm" to="." method="_on_confirm_pressed"]

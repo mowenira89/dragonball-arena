@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="Move" load_steps=10 format=3 uid="uid://cil8u04jxmse3"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_c0t17"]
+[ext_resource type="Script" uid="uid://by1thnikov8sl" path="res://effects/damage_effect.gd" id="2_u31cw"]
+[ext_resource type="Texture2D" uid="uid://dxwjoy0vq62or" path="res://images/character_images/jackie_chun/Jackie Chun - Chun Kamehameha.png" id="2_vgld6"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="3_cnupa"]
+[ext_resource type="Script" uid="uid://rsh7af6ssr6x" path="res://buffs/shield.gd" id="3_nqy0o"]
+[ext_resource type="Script" uid="uid://iq6j758keyb0" path="res://effects/apply_buff.gd" id="4_epm7m"]
+
+[sub_resource type="Resource" id="Resource_3xode"]
+script = ExtResource("2_u31cw")
+amount = 15
+metadata/_custom_type_script = "uid://by1thnikov8sl"
+
+[sub_resource type="Resource" id="Resource_nqy0o"]
+script = ExtResource("3_nqy0o")
+shield_amount = 5
+permanent = true
+show_active = true
+target = 6
+stack_id = "chun_kamehameha"
+metadata/_custom_type_script = "uid://rsh7af6ssr6x"
+
+[sub_resource type="Resource" id="Resource_sagft"]
+script = ExtResource("4_epm7m")
+buff = SubResource("Resource_nqy0o")
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[resource]
+script = ExtResource("3_cnupa")
+pic = ExtResource("2_vgld6")
+move_name = "Chun Kamehameha"
+description = "Jackie Chun targets one enemy with his Kamehameha, dealing 15 damage. In addition, he grants his team 5 points of destructible defense permanently.
+"
+classes = Array[int]([1, 5, 7])
+cost = Dictionary[int, int]({
+2: 1
+})
+target = 1
+effects = Array[ExtResource("1_c0t17")]([SubResource("Resource_3xode"), SubResource("Resource_sagft")])
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

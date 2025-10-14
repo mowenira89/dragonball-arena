@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Move" load_steps=8 format=3 uid="uid://h2rlnm471a2l"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_0a2a5"]
+[ext_resource type="Script" uid="uid://bb65yy8n4c8cp" path="res://buffs/invulnerable.gd" id="2_8ndh8"]
+[ext_resource type="Script" uid="uid://iq6j758keyb0" path="res://effects/apply_buff.gd" id="3_nuonr"]
+[ext_resource type="Texture2D" uid="uid://b7adqyjdspvql" path="res://images/character_images/kid_krillin/Kid Krillin - High Jump!.png" id="4_8ndh8"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="4_spo06"]
+
+[sub_resource type="Resource" id="Resource_nw4qg"]
+script = ExtResource("2_8ndh8")
+turns = 1
+show_active = true
+metadata/_custom_type_script = "uid://bb65yy8n4c8cp"
+
+[sub_resource type="Resource" id="Resource_llu65"]
+script = ExtResource("3_nuonr")
+buff = SubResource("Resource_nw4qg")
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[resource]
+script = ExtResource("4_spo06")
+pic = ExtResource("4_8ndh8")
+move_name = "High Jump!"
+description = "Kid Krillin jumps high in the air making himself invulnerable for 1 turn.
+"
+classes = Array[int]([0, 4, 7])
+cost = Dictionary[int, int]({
+4: 1
+})
+cooldown = 4
+effects = Array[ExtResource("1_0a2a5")]([SubResource("Resource_llu65")])
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

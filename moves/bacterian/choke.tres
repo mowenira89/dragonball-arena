@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="Move" load_steps=11 format=3 uid="uid://cafv8k7xsr1fy"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_eckk3"]
+[ext_resource type="Texture2D" uid="uid://d07dl24ua8mo8" path="res://images/character_images/bacterian/Bacterian - Choke.png" id="2_a77nj"]
+[ext_resource type="Script" uid="uid://ewtut1aqk2tn" path="res://buffs/stun.gd" id="2_cjado"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="3_616g3"]
+[ext_resource type="Script" uid="uid://iq6j758keyb0" path="res://effects/apply_buff.gd" id="3_vniyt"]
+[ext_resource type="Script" uid="uid://c62o3ky4rpwb2" path="res://buffs/alter_incoming_damage.gd" id="4_c13br"]
+
+[sub_resource type="Resource" id="Resource_oxgxt"]
+script = ExtResource("2_cjado")
+classes = Array[int]([3])
+turns = 1
+show_active = true
+target = 1
+stack_id = "choke"
+til_death = true
+metadata/_custom_type_script = "uid://ewtut1aqk2tn"
+
+[sub_resource type="Resource" id="Resource_adteg"]
+script = ExtResource("3_vniyt")
+buff = SubResource("Resource_oxgxt")
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[sub_resource type="Resource" id="Resource_u4ynh"]
+script = ExtResource("4_c13br")
+amount = 5
+classes = Array[int]([2])
+turns = 2
+show_active = true
+target = 1
+stack_id = "choke_2"
+til_death = true
+metadata/_custom_type_script = "uid://c62o3ky4rpwb2"
+
+[sub_resource type="Resource" id="Resource_1ga1a"]
+script = ExtResource("3_vniyt")
+buff = SubResource("Resource_u4ynh")
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[resource]
+script = ExtResource("3_616g3")
+pic = ExtResource("2_a77nj")
+move_name = "Choke"
+description = "Bacterian chokes one enemy, causing them to take 5 additional affliction damage for 2 turns and stunning their mental skills for 1 turn."
+classes = Array[int]([0, 4, 7])
+cost = Dictionary[int, int]({
+0: 1
+})
+cooldown = 1
+target = 1
+effects = Array[ExtResource("1_eckk3")]([SubResource("Resource_adteg"), SubResource("Resource_1ga1a")])
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

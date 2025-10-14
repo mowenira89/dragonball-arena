@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="Move" load_steps=10 format=3 uid="uid://dpd7y50uh316i"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_2la78"]
+[ext_resource type="Texture2D" uid="uid://d1xoyvhetpvu7" path="res://images/character_images/bacterian/Bacterian - Smelly Finger.png" id="2_huarb"]
+[ext_resource type="Script" uid="uid://by1thnikov8sl" path="res://effects/damage_effect.gd" id="2_rwwm7"]
+[ext_resource type="Script" uid="uid://di04rp7xsuxvm" path="res://buffs/damage_per_turn.gd" id="3_0rtf8"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="3_ewu4g"]
+[ext_resource type="Script" uid="uid://iq6j758keyb0" path="res://effects/apply_buff.gd" id="4_uur0f"]
+
+[sub_resource type="Resource" id="Resource_0ja3i"]
+script = ExtResource("2_rwwm7")
+amount = 10
+damage_type = 2
+metadata/_custom_type_script = "uid://by1thnikov8sl"
+
+[sub_resource type="Resource" id="Resource_vq5so"]
+script = ExtResource("3_0rtf8")
+amount = 10
+damage_type = 2
+permanent = true
+show_active = true
+target = 1
+stackable = true
+stack_id = "smelly_finger"
+til_death = true
+metadata/_custom_type_script = "uid://di04rp7xsuxvm"
+
+[sub_resource type="Resource" id="Resource_0b0pp"]
+script = ExtResource("4_uur0f")
+buff = SubResource("Resource_vq5so")
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[resource]
+script = ExtResource("3_ewu4g")
+pic = ExtResource("2_huarb")
+move_name = "Smelly Finger"
+description = "Bacterian scratches his privates and shoves his fingers in one enemy's face, causing them to take 10 permanent affliction damage. This skill stacks and ends when Bacterian dies."
+classes = Array[int]([2, 5, 7])
+cost = Dictionary[int, int]({
+3: 1,
+4: 1
+})
+cooldown = 2
+target = 1
+effects = Array[ExtResource("1_2la78")]([SubResource("Resource_0ja3i"), SubResource("Resource_0b0pp")])
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"
