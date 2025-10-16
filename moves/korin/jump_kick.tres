@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="Move" load_steps=11 format=3 uid="uid://b4x5jc6a7rskj"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_v3hww"]
+[ext_resource type="Script" uid="uid://urvh4504e0dy" path="res://conditions/condition.gd" id="2_a5gfb"]
+[ext_resource type="Script" uid="uid://by1thnikov8sl" path="res://effects/damage_effect.gd" id="3_v22jc"]
+[ext_resource type="Script" uid="uid://c62o3ky4rpwb2" path="res://buffs/alter_incoming_damage.gd" id="4_06oj6"]
+[ext_resource type="Script" uid="uid://iq6j758keyb0" path="res://effects/apply_buff.gd" id="5_wktb6"]
+[ext_resource type="Texture2D" uid="uid://5jhlylyutm87" path="res://images/character_images/korin/Korin - Jump Kick.png" id="6_8ldlk"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="7_81pfl"]
+
+[sub_resource type="Resource" id="Resource_0f811"]
+script = ExtResource("3_v22jc")
+amount = 15
+metadata/_custom_type_script = "uid://by1thnikov8sl"
+
+[sub_resource type="Resource" id="Resource_4an0a"]
+script = ExtResource("4_06oj6")
+amount = -5
+turns = 1
+show_active = true
+stack_id = "korin_jump"
+friendly = true
+metadata/_custom_type_script = "uid://c62o3ky4rpwb2"
+
+[sub_resource type="Resource" id="Resource_fvp8u"]
+script = ExtResource("5_wktb6")
+buff = SubResource("Resource_4an0a")
+friendly = true
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[resource]
+script = ExtResource("7_81pfl")
+pic = ExtResource("6_8ldlk")
+move_name = "Jump Kick"
+description = "Korin kicks one enemy, dealing 15 damage to them. After use, Korin gains 5 points of damage reduction for 1 turn."
+classes = Array[int]([0, 4, 7])
+cost = Dictionary[int, int]({
+1: 1
+})
+target = 1
+effects = Array[ExtResource("1_v3hww")]([SubResource("Resource_0f811"), SubResource("Resource_fvp8u")])
+attack = true
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

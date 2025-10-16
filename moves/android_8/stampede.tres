@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="Move" load_steps=9 format=3 uid="uid://glwkdrpinuf6"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_lntds"]
+[ext_resource type="Script" uid="uid://urvh4504e0dy" path="res://conditions/condition.gd" id="2_ro6ix"]
+[ext_resource type="Script" uid="uid://bqch20irdhq6i" path="res://effects/destroy_defense.gd" id="3_ffugk"]
+[ext_resource type="Script" uid="uid://by1thnikov8sl" path="res://effects/damage_effect.gd" id="4_md5x7"]
+[ext_resource type="Texture2D" uid="uid://c4h6vadicsxoa" path="res://images/character_images/android_8/Android #8 Stampede.png" id="5_n8q8c"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="6_08g7h"]
+
+[sub_resource type="Resource" id="Resource_3l3vb"]
+script = ExtResource("3_ffugk")
+harmful = true
+metadata/_custom_type_script = "uid://bqch20irdhq6i"
+
+[sub_resource type="Resource" id="Resource_bkc43"]
+script = ExtResource("4_md5x7")
+amount = 10
+metadata/_custom_type_script = "uid://by1thnikov8sl"
+
+[resource]
+script = ExtResource("6_08g7h")
+pic = ExtResource("5_n8q8c")
+move_name = "Stampede"
+description = "Android #8 stampedes through anything in his path. This skill targets 1 enemy, destroying all destructible defense they have and then dealing 10 damage.
+"
+classes = Array[int]([0, 4, 7])
+cost = Dictionary[int, int]({
+4: 1
+})
+target = 1
+effects = Array[ExtResource("1_lntds")]([SubResource("Resource_3l3vb"), SubResource("Resource_bkc43")])
+attack = true
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

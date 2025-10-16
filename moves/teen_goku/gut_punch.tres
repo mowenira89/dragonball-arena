@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="Move" load_steps=11 format=3 uid="uid://bae23ee433g4y"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_r356s"]
+[ext_resource type="Script" uid="uid://urvh4504e0dy" path="res://conditions/condition.gd" id="2_t37kd"]
+[ext_resource type="Script" uid="uid://by1thnikov8sl" path="res://effects/damage_effect.gd" id="3_o7huh"]
+[ext_resource type="Script" uid="uid://crxhvyixgnvej" path="res://buffs/alter_cooldown.gd" id="4_jtc0l"]
+[ext_resource type="Script" uid="uid://iq6j758keyb0" path="res://effects/apply_buff.gd" id="5_0fcgq"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="6_rc0as"]
+[ext_resource type="Texture2D" uid="uid://bxm3hju2lyf34" path="res://images/character_images/teen_goku/Teen Goku - Gut Punch.png" id="6_t37kd"]
+
+[sub_resource type="Resource" id="Resource_6q1n4"]
+script = ExtResource("3_o7huh")
+amount = 10
+metadata/_custom_type_script = "uid://by1thnikov8sl"
+
+[sub_resource type="Resource" id="Resource_lle8m"]
+script = ExtResource("4_jtc0l")
+delta = 1
+turns = 1
+show_active = true
+stack_id = "gut_punch"
+harmful = true
+metadata/_custom_type_script = "uid://crxhvyixgnvej"
+
+[sub_resource type="Resource" id="Resource_u4npd"]
+script = ExtResource("5_0fcgq")
+buff = SubResource("Resource_lle8m")
+harmful = true
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[resource]
+script = ExtResource("6_rc0as")
+pic = ExtResource("6_t37kd")
+move_name = "Gut Punch"
+description = "Teen Goku punches one enemy with extreme force, knocking the wind out of them. This causes them to take 10 damage and increases their cooldowns by 1 for 1 turn.
+"
+classes = Array[int]([0, 4, 7])
+cost = Dictionary[int, int]({
+4: 1
+})
+cooldown = 1
+target = 1
+effects = Array[ExtResource("1_r356s")]([SubResource("Resource_6q1n4"), SubResource("Resource_u4npd")])
+attack = true
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

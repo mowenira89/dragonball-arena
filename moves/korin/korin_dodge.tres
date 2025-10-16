@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="Move" load_steps=9 format=3 uid="uid://cywb84wjooixc"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_g6jca"]
+[ext_resource type="Script" uid="uid://bb65yy8n4c8cp" path="res://buffs/invulnerable.gd" id="2_2pfw5"]
+[ext_resource type="Texture2D" uid="uid://cq1arofxivakh" path="res://images/character_images/korin/Korin - Korin Dodge.png" id="2_oyxm6"]
+[ext_resource type="Script" uid="uid://urvh4504e0dy" path="res://conditions/condition.gd" id="3_a38yw"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="3_hil0o"]
+[ext_resource type="Script" uid="uid://iq6j758keyb0" path="res://effects/apply_buff.gd" id="4_c750o"]
+
+[sub_resource type="Resource" id="Resource_tcxn0"]
+script = ExtResource("2_2pfw5")
+turns = 1
+show_active = true
+friendly = true
+metadata/_custom_type_script = "uid://bb65yy8n4c8cp"
+
+[sub_resource type="Resource" id="Resource_os0ks"]
+script = ExtResource("4_c750o")
+buff = SubResource("Resource_tcxn0")
+friendly = true
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[resource]
+script = ExtResource("3_hil0o")
+pic = ExtResource("2_oyxm6")
+move_name = "Korin Dodge"
+description = "Korin dodges his enemies' attacks, making him invulnerable for 1 turn.
+"
+classes = Array[int]([0, 7])
+cost = Dictionary[int, int]({
+4: 1
+})
+effects = Array[ExtResource("1_g6jca")]([SubResource("Resource_os0ks")])
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

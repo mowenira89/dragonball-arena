@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="Move" load_steps=13 format=3 uid="uid://dfrd4na7plvej"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_5sjgt"]
+[ext_resource type="Script" uid="uid://urvh4504e0dy" path="res://conditions/condition.gd" id="2_pl6t5"]
+[ext_resource type="Script" uid="uid://c2ybrmd13277n" path="res://buffs/alter_outgoing_damage.gd" id="3_dlhw2"]
+[ext_resource type="Script" uid="uid://iq6j758keyb0" path="res://effects/apply_buff.gd" id="4_jvyru"]
+[ext_resource type="Script" uid="uid://by1thnikov8sl" path="res://effects/damage_effect.gd" id="5_8p7t4"]
+[ext_resource type="Script" uid="uid://crkwowrut6x36" path="res://effects/coin_flip_effect.gd" id="6_62h63"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="7_gqq1k"]
+[ext_resource type="Texture2D" uid="uid://dmameltf2fcsu" path="res://images/character_images/korin/Korin - Sacred Water.png" id="7_pl6t5"]
+
+[sub_resource type="Resource" id="Resource_5t0bb"]
+script = ExtResource("3_dlhw2")
+amount = 5
+permanent = true
+show_active = true
+target = 4
+stackable = true
+stack_id = "sacred_water"
+friendly = true
+metadata/_custom_type_script = "uid://c2ybrmd13277n"
+
+[sub_resource type="Resource" id="Resource_m1t5l"]
+script = ExtResource("4_jvyru")
+buff = SubResource("Resource_5t0bb")
+friendly = true
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[sub_resource type="Resource" id="Resource_ntjla"]
+script = ExtResource("5_8p7t4")
+amount = 15
+harmful = true
+metadata/_custom_type_script = "uid://by1thnikov8sl"
+
+[sub_resource type="Resource" id="Resource_pv5o3"]
+script = ExtResource("6_62h63")
+effect_1 = SubResource("Resource_m1t5l")
+effect_2 = SubResource("Resource_ntjla")
+harmful = true
+metadata/_custom_type_script = "uid://crkwowrut6x36"
+
+[resource]
+script = ExtResource("7_gqq1k")
+pic = ExtResource("7_pl6t5")
+move_name = "Sacred Water"
+description = "Korin offers Sacred Water to one teammate. This skill targets one ally and has a 50/50 chance to either increase their damage by 5 permanently or deal 15 affliction damage to them instantly.
+"
+classes = Array[int]([2, 7])
+cooldown = 2
+target = 4
+effects = Array[ExtResource("1_5sjgt")]([SubResource("Resource_pv5o3")])
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

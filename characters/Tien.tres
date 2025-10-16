@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Character" load_steps=8 format=3 uid="uid://g6n7tdm3srwl"]
+
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="1_56nqt"]
+[ext_resource type="Resource" uid="uid://cbse476pddkln" path="res://moves/tien/dodon_ray.tres" id="2_h2sfg"]
+[ext_resource type="Resource" uid="uid://dw0nygyo1han2" path="res://moves/tien/solar_flare.tres" id="3_7gtd8"]
+[ext_resource type="Resource" uid="uid://dyda0mo8thn34" path="res://moves/tien/total_invulnerability.tres" id="4_21cgy"]
+[ext_resource type="Resource" uid="uid://cmu4dwyurpruu" path="res://moves/tien/tri_beam.tres" id="5_r4vuo"]
+[ext_resource type="Texture2D" uid="uid://c52jxy2fych1a" path="res://images/character_images/tien/Tien - Face Picture.png" id="6_0gp0w"]
+[ext_resource type="Script" uid="uid://dafn65t8p7eec" path="res://characters/character.gd" id="7_jmqd3"]
+
+[resource]
+script = ExtResource("7_jmqd3")
+pic = ExtResource("6_0gp0w")
+name = "Tien"
+moves = Array[ExtResource("1_56nqt")]([ExtResource("2_h2sfg"), ExtResource("3_7gtd8"), ExtResource("4_21cgy"), ExtResource("5_r4vuo")])
+desc = "Tien is a disciplined, reclusive and heavily devoted martial artist, and one of the strongest Earthlings within the Dragon Ball universe. He also possesses a few non-human traits due to being descended from the alien Triclops race.
+"
+metadata/_custom_type_script = "uid://dafn65t8p7eec"

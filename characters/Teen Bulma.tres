@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Character" load_steps=8 format=3 uid="uid://ddpcqoyk5t508"]
+
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="1_6qxyf"]
+[ext_resource type="Resource" uid="uid://186o6t06fuq4" path="res://moves/teen_bulma/fire.tres" id="2_ynipr"]
+[ext_resource type="Resource" uid="uid://cln3r0qkbb3d" path="res://moves/teen_bulma/provisions.tres" id="3_0jirj"]
+[ext_resource type="Resource" uid="uid://dvyx5iow4a874" path="res://moves/teen_bulma/capsule_house.tres" id="4_k7ikm"]
+[ext_resource type="Resource" uid="uid://lffnyvq1fssb" path="res://moves/teen_bulma/capsule_motorcycle.tres" id="5_ccofh"]
+[ext_resource type="Texture2D" uid="uid://b8ig8neao7sqh" path="res://images/character_images/teen_bluma/Bulma - Face Picture.png" id="6_0ejlp"]
+[ext_resource type="Script" uid="uid://dafn65t8p7eec" path="res://characters/character.gd" id="7_fgv63"]
+
+[resource]
+script = ExtResource("7_fgv63")
+pic = ExtResource("6_0ejlp")
+name = "Teen Bulma"
+moves = Array[ExtResource("1_6qxyf")]([ExtResource("2_ynipr"), ExtResource("3_0jirj"), ExtResource("4_k7ikm"), ExtResource("5_ccofh")])
+desc = "Teenage Bulma is a brilliant scientist and the second daughter of Capsule Corporation's founder Dr. Brief and his wife Bikini, the younger sister of Tights, and is Goku's first friend.
+"
+metadata/_custom_type_script = "uid://dafn65t8p7eec"

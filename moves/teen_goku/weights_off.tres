@@ -1,0 +1,58 @@
+[gd_resource type="Resource" script_class="Move" load_steps=17 format=3 uid="uid://cab27nypxfa08"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_83ncq"]
+[ext_resource type="Script" uid="uid://urvh4504e0dy" path="res://conditions/condition.gd" id="2_dfmo7"]
+[ext_resource type="Script" uid="uid://bsyun1mtbd28y" path="res://effects/alter_move.gd" id="3_kycvs"]
+[ext_resource type="Resource" uid="uid://bae23ee433g4y" path="res://moves/teen_goku/gut_punch.tres" id="3_xnwy7"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="4_xnwy7"]
+[ext_resource type="Resource" uid="uid://dvfrct4i4448i" path="res://moves/teen_goku/flying_kick.tres" id="5_rsd7c"]
+[ext_resource type="Texture2D" uid="uid://cnkil3vlv48db" path="res://images/character_images/teen_goku/Teen Goku - Weights Off!.png" id="6_8dwno"]
+[ext_resource type="Script" uid="uid://cix1q6ag1a1p" path="res://buffs/no_harm.gd" id="6_n0236"]
+[ext_resource type="Script" uid="uid://iq6j758keyb0" path="res://effects/apply_buff.gd" id="7_msqa6"]
+[ext_resource type="Script" uid="uid://v5tgkue1wb2t" path="res://effects/swap_effect.gd" id="8_kx5n4"]
+[ext_resource type="Resource" uid="uid://bdxuovsmsgpm2" path="res://moves/teen_goku/feet_kamehameha.tres" id="9_msqa6"]
+
+[sub_resource type="Resource" id="Resource_rsd7c"]
+script = ExtResource("3_kycvs")
+move_to_alter = ExtResource("3_xnwy7")
+change_damage = 10
+new_random_energy = 1
+new_unrandom_energy = Dictionary[int, int]({
+4: 1
+})
+metadata/_custom_type_script = "uid://bsyun1mtbd28y"
+
+[sub_resource type="Resource" id="Resource_n0236"]
+script = ExtResource("3_kycvs")
+move_to_alter = ExtResource("5_rsd7c")
+change_damage = 15
+new_random_energy = 1
+new_unrandom_energy = Dictionary[int, int]({
+0: 1
+})
+metadata/_custom_type_script = "uid://bsyun1mtbd28y"
+
+[sub_resource type="Resource" id="Resource_xen6e"]
+script = ExtResource("6_n0236")
+metadata/_custom_type_script = "uid://cix1q6ag1a1p"
+
+[sub_resource type="Resource" id="Resource_npp8b"]
+script = ExtResource("7_msqa6")
+buff = SubResource("Resource_xen6e")
+friendly = true
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[sub_resource type="Resource" id="Resource_cf0j6"]
+script = ExtResource("8_kx5n4")
+swap_to = ExtResource("9_msqa6")
+metadata/_custom_type_script = "uid://v5tgkue1wb2t"
+
+[resource]
+script = ExtResource("4_xnwy7")
+pic = ExtResource("6_8dwno")
+move_name = "Weights Off!"
+description = "Teen Goku removes his weighted clothing, becoming immune to all harmful effects except damage. This also causes 'Gut Punch' and 'Flying Kick' to deal double damage, but they will cost 1 extra random energy to use. This skill cannot be removed and will be permanently replaced by 'Feet Kamehameha' after use.\"
+"
+classes = Array[int]([0, 7])
+effects = Array[ExtResource("1_83ncq")]([SubResource("Resource_rsd7c"), SubResource("Resource_n0236"), SubResource("Resource_npp8b"), SubResource("Resource_cf0j6")])
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

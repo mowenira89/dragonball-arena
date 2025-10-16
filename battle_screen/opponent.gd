@@ -15,6 +15,7 @@ func set_opponent(c:Character):
 	character=c
 	character_pic.character=c
 	character_pic.pic.texture=c.pic
+	character.setup()
 
 func flash_pic():
 	character_pic.flash_pic()
@@ -36,7 +37,6 @@ func attach_active_buff(c:Character,b:Buff):
 		var new_ab = ACTIVE_BUFF.instantiate()
 		new_ab.create(b.move,b)
 		active_effects.add_child(new_ab)
-
 
 	
 		

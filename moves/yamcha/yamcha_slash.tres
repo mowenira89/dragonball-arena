@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="Move" load_steps=9 format=3 uid="uid://bok4tue1ybtba"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_r10tv"]
+[ext_resource type="Script" uid="uid://urvh4504e0dy" path="res://conditions/condition.gd" id="2_ot001"]
+[ext_resource type="Script" uid="uid://bqch20irdhq6i" path="res://effects/destroy_defense.gd" id="2_pjwc1"]
+[ext_resource type="Script" uid="uid://by1thnikov8sl" path="res://effects/damage_effect.gd" id="3_ot001"]
+[ext_resource type="Texture2D" uid="uid://77yhtxxepdm" path="res://images/character_images/yamcha/Yamcha - Yamcha Slash.png" id="4_pjwc1"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="4_rq8pu"]
+
+[sub_resource type="Resource" id="Resource_cfpho"]
+script = ExtResource("2_pjwc1")
+metadata/_custom_type_script = "uid://bqch20irdhq6i"
+
+[sub_resource type="Resource" id="Resource_r4x8l"]
+script = ExtResource("3_ot001")
+amount = 10
+metadata/_custom_type_script = "uid://by1thnikov8sl"
+
+[resource]
+script = ExtResource("4_rq8pu")
+pic = ExtResource("4_pjwc1")
+move_name = "Yamcha Slash"
+description = "Yamcha slashes at his opponent, destroying their destructible defense and dealing 10 damage."
+classes = Array[int]([0, 4, 7])
+cost = Dictionary[int, int]({
+4: 1
+})
+target = 1
+effects = Array[ExtResource("1_r10tv")]([SubResource("Resource_cfpho"), SubResource("Resource_r4x8l")])
+attack = true
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

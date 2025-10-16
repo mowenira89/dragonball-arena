@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="Move" load_steps=9 format=3 uid="uid://cs41pfcnq23wj"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_b6o4n"]
+[ext_resource type="Script" uid="uid://cba8aaowwl0uk" path="res://buffs/counter_see_through.gd" id="2_iiqck"]
+[ext_resource type="Script" uid="uid://urvh4504e0dy" path="res://conditions/condition.gd" id="3_khc6a"]
+[ext_resource type="Script" uid="uid://iq6j758keyb0" path="res://effects/apply_buff.gd" id="4_7gd82"]
+[ext_resource type="Texture2D" uid="uid://c7q8jd8flwdbf" path="res://images/character_images/see_through/See-Through the Invisible Man - Invisible Sucker Punch.png" id="5_qmw0u"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="6_dhw3r"]
+
+[sub_resource type="Resource" id="Resource_wwqf8"]
+script = ExtResource("2_iiqck")
+damage = 10
+damage_type = 1
+permanent = true
+target = 1
+stackable = true
+stack_id = "invisible_sucker"
+harmful = true
+metadata/_custom_type_script = "uid://cba8aaowwl0uk"
+
+[sub_resource type="Resource" id="Resource_1hceg"]
+script = ExtResource("4_7gd82")
+buff = SubResource("Resource_wwqf8")
+harmful = true
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[resource]
+script = ExtResource("6_dhw3r")
+pic = ExtResource("5_qmw0u")
+move_name = "Invisible Sucker Punch"
+description = "See-Through the Invisible Man targets one enemy. The first time they use a harmful skill, they will take 10 piercing damage. This skill stacks and is invisible.
+"
+classes = Array[int]([0, 4, 7])
+cost = Dictionary[int, int]({
+4: 1
+})
+target = 1
+effects = Array[ExtResource("1_b6o4n")]([SubResource("Resource_1hceg")])
+attack = true
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

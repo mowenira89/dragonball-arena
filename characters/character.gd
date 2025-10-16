@@ -4,7 +4,8 @@ class_name Character extends Resource
 @export var name:String
 @export var moves:Array[Move]
 @export_multiline var desc:String
-
+@export var setup_buffs:Array[Buff]
+var battle_moves:Array[Move]
 var current_hp:int=100
 
 var buffs:Array[Buff]
@@ -16,26 +17,42 @@ func add_buff(buff:Buff,move:Move,u:Character):
 			for x in buffs:
 				if new_buff.stack_id==x.stack_id:
 					return false	
-			new_buff._owner=self
-			new_buff.move=move
-			new_buff.user=u
-			buffs.append(new_buff)
-			new_buff.apply(self,move)
-			if new_buff.show_active:
-				TargettingManager.attach_active_buff.emit(self,new_buff)
-			return true
+			register_buff(new_buff,move,u)
 		else:
 			for x in buffs:
 				if x.stack_id==new_buff.stack_id:
 					x.stack()
-	return false
+					return true
+			register_buff(buff,move,u)
+				
+func register_buff(b:Buff,move:Move,u:Character):
+	b._owner=self
+	b.move=move
+	b.user=u
+	buffs.append(b)
+	b.apply(self,move)
+	if b.show_active or buffs.any(func(b):return b is ForceVisible):
+		TargettingManager.attach_active_buff.emit(self,b)	
+
+func setup():
+	for x in setup_buffs:
+		add_buff(x,null,self)
 	
-	
+func heal(amount:int):
+	current_hp+=amount
+
 func take_damage(amount,damage_type,move):
+	if buffs.any(func(b):b is ImmuneToDamage):
+		return false
 	var dmg=amount
 	for x in buffs:
 		dmg=x.alter_incoming_damage(dmg,move,damage_type)
 	current_hp-=dmg
+	
+	if buffs.any(func(b):return b is Unkillable):
+		if current_hp<=0:
+			current_hp=1
+	
 	if current_hp<=0:
 		BattleManager.death.emit(self)
 		if TargettingManager.friendlies.any(func(c):c.current_hp>0):
@@ -76,3 +93,18 @@ func move_opponent():
 		standee.create_standee(self,target,new_move)
 		TargettingManager.attack_queue.append(standee)
 			
+func check_stun(move_class:Array[Move.CLASSES]):
+	for b in buffs:
+		if b is Stun:
+			if move_class.is_empty():
+				return true
+			else:
+				if b.classes.any(func(a):a in move_class):
+					return true
+					
+
+func get_move(n:String):
+	for x in moves:
+		if x.move_name==n:
+			return x
+	return false

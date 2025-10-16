@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="Move" load_steps=9 format=3 uid="uid://bbnevjc3qiutn"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_m0w7d"]
+[ext_resource type="Script" uid="uid://bb65yy8n4c8cp" path="res://buffs/invulnerable.gd" id="2_b1vab"]
+[ext_resource type="Script" uid="uid://urvh4504e0dy" path="res://conditions/condition.gd" id="3_t5e5h"]
+[ext_resource type="Script" uid="uid://iq6j758keyb0" path="res://effects/apply_buff.gd" id="4_hi5ay"]
+[ext_resource type="Texture2D" uid="uid://bptjuxargxwj7" path="res://images/character_images/android_8/Android #8 - Rest.png" id="5_6ctnx"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="6_6ywyj"]
+
+[sub_resource type="Resource" id="Resource_7643j"]
+script = ExtResource("2_b1vab")
+turns = 1
+show_active = true
+friendly = true
+metadata/_custom_type_script = "uid://bb65yy8n4c8cp"
+
+[sub_resource type="Resource" id="Resource_2usyi"]
+script = ExtResource("4_hi5ay")
+buff = SubResource("Resource_7643j")
+friendly = true
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[resource]
+script = ExtResource("6_6ywyj")
+pic = ExtResource("5_6ctnx")
+move_name = "Rest"
+description = "Android #8 relaxes after a long day, making himself invulnerable for 1 turn."
+classes = Array[int]([0, 7])
+cost = Dictionary[int, int]({
+4: 1
+})
+cooldown = 4
+effects = Array[ExtResource("1_m0w7d")]([SubResource("Resource_2usyi")])
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

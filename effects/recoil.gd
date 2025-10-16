@@ -3,7 +3,7 @@ class_name Recoil extends Effect
 @export var amount:int
 @export var damage_type:DamageEffect.DAMAGES
 
-func apply(standee:AttackStandee):
+func apply(standee:AttackStandee,t:Character):
 	var amt
 	amt=amount
 	for x in standee.user.buffs:

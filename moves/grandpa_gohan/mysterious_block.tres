@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="Move" load_steps=9 format=3 uid="uid://dru5o6yku500f"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_5lthk"]
+[ext_resource type="Script" uid="uid://bb65yy8n4c8cp" path="res://buffs/invulnerable.gd" id="2_x3qb7"]
+[ext_resource type="Script" uid="uid://urvh4504e0dy" path="res://conditions/condition.gd" id="3_ge37o"]
+[ext_resource type="Script" uid="uid://iq6j758keyb0" path="res://effects/apply_buff.gd" id="4_aix6e"]
+[ext_resource type="Texture2D" uid="uid://bl3s0ocnxw0g2" path="res://images/character_images/grandpa_gohan/Grandpa Gohan - Mysterious Block.png" id="5_evy6x"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="6_b8dwa"]
+
+[sub_resource type="Resource" id="Resource_wf7si"]
+script = ExtResource("2_x3qb7")
+turns = 1
+show_active = true
+friendly = true
+metadata/_custom_type_script = "uid://bb65yy8n4c8cp"
+
+[sub_resource type="Resource" id="Resource_53p5k"]
+script = ExtResource("4_aix6e")
+buff = SubResource("Resource_wf7si")
+friendly = true
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[resource]
+script = ExtResource("6_b8dwa")
+pic = ExtResource("5_evy6x")
+move_name = "Mysterious Block"
+description = "Grandpa Gohan blocks his enemies attacks, this skill will make Grandpa Invulnerable for 1 turn.
+"
+classes = Array[int]([0, 4, 7])
+cost = Dictionary[int, int]({
+4: 1
+})
+cooldown = 4
+effects = Array[ExtResource("1_5lthk")]([SubResource("Resource_53p5k")])
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

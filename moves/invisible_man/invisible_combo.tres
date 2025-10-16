@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="Move" load_steps=9 format=3 uid="uid://ccnmgbglv4wy6"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_g8ehk"]
+[ext_resource type="Script" uid="uid://urvh4504e0dy" path="res://conditions/condition.gd" id="2_rcmo8"]
+[ext_resource type="Script" uid="uid://dmhjtyod3x8wn" path="res://conditions/if_has_buff.gd" id="3_ylmnc"]
+[ext_resource type="Script" uid="uid://c7h2pxpall0t5" path="res://effects/alter_buff_effect.gd" id="4_bfj4e"]
+[ext_resource type="Texture2D" uid="uid://e6cxtl7c4q0" path="res://images/character_images/see_through/See-Through the Invisible Man Invisible Combo.png" id="5_kmhkw"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="6_ptsfp"]
+
+[sub_resource type="Resource" id="Resource_4bagc"]
+script = ExtResource("3_ylmnc")
+stack_id = "invisible_kick"
+target = true
+metadata/_custom_type_script = "uid://dmhjtyod3x8wn"
+
+[sub_resource type="Resource" id="Resource_2i0al"]
+script = ExtResource("4_bfj4e")
+stack_id = "invisible_kick"
+damage = 15
+conditions = Array[ExtResource("2_rcmo8")]([SubResource("Resource_4bagc")])
+metadata/_custom_type_script = "uid://c7h2pxpall0t5"
+
+[resource]
+script = ExtResource("6_ptsfp")
+pic = ExtResource("5_kmhkw")
+move_name = "Invisible Combo"
+description = "See-Through the Invisible Man continues his combo, increasing the damage dealt by 'Invisible Kick' by 15. This skill can only be used during 'Invisible Kick' and remains invisible.
+"
+classes = Array[int]([0, 4, 7])
+cost = Dictionary[int, int]({
+0: 1
+})
+target = 1
+effects = Array[ExtResource("1_g8ehk")]([SubResource("Resource_2i0al")])
+attack = true
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

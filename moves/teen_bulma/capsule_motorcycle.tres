@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="Move" load_steps=8 format=3 uid="uid://lffnyvq1fssb"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_sndgv"]
+[ext_resource type="Script" uid="uid://bb65yy8n4c8cp" path="res://buffs/invulnerable.gd" id="2_5oy64"]
+[ext_resource type="Script" uid="uid://iq6j758keyb0" path="res://effects/apply_buff.gd" id="3_3amye"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="4_4eqmu"]
+[ext_resource type="Texture2D" uid="uid://bf15ikipb1vyw" path="res://images/character_images/teen_bluma/Teenage Bulma - Capsule Motorcycle.png" id="4_5oy64"]
+
+[sub_resource type="Resource" id="Resource_h6dl3"]
+script = ExtResource("2_5oy64")
+turns = 1
+show_active = true
+stack_id = "capsule_motor"
+metadata/_custom_type_script = "uid://bb65yy8n4c8cp"
+
+[sub_resource type="Resource" id="Resource_bkf7s"]
+script = ExtResource("3_3amye")
+buff = SubResource("Resource_h6dl3")
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[resource]
+script = ExtResource("4_4eqmu")
+pic = ExtResource("4_5oy64")
+move_name = "Capsule Motorcycle"
+description = "Teenage Bulma uses her capsule to summon her motorcycle. This skill makes Teenage Bulma invulnerable for 1 turn. 
+"
+classes = Array[int]([0, 7])
+cost = Dictionary[int, int]({
+4: 1
+})
+cooldown = 4
+effects = Array[ExtResource("1_sndgv")]([SubResource("Resource_bkf7s")])
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

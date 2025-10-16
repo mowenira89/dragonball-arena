@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="Move" load_steps=9 format=3 uid="uid://b5365eukqxkg0"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_vb5ne"]
+[ext_resource type="Script" uid="uid://61t3l24ikss3" path="res://effects/energy_steal.gd" id="2_0gwui"]
+[ext_resource type="Script" uid="uid://urvh4504e0dy" path="res://conditions/condition.gd" id="2_fu3iy"]
+[ext_resource type="Script" uid="uid://dmhjtyod3x8wn" path="res://conditions/if_has_buff.gd" id="3_qj2pw"]
+[ext_resource type="Texture2D" uid="uid://bro180o0gf6rw" path="res://images/character_images/general_blue/General-Blue - Two Shot Telekinesis.png" id="4_qj2pw"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="5_am86e"]
+
+[sub_resource type="Resource" id="Resource_am86e"]
+script = ExtResource("3_qj2pw")
+stack_id = "psi_eye"
+target = true
+metadata/_custom_type_script = "uid://dmhjtyod3x8wn"
+
+[sub_resource type="Resource" id="Resource_rv5a4"]
+script = ExtResource("2_0gwui")
+amount = 1
+color = 5
+friendly = true
+harmful = true
+conditions = Array[ExtResource("2_fu3iy")]([SubResource("Resource_am86e")])
+metadata/_custom_type_script = "uid://61t3l24ikss3"
+
+[resource]
+script = ExtResource("5_am86e")
+pic = ExtResource("4_qj2pw")
+move_name = "Two Shot Telekinesis"
+description = "General Blue uses his psychic abilities to tie up one enemy with rope, binding their pressure points. The target loses 1 energy. If they are currently affected by 'Psychic Eyes,' this skill costs 1 less random energy, and 1 energy is stolen instead.
+"
+classes = Array[int]([1, 5, 7])
+cost = Dictionary[int, int]({
+2: 1,
+4: 1
+})
+cooldown = 2
+target = 1
+effects = Array[ExtResource("1_vb5ne")]([SubResource("Resource_rv5a4")])
+attack = true
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

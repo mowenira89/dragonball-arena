@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Character" load_steps=8 format=3 uid="uid://crh8b6g0cakys"]
+
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="1_n741s"]
+[ext_resource type="Resource" uid="uid://dulo0vs41bpr8" path="res://moves/mr_popo/assistants_block.tres" id="2_viu1n"]
+[ext_resource type="Resource" uid="uid://f54ps1brw1og" path="res://moves/mr_popo/energy_scan.tres" id="3_vp32j"]
+[ext_resource type="Resource" uid="uid://c7eadnqkxdk0r" path="res://moves/mr_popo/prediction_punch.tres" id="4_yrswg"]
+[ext_resource type="Resource" uid="uid://bqjfr224tp3lo" path="res://moves/mr_popo/puppet_copy.tres" id="5_wvk0s"]
+[ext_resource type="Texture2D" uid="uid://kmo28l7l66l0" path="res://images/character_images/mr_popo/Mr.Popo - Face Picture.png" id="6_4gn52"]
+[ext_resource type="Script" uid="uid://dafn65t8p7eec" path="res://characters/character.gd" id="7_801f7"]
+
+[resource]
+script = ExtResource("7_801f7")
+pic = ExtResource("6_4gn52")
+name = "Mr. Popo"
+moves = Array[ExtResource("1_n741s")]([ExtResource("2_viu1n"), ExtResource("3_vp32j"), ExtResource("4_yrswg"), ExtResource("5_wvk0s")])
+desc = "Mr.Popo is an assistant deity who serves as the attendant to Earth's Guardian. He also tends the grounds of the Lookout. Although he is bound there eternally as the gardener and caretaker, he can instantaneously travel anywhere in the world when the occasion calls for it by using a magic carpet."
+metadata/_custom_type_script = "uid://dafn65t8p7eec"

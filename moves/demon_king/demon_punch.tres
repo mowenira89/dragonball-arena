@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="Move" load_steps=13 format=3 uid="uid://dx1tf0hqxnsyu"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_vfq6r"]
+[ext_resource type="Script" uid="uid://by1thnikov8sl" path="res://effects/damage_effect.gd" id="2_e5gqe"]
+[ext_resource type="Script" uid="uid://urvh4504e0dy" path="res://conditions/condition.gd" id="2_mkbkd"]
+[ext_resource type="Texture2D" uid="uid://ckg47ofna6j4q" path="res://images/character_images/demon_king/Demon King Piccolo - Demon Punch.png" id="3_mkbkd"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="4_c0gio"]
+[ext_resource type="Script" uid="uid://ewtut1aqk2tn" path="res://buffs/stun.gd" id="4_nfbeb"]
+[ext_resource type="Script" uid="uid://iq6j758keyb0" path="res://effects/apply_buff.gd" id="4_wbfmh"]
+[ext_resource type="Script" uid="uid://dmhjtyod3x8wn" path="res://conditions/if_has_buff.gd" id="5_28no6"]
+
+[sub_resource type="Resource" id="Resource_wbfmh"]
+script = ExtResource("2_e5gqe")
+amount = 15
+metadata/_custom_type_script = "uid://by1thnikov8sl"
+
+[sub_resource type="Resource" id="Resource_dsn6h"]
+script = ExtResource("4_nfbeb")
+turns = 1
+show_active = true
+target = 1
+stack_id = "demon_punch_stun"
+harmful = true
+metadata/_custom_type_script = "uid://ewtut1aqk2tn"
+
+[sub_resource type="Resource" id="Resource_6pyye"]
+script = ExtResource("5_28no6")
+stack_id = "demon_punch_stack"
+user = true
+metadata/_custom_type_script = "uid://dmhjtyod3x8wn"
+
+[sub_resource type="Resource" id="Resource_nfbeb"]
+script = ExtResource("4_wbfmh")
+buff = SubResource("Resource_dsn6h")
+harmful = true
+conditions = Array[ExtResource("2_mkbkd")]([SubResource("Resource_6pyye")])
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[resource]
+script = ExtResource("4_c0gio")
+pic = ExtResource("3_mkbkd")
+move_name = "Demon Punch"
+description = "Demon King Piccolo strikes an enemy, dealing 15 damage."
+classes = Array[int]([0, 4, 7])
+cost = Dictionary[int, int]({
+0: 1
+})
+target = 1
+effects = Array[ExtResource("1_vfq6r")]([SubResource("Resource_wbfmh"), SubResource("Resource_nfbeb")])
+stackable_boost = true
+attack = true
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="Move" load_steps=8 format=3 uid="uid://bld01e74jtd4d"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_he85x"]
+[ext_resource type="Script" uid="uid://bb65yy8n4c8cp" path="res://buffs/invulnerable.gd" id="2_dh8ie"]
+[ext_resource type="Script" uid="uid://iq6j758keyb0" path="res://effects/apply_buff.gd" id="3_dj2yu"]
+[ext_resource type="Texture2D" uid="uid://br67buw65s723" path="res://images/character_images/demon_king/Demon King Piccolo - Demon Block.png" id="4_4vvqs"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="5_tboro"]
+
+[sub_resource type="Resource" id="Resource_2fe6w"]
+script = ExtResource("2_dh8ie")
+turns = 1
+show_active = true
+stack_id = "demon_block"
+metadata/_custom_type_script = "uid://bb65yy8n4c8cp"
+
+[sub_resource type="Resource" id="Resource_jj0dt"]
+script = ExtResource("3_dj2yu")
+buff = SubResource("Resource_2fe6w")
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[resource]
+script = ExtResource("5_tboro")
+pic = ExtResource("4_4vvqs")
+move_name = "Demon Block"
+description = "Demon King Piccolo effortlessly blocks all incoming attacks, becoming invulnerable for 1 turn.
+"
+classes = Array[int]([0, 4, 7])
+cost = Dictionary[int, int]({
+4: 1
+})
+cooldown = 4
+effects = Array[ExtResource("1_he85x")]([SubResource("Resource_jj0dt")])
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

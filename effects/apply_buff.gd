@@ -2,10 +2,11 @@ class_name ApplyBuff extends Effect
 
 @export var buff:Buff
 
-func apply(standee):
+func apply(standee,t:Character):
 	var targets = TargettingManager.buff_targetting(standee,buff)
-			
 	for x in targets:
+		if x.buffs.any(func(b):b is NoBlock) and buff is Invulnerable:
+			return false
 		var new_buff=buff.duplicate()
 		new_buff._owner=x
 		new_buff.move=standee.move

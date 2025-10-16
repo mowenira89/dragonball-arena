@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Character" load_steps=8 format=3 uid="uid://cbu1e71lt73lp"]
+
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="1_u6e5i"]
+[ext_resource type="Resource" uid="uid://vjqledjp8ep5" path="res://moves/kami/creation.tres" id="2_7xjur"]
+[ext_resource type="Resource" uid="uid://b3tqfyrhluglq" path="res://moves/kami/expulsion.tres" id="3_ns3ro"]
+[ext_resource type="Resource" uid="uid://dxbv6wvqub22h" path="res://moves/kami/guardian_flick.tres" id="4_j34en"]
+[ext_resource type="Resource" uid="uid://bnhdwbh3wjrum" path="res://moves/kami/acceptance.tres" id="5_5ltpa"]
+[ext_resource type="Texture2D" uid="uid://caam42kmce4uw" path="res://images/character_images/kami/Kami - Face Picture.png" id="6_b1cbn"]
+[ext_resource type="Script" uid="uid://dafn65t8p7eec" path="res://characters/character.gd" id="7_xwvgj"]
+
+[resource]
+script = ExtResource("7_xwvgj")
+pic = ExtResource("6_b1cbn")
+name = "Kami"
+moves = Array[ExtResource("1_u6e5i")]([ExtResource("2_7xjur"), ExtResource("3_ns3ro"), ExtResource("4_j34en"), ExtResource("5_5ltpa")])
+desc = "Kami the Guardian of the Earth split himself into being, while simultaneously expelling the darkness within him. The remaining good half became Kami, while the evil expunged became King Piccolo. Kami is also the Namekian that created Earth's Dragon Balls. 
+"
+metadata/_custom_type_script = "uid://dafn65t8p7eec"

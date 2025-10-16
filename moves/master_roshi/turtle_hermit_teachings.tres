@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="Move" load_steps=7 format=3 uid="uid://8v05pfmsyunj"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_samy5"]
+[ext_resource type="Script" uid="uid://by1thnikov8sl" path="res://effects/damage_effect.gd" id="2_06uyr"]
+[ext_resource type="Script" uid="uid://urvh4504e0dy" path="res://conditions/condition.gd" id="2_qpec8"]
+[ext_resource type="Texture2D" uid="uid://cpaennfapnr8x" path="res://images/character_images/master_roshi/Master Roshi - Turtle Hermit Teachings.png" id="3_06uyr"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="3_qpec8"]
+
+[sub_resource type="Resource" id="Resource_blgeh"]
+script = ExtResource("2_06uyr")
+amount = 10
+metadata/_custom_type_script = "uid://by1thnikov8sl"
+
+[resource]
+script = ExtResource("3_qpec8")
+pic = ExtResource("3_06uyr")
+move_name = "Turtle Hermit Teachings"
+description = "Permanently, every time Master Roshi uses \"Stone Throw\" or \"Milk Delivery,\" he gains 1 stack of this skill. After the initial use, this skill will cost 1 blue energy permanently. Master Roshi can use this skill to deal 10 damage to one enemy, with an additional 5 damage for each stack of \"Turtle Hermit\" he has. Once this skill is used, all stacks will be removed.
+"
+classes = Array[int]([6, 5, 9])
+cost = Dictionary[int, int]({
+4: 1
+})
+target = 1
+effects = Array[ExtResource("1_samy5")]([SubResource("Resource_blgeh")])
+stackable_boost = true
+attack = true
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

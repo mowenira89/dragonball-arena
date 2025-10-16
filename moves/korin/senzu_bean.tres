@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="Move" load_steps=7 format=3 uid="uid://bi404wqxejbsq"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_ixhwa"]
+[ext_resource type="Script" uid="uid://urvh4504e0dy" path="res://conditions/condition.gd" id="2_32vq1"]
+[ext_resource type="Script" uid="uid://ilbj1g1ls5m0" path="res://effects/heal.gd" id="3_t86hq"]
+[ext_resource type="Texture2D" uid="uid://dor2bqsrif0r" path="res://images/character_images/korin/Korin - Senzu Bean.png" id="4_v5gwa"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="5_qq5j2"]
+
+[sub_resource type="Resource" id="Resource_x0y6a"]
+script = ExtResource("3_t86hq")
+amount = 25
+friendly = true
+metadata/_custom_type_script = "uid://ilbj1g1ls5m0"
+
+[resource]
+script = ExtResource("5_qq5j2")
+pic = ExtResource("4_v5gwa")
+move_name = "Senzu Bean"
+description = "Korin targets one teammate, giving them a Senzu Bean. This skill will heal the selected ally by 25 health.
+"
+classes = Array[int]([6, 7])
+cooldown = 3
+target = 9
+effects = Array[ExtResource("1_ixhwa")]([SubResource("Resource_x0y6a")])
+random_energy = 2
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

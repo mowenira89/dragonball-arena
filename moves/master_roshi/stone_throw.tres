@@ -1,0 +1,73 @@
+[gd_resource type="Resource" script_class="Move" load_steps=18 format=3 uid="uid://y221l7i488v7"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_u8f3k"]
+[ext_resource type="Script" uid="uid://c2ybrmd13277n" path="res://buffs/alter_outgoing_damage.gd" id="2_jgskt"]
+[ext_resource type="Script" uid="uid://iq6j758keyb0" path="res://effects/apply_buff.gd" id="3_bsfte"]
+[ext_resource type="Script" uid="uid://hpi8m8jhsmc6" path="res://buffs/unkillable.gd" id="4_bsfte"]
+[ext_resource type="Texture2D" uid="uid://dmamwbexppkg3" path="res://images/character_images/master_roshi/Master Roshi - Stone Throw.png" id="4_v57ag"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="5_1mj8f"]
+[ext_resource type="Script" uid="uid://bfi05nai110fv" path="res://effects/change_cost.gd" id="5_v57ag"]
+[ext_resource type="Texture2D" uid="uid://cpaennfapnr8x" path="res://images/character_images/master_roshi/Master Roshi - Turtle Hermit Teachings.png" id="6_jwqly"]
+[ext_resource type="Resource" uid="uid://8v05pfmsyunj" path="res://moves/master_roshi/turtle_hermit_teachings.tres" id="7_j8svl"]
+[ext_resource type="Script" uid="uid://dex04nc1ipt45" path="res://buffs/move_stack.gd" id="7_jwqly"]
+
+[sub_resource type="Resource" id="Resource_jwqly"]
+script = ExtResource("2_jgskt")
+amount = 5
+turns = 1
+show_active = true
+target = 4
+stack_id = "stone_throw"
+metadata/_custom_type_script = "uid://c2ybrmd13277n"
+
+[sub_resource type="Resource" id="Resource_j8svl"]
+script = ExtResource("3_bsfte")
+buff = SubResource("Resource_jwqly")
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[sub_resource type="Resource" id="Resource_1mj8f"]
+script = ExtResource("4_bsfte")
+turns = 1
+show_active = true
+target = 4
+stack_id = "stonethrow"
+metadata/_custom_type_script = "uid://hpi8m8jhsmc6"
+
+[sub_resource type="Resource" id="Resource_qmsti"]
+script = ExtResource("3_bsfte")
+buff = SubResource("Resource_1mj8f")
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[sub_resource type="Resource" id="Resource_ck7ur"]
+script = ExtResource("5_v57ag")
+randomize = true
+own_move = true
+metadata/_custom_type_script = "uid://bfi05nai110fv"
+
+[sub_resource type="Resource" id="Resource_0ud5s"]
+script = ExtResource("7_jwqly")
+affected_move = ExtResource("7_j8svl")
+amount = 5
+show_active = true
+active_pic = ExtResource("6_jwqly")
+stackable = true
+stack_id = "tht_stack"
+metadata/_custom_type_script = "uid://dex04nc1ipt45"
+
+[sub_resource type="Resource" id="Resource_qv4oe"]
+script = ExtResource("3_bsfte")
+buff = SubResource("Resource_0ud5s")
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[resource]
+script = ExtResource("5_1mj8f")
+pic = ExtResource("4_v57ag")
+move_name = "Stone Throw"
+description = "One ally will be unable to be killed for 1 turn, and their Physical and Melee skills will deal 5 additional damage. This skill's cost will increase by 1 random energy after each use. 
+"
+classes = Array[int]([1, 7])
+cooldown = 1
+target = 4
+effects = Array[ExtResource("1_u8f3k")]([SubResource("Resource_j8svl"), SubResource("Resource_qmsti"), SubResource("Resource_ck7ur"), SubResource("Resource_qv4oe")])
+random_energy = 1
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

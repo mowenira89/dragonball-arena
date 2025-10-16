@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Move" load_steps=8 format=3 uid="uid://cmu4dwyurpruu"]
+[gd_resource type="Resource" script_class="Move" load_steps=9 format=3 uid="uid://cmu4dwyurpruu"]
 
 [ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_1lyxp"]
+[ext_resource type="Script" uid="uid://urvh4504e0dy" path="res://conditions/condition.gd" id="2_8b2a6"]
 [ext_resource type="Script" uid="uid://by1thnikov8sl" path="res://effects/damage_effect.gd" id="2_g0s4w"]
 [ext_resource type="Script" uid="uid://d1toe0l28s2ne" path="res://effects/recoil.gd" id="3_8b2a6"]
 [ext_resource type="Texture2D" uid="uid://bn1jojbfwwfj0" path="res://images/character_images/tien/Tien - Tri-Beam.png" id="4_qvuod"]
@@ -26,4 +27,5 @@ description = "Tien uses his forbidden technique Tri-Beam, dealing 15 piercing d
 classes = Array[int]([1, 5, 7])
 target = 1
 effects = Array[ExtResource("1_1lyxp")]([SubResource("Resource_msd8u"), SubResource("Resource_2g1hr")])
+attack = true
 metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

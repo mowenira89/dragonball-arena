@@ -21,7 +21,7 @@ var combatants = friendlies+opponents
 var energy_active:bool=false
 
 func _ready():
-	TargettingManager.start_targetting.connect(start_targetting)
+	#TargettingManager.start_targetting.connect(start_targetting)
 	TargettingManager.untarget.connect(stop_targetting)
 	friendlies = [skill_panel,skill_panel_2,skill_panel_3]
 	opponents = [opponent,opponent_2,opponent_3]
@@ -67,7 +67,22 @@ func start_targetting():
 		Move.TARGETS.AllOpponents:
 			for x in opponents:
 				x.target()
+				return
+		Move.TARGETS.Ally:
+			for x in friendlies:
+				if !x.character==TargettingManager.currently_targetting:
+					potential_targets.append(x)
+		Move.TARGETS.Friendlies:
+			for x in friendlies:
+				x.target()
 			return
+		Move.TARGETS.Random:
+			for x in friendlies:
+				if !x.character==TargettingManager.currently_targetting:
+					potential_targets.append(x)
+		Move.TARGETS.AnyAlly:
+			for x in friendlies:
+				x.flash_pic()
 
 	if TargettingManager.current_move.needs_mark:
 		for x in potential_targets:

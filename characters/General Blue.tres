@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Character" load_steps=8 format=3 uid="uid://c3tmhdjmi3ek6"]
+
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="1_exhaa"]
+[ext_resource type="Resource" uid="uid://vh8cpg8swcq5" path="res://moves/general_blue/psychic_eyes.tres" id="2_tf03h"]
+[ext_resource type="Resource" uid="uid://b5365eukqxkg0" path="res://moves/general_blue/two_shot_telekinesis.tres" id="3_2j2wr"]
+[ext_resource type="Resource" uid="uid://chilmmagkdjxa" path="res://moves/general_blue/skewer.tres" id="4_bvc1e"]
+[ext_resource type="Resource" uid="uid://ykymj1dbou1s" path="res://moves/general_blue/fly_away.tres" id="5_nnmop"]
+[ext_resource type="Texture2D" uid="uid://dlqslpr60yr86" path="res://images/character_images/general_blue/General Blue - Face Picture.png" id="6_k78ns"]
+[ext_resource type="Script" uid="uid://dafn65t8p7eec" path="res://characters/character.gd" id="7_3anvq"]
+
+[resource]
+script = ExtResource("7_3anvq")
+pic = ExtResource("6_k78ns")
+name = "General Blue"
+moves = Array[ExtResource("1_exhaa")]([ExtResource("2_tf03h"), ExtResource("3_2j2wr"), ExtResource("4_bvc1e"), ExtResource("5_nnmop")])
+desc = "General Blue is a powerful high-ranking officer in the Red Ribbon Army and is the leader of the Blue Corps. He also has powerful psychic abilities."
+metadata/_custom_type_script = "uid://dafn65t8p7eec"

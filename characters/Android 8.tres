@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="Character" load_steps=11 format=3 uid="uid://bnpwkdes1j68x"]
+
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="1_gbue5"]
+[ext_resource type="Resource" uid="uid://glwkdrpinuf6" path="res://moves/android_8/stampede.tres" id="2_oxk70"]
+[ext_resource type="Resource" uid="uid://b765v66nvps2k" path="res://moves/android_8/ally_shield.tres" id="3_scwjw"]
+[ext_resource type="Resource" uid="uid://bth7f6c2q7f4r" path="res://moves/android_8/revenge_punch.tres" id="4_bc6e5"]
+[ext_resource type="Resource" uid="uid://bbnevjc3qiutn" path="res://moves/android_8/rest.tres" id="5_s7hb8"]
+[ext_resource type="Texture2D" uid="uid://802dyvt5gcdu" path="res://images/character_images/android_8/Android #8 - Face Picture.png" id="6_u6chi"]
+[ext_resource type="Script" uid="uid://dafn65t8p7eec" path="res://characters/character.gd" id="7_siqde"]
+[ext_resource type="Script" uid="uid://cj02g364dn37u" path="res://buffs/buff.gd" id="8_6fkqm"]
+[ext_resource type="Script" uid="uid://b71au3lj2yysy" path="res://buffs/revenge_stack.gd" id="9_gwqwj"]
+
+[sub_resource type="Resource" id="Resource_kvpre"]
+script = ExtResource("9_gwqwj")
+reset = true
+affected_move = ExtResource("4_bc6e5")
+amount = 15
+permanent = true
+stack_id = "revenge_stack"
+metadata/_custom_type_script = "uid://b71au3lj2yysy"
+
+[resource]
+script = ExtResource("7_siqde")
+pic = ExtResource("6_u6chi")
+name = "Android 8"
+moves = Array[ExtResource("1_gbue5")]([ExtResource("2_oxk70"), ExtResource("3_scwjw"), ExtResource("4_bc6e5"), ExtResource("5_s7hb8")])
+desc = "Android #8 who goes by the name Eighter as suggested by Goku, is Dr. Gero's eighth Android creation. He is designed to serve the Red Ribbon Army but is seen as faulty because of his good-spirited nature.
+"
+setup_buffs = Array[ExtResource("8_6fkqm")]([SubResource("Resource_kvpre")])
+metadata/_custom_type_script = "uid://dafn65t8p7eec"

@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="Move" load_steps=9 format=3 uid="uid://dvyx5iow4a874"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_31lb1"]
+[ext_resource type="Script" uid="uid://rsh7af6ssr6x" path="res://buffs/shield.gd" id="2_vlv1r"]
+[ext_resource type="Script" uid="uid://iq6j758keyb0" path="res://effects/apply_buff.gd" id="3_l4upw"]
+[ext_resource type="Script" uid="uid://urvh4504e0dy" path="res://conditions/condition.gd" id="3_vlv1r"]
+[ext_resource type="Texture2D" uid="uid://d2uyvn57htue3" path="res://images/character_images/teen_bluma/Teenage Bulma - Capsule House.png" id="4_mfvc6"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="5_br1lb"]
+
+[sub_resource type="Resource" id="Resource_lwvs2"]
+script = ExtResource("2_vlv1r")
+shield_amount = 15
+permanent = true
+show_active = true
+target = 6
+stack_id = "capsule_house"
+friendly = true
+metadata/_custom_type_script = "uid://rsh7af6ssr6x"
+
+[sub_resource type="Resource" id="Resource_7g60n"]
+script = ExtResource("3_l4upw")
+buff = SubResource("Resource_lwvs2")
+friendly = true
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[resource]
+script = ExtResource("5_br1lb")
+pic = ExtResource("4_mfvc6")
+move_name = "Capsule House"
+description = "Teenage Bulma uses a capsule and provides shelter for her teammates. This skill grants Teenage Bulma and her teammates 15 destructible defense permanently.
+"
+classes = Array[int]([6, 5, 7])
+cost = Dictionary[int, int]({
+4: 2
+})
+cooldown = 3
+target = 6
+effects = Array[ExtResource("1_31lb1")]([SubResource("Resource_7g60n")])
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

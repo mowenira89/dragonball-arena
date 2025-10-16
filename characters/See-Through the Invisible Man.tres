@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Character" load_steps=9 format=3 uid="uid://goghq42pp2d8"]
+
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="1_2sdqx"]
+[ext_resource type="Resource" uid="uid://cdfcy85txfj3n" path="res://moves/invisible_man/invisible_kick.tres" id="2_en75h"]
+[ext_resource type="Resource" uid="uid://ccnmgbglv4wy6" path="res://moves/invisible_man/invisible_combo.tres" id="3_h1tnx"]
+[ext_resource type="Resource" uid="uid://cs41pfcnq23wj" path="res://moves/invisible_man/invisible_sucker_punch.tres" id="4_4qr61"]
+[ext_resource type="Resource" uid="uid://bv0dsmrdxx56e" path="res://moves/invisible_man/invisible_block.tres" id="5_ny273"]
+[ext_resource type="Texture2D" uid="uid://mrqmfpnfcq0" path="res://images/character_images/see_through/See-Through the Invisible Man - Face Picture.png" id="6_k6svn"]
+[ext_resource type="Script" uid="uid://dafn65t8p7eec" path="res://characters/character.gd" id="7_jhdle"]
+[ext_resource type="Script" uid="uid://cj02g364dn37u" path="res://buffs/buff.gd" id="8_r6am1"]
+
+[resource]
+script = ExtResource("7_jhdle")
+pic = ExtResource("6_k6svn")
+name = "See-Through the Invisible Man"
+moves = Array[ExtResource("1_2sdqx")]([ExtResource("2_en75h"), ExtResource("3_h1tnx"), ExtResource("4_4qr61"), ExtResource("5_ny273")])
+desc = "See-Through the Invisible Man is one of Fortuneteller Baba's five formidable champions. Renowned for his elusive nature, he uses his unique ability to become invisible to gain the upper hand in battle. As a member of Baba's elite team, he plays a crucial role in her mystical operations, leveraging his stealth and strategic prowess to outmaneuver opponents and execute precise attacks.
+"
+metadata/_custom_type_script = "uid://dafn65t8p7eec"

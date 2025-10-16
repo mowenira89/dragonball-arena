@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="Move" load_steps=7 format=3 uid="uid://cln3r0qkbb3d"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_ao6ht"]
+[ext_resource type="Script" uid="uid://urvh4504e0dy" path="res://conditions/condition.gd" id="2_4p6dv"]
+[ext_resource type="Script" uid="uid://ilbj1g1ls5m0" path="res://effects/heal.gd" id="2_y65u1"]
+[ext_resource type="Texture2D" uid="uid://ch76vixc2thq0" path="res://images/character_images/teen_bluma/Teenage Bulma - Food Recovery.png" id="3_4p6dv"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="4_tkgxj"]
+
+[sub_resource type="Resource" id="Resource_wngxu"]
+script = ExtResource("2_y65u1")
+amount = 15
+friendly = true
+metadata/_custom_type_script = "uid://ilbj1g1ls5m0"
+
+[resource]
+script = ExtResource("4_tkgxj")
+pic = ExtResource("3_4p6dv")
+move_name = "Provisions"
+description = "Providing food, Teenage Bulma heals any ally, including herself, for 15 health.
+"
+classes = Array[int]([6, 5, 7])
+cost = Dictionary[int, int]({
+3: 1
+})
+cooldown = 1
+target = 9
+effects = Array[ExtResource("1_ao6ht")]([SubResource("Resource_wngxu")])
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

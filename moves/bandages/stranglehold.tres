@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="Move" load_steps=11 format=3 uid="uid://c4qb5u8c7kmcj"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_r85hd"]
+[ext_resource type="Script" uid="uid://urvh4504e0dy" path="res://conditions/condition.gd" id="2_8r2xp"]
+[ext_resource type="Script" uid="uid://by1thnikov8sl" path="res://effects/damage_effect.gd" id="3_67ivr"]
+[ext_resource type="Script" uid="uid://c62o3ky4rpwb2" path="res://buffs/alter_incoming_damage.gd" id="4_v5muw"]
+[ext_resource type="Script" uid="uid://iq6j758keyb0" path="res://effects/apply_buff.gd" id="5_pcj1d"]
+[ext_resource type="Texture2D" uid="uid://bfps8wm284076" path="res://images/character_images/bandages/Bandages the Mummy - Stranglehold.png" id="6_b5qbb"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="7_yjfsl"]
+
+[sub_resource type="Resource" id="Resource_1b8bq"]
+script = ExtResource("3_67ivr")
+amount = 25
+metadata/_custom_type_script = "uid://by1thnikov8sl"
+
+[sub_resource type="Resource" id="Resource_8xt8g"]
+script = ExtResource("4_v5muw")
+amount = -5
+classes = Array[int]([4])
+turns = 1
+show_active = true
+stack_id = "stranglehold"
+friendly = true
+metadata/_custom_type_script = "uid://c62o3ky4rpwb2"
+
+[sub_resource type="Resource" id="Resource_5goe4"]
+script = ExtResource("5_pcj1d")
+buff = SubResource("Resource_8xt8g")
+friendly = true
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[resource]
+script = ExtResource("7_yjfsl")
+pic = ExtResource("6_b5qbb")
+move_name = "Stranglehold"
+description = "Bandages the Mummy strangles one enemy with his bandages, dealing 25 damage. For 1 turn, Bandages the Mummy will take 10 less damage from all melee skills.
+"
+classes = Array[int]([1, 6, 7])
+cost = Dictionary[int, int]({
+4: 2
+})
+cooldown = 2
+target = 1
+effects = Array[ExtResource("1_r85hd")]([SubResource("Resource_1b8bq"), SubResource("Resource_5goe4")])
+attack = true
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

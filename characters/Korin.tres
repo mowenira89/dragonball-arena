@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Character" load_steps=9 format=3 uid="uid://cjij1mbh6gucs"]
+
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="1_4u012"]
+[ext_resource type="Resource" uid="uid://b4x5jc6a7rskj" path="res://moves/korin/jump_kick.tres" id="2_b513y"]
+[ext_resource type="Resource" uid="uid://bi404wqxejbsq" path="res://moves/korin/senzu_bean.tres" id="3_73dfi"]
+[ext_resource type="Resource" uid="uid://dfrd4na7plvej" path="res://moves/korin/sacred_water.tres" id="4_vocnc"]
+[ext_resource type="Resource" uid="uid://cywb84wjooixc" path="res://moves/korin/korin_dodge.tres" id="5_ef4fj"]
+[ext_resource type="Texture2D" uid="uid://c2ti3f66c7b4k" path="res://images/character_images/korin/Korin - Face Picture.png" id="6_5qong"]
+[ext_resource type="Script" uid="uid://dafn65t8p7eec" path="res://characters/character.gd" id="7_df7lm"]
+[ext_resource type="Script" uid="uid://cj02g364dn37u" path="res://buffs/buff.gd" id="8_njtak"]
+
+[resource]
+script = ExtResource("7_df7lm")
+pic = ExtResource("6_5qong")
+name = "Korin"
+moves = Array[ExtResource("1_4u012")]([ExtResource("2_b513y"), ExtResource("3_73dfi"), ExtResource("4_vocnc"), ExtResource("5_ef4fj")])
+desc = "Korin is a wise cat who is over 800 years old that lives atop a giant tower. He is a Martial Arts master.
+"
+metadata/_custom_type_script = "uid://dafn65t8p7eec"

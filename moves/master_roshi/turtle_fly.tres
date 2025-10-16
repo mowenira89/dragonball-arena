@@ -25,6 +25,9 @@ move_name = "Turtle Fly"
 description = "Master Roshi uses his Turtle technique to escape, making him invulnerable for 1 turn.
 "
 classes = Array[int]([0, 7])
+cost = Dictionary[int, int]({
+4: 1
+})
 cooldown = 4
 effects = Array[ExtResource("1_ifv37")]([SubResource("Resource_k215i")])
 metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

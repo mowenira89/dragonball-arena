@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="Move" load_steps=7 format=3 uid="uid://c7eadnqkxdk0r"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_nk4vi"]
+[ext_resource type="Script" uid="uid://urvh4504e0dy" path="res://conditions/condition.gd" id="2_beufe"]
+[ext_resource type="Script" uid="uid://by1thnikov8sl" path="res://effects/damage_effect.gd" id="3_cdn2b"]
+[ext_resource type="Texture2D" uid="uid://vbm2g46mdwrl" path="res://images/character_images/mr_popo/Mr.Popo - Predeiction Punch.png" id="4_jm2qx"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="5_p780w"]
+
+[sub_resource type="Resource" id="Resource_euhck"]
+script = ExtResource("3_cdn2b")
+amount = 20
+metadata/_custom_type_script = "uid://by1thnikov8sl"
+
+[resource]
+script = ExtResource("5_p780w")
+pic = ExtResource("4_jm2qx")
+move_name = "Prediction Punch"
+description = "Mr.Popo predicts where one enemy will be and punches them dealing 20 damage, this skill cannot be countered or reflected.
+"
+classes = Array[int]([0, 4, 7])
+cost = Dictionary[int, int]({
+0: 1
+})
+target = 1
+effects = Array[ExtResource("1_nk4vi")]([SubResource("Resource_euhck")])
+uncounterable = true
+attack = true
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

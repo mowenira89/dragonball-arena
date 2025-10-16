@@ -1,15 +1,15 @@
-[gd_resource type="Resource" script_class="Move" load_steps=8 format=3 uid="uid://dn0x8ib57hlrr"]
+[gd_resource type="Resource" script_class="Move" load_steps=9 format=3 uid="uid://dn0x8ib57hlrr"]
 
 [ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_vi2xe"]
 [ext_resource type="Script" uid="uid://bb65yy8n4c8cp" path="res://buffs/invulnerable.gd" id="2_5ryhf"]
 [ext_resource type="Texture2D" uid="uid://bu4fq0sh80kwd" path="res://images/character_images/bacterian/Bacterian - Stench.png" id="2_7tdri"]
 [ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="3_5ryhf"]
 [ext_resource type="Script" uid="uid://iq6j758keyb0" path="res://effects/apply_buff.gd" id="3_7h3j2"]
+[ext_resource type="Script" uid="uid://urvh4504e0dy" path="res://conditions/condition.gd" id="3_xxm5c"]
 
 [sub_resource type="Resource" id="Resource_xxm5c"]
 script = ExtResource("2_5ryhf")
 turns = 1
-start = true
 show_active = true
 metadata/_custom_type_script = "uid://bb65yy8n4c8cp"
 

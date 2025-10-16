@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="Move" load_steps=11 format=3 uid="uid://dxbv6wvqub22h"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_di8o0"]
+[ext_resource type="Script" uid="uid://urvh4504e0dy" path="res://conditions/condition.gd" id="2_k6xj1"]
+[ext_resource type="Script" uid="uid://by1thnikov8sl" path="res://effects/damage_effect.gd" id="3_vki2b"]
+[ext_resource type="Script" uid="uid://ewtut1aqk2tn" path="res://buffs/stun.gd" id="4_cssx2"]
+[ext_resource type="Script" uid="uid://iq6j758keyb0" path="res://effects/apply_buff.gd" id="5_7v3wj"]
+[ext_resource type="Texture2D" uid="uid://gynmktvjlx8y" path="res://images/character_images/kami/Kami - Guardian Flick.png" id="6_fwugf"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="7_i63ve"]
+
+[sub_resource type="Resource" id="Resource_it5lh"]
+script = ExtResource("3_vki2b")
+amount = 20
+damage_type = 1
+metadata/_custom_type_script = "uid://by1thnikov8sl"
+
+[sub_resource type="Resource" id="Resource_j6hdx"]
+script = ExtResource("4_cssx2")
+turns = 1
+show_active = true
+target = 1
+stack_id = "kami_stun"
+harmful = true
+metadata/_custom_type_script = "uid://ewtut1aqk2tn"
+
+[sub_resource type="Resource" id="Resource_f3ko4"]
+script = ExtResource("5_7v3wj")
+buff = SubResource("Resource_j6hdx")
+harmful = true
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[resource]
+script = ExtResource("7_i63ve")
+pic = ExtResource("6_fwugf")
+move_name = "Guardian Flick"
+description = "Kami flicks one enemy, dealing 20 piercing damage and stunning them for 1 turn."
+classes = Array[int]([6, 1, 7])
+cost = Dictionary[int, int]({
+2: 1,
+3: 1
+})
+target = 1
+effects = Array[ExtResource("1_di8o0")]([SubResource("Resource_it5lh"), SubResource("Resource_f3ko4")])
+attack = true
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

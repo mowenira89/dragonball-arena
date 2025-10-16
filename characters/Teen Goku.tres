@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Character" load_steps=8 format=3 uid="uid://v3vxsy8konf8"]
+
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="1_fblsw"]
+[ext_resource type="Resource" uid="uid://bkfj0f0devl2t" path="res://moves/teen_goku/attack_clash.tres" id="2_xixd2"]
+[ext_resource type="Resource" uid="uid://cab27nypxfa08" path="res://moves/teen_goku/weights_off.tres" id="3_o7wtr"]
+[ext_resource type="Resource" uid="uid://bae23ee433g4y" path="res://moves/teen_goku/gut_punch.tres" id="4_qm72n"]
+[ext_resource type="Resource" uid="uid://dvfrct4i4448i" path="res://moves/teen_goku/flying_kick.tres" id="5_50f5r"]
+[ext_resource type="Texture2D" uid="uid://dmwkyd35bit15" path="res://images/character_images/teen_goku/Teen Goku - Face Picture.png" id="6_or8wh"]
+[ext_resource type="Script" uid="uid://dafn65t8p7eec" path="res://characters/character.gd" id="7_qgm4a"]
+
+[resource]
+script = ExtResource("7_qgm4a")
+pic = ExtResource("6_or8wh")
+name = "Teen Goku"
+moves = Array[ExtResource("1_fblsw")]([ExtResource("2_xixd2"), ExtResource("3_o7wtr"), ExtResource("4_qm72n"), ExtResource("5_50f5r")])
+desc = "After defeating Demon King Piccolo, Goku spent his time training in preparation for his rival Piccolo Jr. eventually defeating him in the Tenkaichi Budokai.
+"
+metadata/_custom_type_script = "uid://dafn65t8p7eec"

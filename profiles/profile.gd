@@ -29,5 +29,20 @@ var characters = {
 	"Bacterian":1,
 	"Jackie Chun":1,
 	"Kid Goku":1,
-	"Kid Krillin":1	
+	"Kid Krillin":1,
+	"Master Roshi":1,
+	"Teen Bulma":1,
+	"Yamcha":1,
+	"Tien":1,
+	"Android 8":1,
+	"General Blue":1,
+	"Kami":1,
+	"Korin":1,
+	"Grandpa Gohan":1,
+	"See-Through the Invisible Man":1,
+	"Bandages the Mummy":1,
+	"Fangs":1,	
+	"Demon King":1,
+	"Teen Goku":1,
+
 }

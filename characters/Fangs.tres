@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Character" load_steps=9 format=3 uid="uid://bry3i6yjbmrvx"]
+
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="1_x5j4e"]
+[ext_resource type="Resource" uid="uid://dudd5cq22lbs2" path="res://moves/fang/sucker_punch.tres" id="2_akgjf"]
+[ext_resource type="Resource" uid="uid://c52vvnegppvqr" path="res://moves/fang/deceiving_dance.tres" id="3_ndlyy"]
+[ext_resource type="Resource" uid="uid://d3gimjtxteiey" path="res://moves/fang/blood_suck.tres" id="4_awh7f"]
+[ext_resource type="Resource" uid="uid://cht385i3qrnsp" path="res://moves/fang/bat_getaway.tres" id="5_qjy1q"]
+[ext_resource type="Script" uid="uid://dafn65t8p7eec" path="res://characters/character.gd" id="6_4y00k"]
+[ext_resource type="Texture2D" uid="uid://6hkpw5afijdl" path="res://images/character_images/fangs/Fangs the Vampire - Face Pic.png" id="6_akgjf"]
+[ext_resource type="Script" uid="uid://cj02g364dn37u" path="res://buffs/buff.gd" id="7_g0ucl"]
+
+[resource]
+script = ExtResource("6_4y00k")
+pic = ExtResource("6_akgjf")
+name = "Fangs the Vampire"
+moves = Array[ExtResource("1_x5j4e")]([ExtResource("2_akgjf"), ExtResource("3_ndlyy"), ExtResource("4_awh7f"), ExtResource("5_qjy1q")])
+desc = "Fangs the Vampire is a vampire who serves as one of Fortuneteller Baba's fighters. Known for his sinister charm and predatory nature, Fangs combines his vampiric abilities with formidable combat skills. His role in Baba's team highlights his unique abilities to drain life force and evade attacks, making him a cunning and dangerous adversary in battle.
+"
+metadata/_custom_type_script = "uid://dafn65t8p7eec"

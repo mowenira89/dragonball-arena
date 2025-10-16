@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="Move" load_steps=9 format=3 uid="uid://vh8cpg8swcq5"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_0k2g3"]
+[ext_resource type="Script" uid="uid://ewtut1aqk2tn" path="res://buffs/stun.gd" id="2_5mtwo"]
+[ext_resource type="Script" uid="uid://urvh4504e0dy" path="res://conditions/condition.gd" id="3_5mtwo"]
+[ext_resource type="Script" uid="uid://iq6j758keyb0" path="res://effects/apply_buff.gd" id="3_wm41o"]
+[ext_resource type="Texture2D" uid="uid://dgh1dqwmk0eo7" path="res://images/character_images/general_blue/General Blue - Psychic Eyes.png" id="4_5c6ov"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="5_yun82"]
+
+[sub_resource type="Resource" id="Resource_mq7at"]
+script = ExtResource("2_5mtwo")
+turns = 1
+show_active = true
+target = 1
+stack_id = "psi_eye"
+harmful = true
+metadata/_custom_type_script = "uid://ewtut1aqk2tn"
+
+[sub_resource type="Resource" id="Resource_2pli6"]
+script = ExtResource("3_wm41o")
+buff = SubResource("Resource_mq7at")
+harmful = true
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[resource]
+script = ExtResource("5_yun82")
+pic = ExtResource("4_5c6ov")
+move_name = "Psychic Eyes"
+description = "General Blue's eyes glow with psychic power, stunning one enemy for 1 turn.
+"
+classes = Array[int]([1, 3, 7])
+cost = Dictionary[int, int]({
+2: 1,
+4: 1
+})
+cooldown = 2
+target = 1
+effects = Array[ExtResource("1_0k2g3")]([SubResource("Resource_2pli6")])
+attack = true
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

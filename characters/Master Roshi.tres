@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Character" load_steps=8 format=3 uid="uid://c8271hvohn40o"]
+
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="1_uakc4"]
+[ext_resource type="Resource" uid="uid://y221l7i488v7" path="res://moves/master_roshi/stone_throw.tres" id="2_6tibq"]
+[ext_resource type="Resource" uid="uid://cl07v0c0v7wpw" path="res://moves/master_roshi/milk_delivery.tres" id="3_ountx"]
+[ext_resource type="Resource" uid="uid://8v05pfmsyunj" path="res://moves/master_roshi/turtle_hermit_teachings.tres" id="4_wuswl"]
+[ext_resource type="Resource" uid="uid://cpkw6p2fwclhf" path="res://moves/master_roshi/turtle_fly.tres" id="5_75240"]
+[ext_resource type="Texture2D" uid="uid://ck81garul7tvx" path="res://images/character_images/master_roshi/Master Roshi - Face Picture.png" id="6_xfmod"]
+[ext_resource type="Script" uid="uid://dafn65t8p7eec" path="res://characters/character.gd" id="7_spmkq"]
+
+[resource]
+script = ExtResource("7_spmkq")
+pic = ExtResource("6_xfmod")
+name = "Master Roshi"
+moves = Array[ExtResource("1_uakc4")]([ExtResource("2_6tibq"), ExtResource("3_ountx"), ExtResource("4_wuswl"), ExtResource("5_75240")])
+desc = "Master Roshi is a perverted hermit and a master of martial arts. He lives on his own isolated island called Kame House, where he may be willing to train students who travel to his doorstep. He is also the originator of the Kamehameha Wave.
+"
+metadata/_custom_type_script = "uid://dafn65t8p7eec"

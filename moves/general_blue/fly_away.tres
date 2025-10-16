@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Move" load_steps=8 format=3 uid="uid://ykymj1dbou1s"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_jfuv5"]
+[ext_resource type="Script" uid="uid://bb65yy8n4c8cp" path="res://buffs/invulnerable.gd" id="2_q7d5s"]
+[ext_resource type="Script" uid="uid://iq6j758keyb0" path="res://effects/apply_buff.gd" id="3_kusmm"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="4_mik8f"]
+[ext_resource type="Texture2D" uid="uid://sqxka2xfhxn7" path="res://images/character_images/general_blue/General-Blue - Fly Away!.png" id="4_q7d5s"]
+
+[sub_resource type="Resource" id="Resource_v74b6"]
+script = ExtResource("2_q7d5s")
+turns = 1
+show_active = true
+stack_id = "rocket_invulnerable"
+metadata/_custom_type_script = "uid://bb65yy8n4c8cp"
+
+[sub_resource type="Resource" id="Resource_q6gtn"]
+script = ExtResource("3_kusmm")
+buff = SubResource("Resource_v74b6")
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[resource]
+script = ExtResource("4_mik8f")
+pic = ExtResource("4_q7d5s")
+move_name = "Fly Away!"
+description = "General Blue gets into his rocket ship and flies away from the battle, making him invulnerable for 1 turn."
+classes = Array[int]([0, 4, 7])
+cost = Dictionary[int, int]({
+4: 1
+})
+cooldown = 4
+effects = Array[ExtResource("1_jfuv5")]([SubResource("Resource_q6gtn")])
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

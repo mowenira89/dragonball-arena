@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Move" load_steps=6 format=3 uid="uid://b54gfxpku55ck"]
+[gd_resource type="Resource" script_class="Move" load_steps=7 format=3 uid="uid://b54gfxpku55ck"]
 
 [ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_eguip"]
+[ext_resource type="Script" uid="uid://urvh4504e0dy" path="res://conditions/condition.gd" id="2_ge4sa"]
 [ext_resource type="Script" uid="uid://by1thnikov8sl" path="res://effects/damage_effect.gd" id="2_n2gvv"]
 [ext_resource type="Texture2D" uid="uid://dihbn5nhkx6qy" path="res://images/character_images/kid_goku/Kid-Goku - Power-Pole.png" id="3_ge4sa"]
 [ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="4_eenab"]
@@ -22,4 +23,5 @@ cost = Dictionary[int, int]({
 })
 target = 1
 effects = Array[ExtResource("1_eguip")]([SubResource("Resource_7xl28")])
+attack = true
 metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

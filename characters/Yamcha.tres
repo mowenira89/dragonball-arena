@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Character" load_steps=8 format=3 uid="uid://bry8ipe16m6kf"]
+
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="1_mb8bo"]
+[ext_resource type="Resource" uid="uid://bg3xw05g6qfxm" path="res://moves/yamcha/wolf_style.tres" id="2_3p745"]
+[ext_resource type="Resource" uid="uid://bok4tue1ybtba" path="res://moves/yamcha/yamcha_slash.tres" id="3_k4rky"]
+[ext_resource type="Resource" uid="uid://72qqu1lfa4dp" path="res://moves/yamcha/wolf_fang_fist.tres" id="4_1pf6t"]
+[ext_resource type="Resource" uid="uid://bawyibkibopeb" path="res://moves/yamcha/wolf_block.tres" id="5_hef6r"]
+[ext_resource type="Texture2D" uid="uid://b4i2j6ed304g0" path="res://images/character_images/yamcha/Yamcha - Face Picture.png" id="6_x3um0"]
+[ext_resource type="Script" uid="uid://dafn65t8p7eec" path="res://characters/character.gd" id="7_bop26"]
+
+[resource]
+script = ExtResource("7_bop26")
+pic = ExtResource("6_x3um0")
+name = "Yamcha"
+moves = Array[ExtResource("1_mb8bo")]([ExtResource("2_3p745"), ExtResource("3_k4rky"), ExtResource("4_1pf6t"), ExtResource("5_hef6r")])
+desc = "Yamcha, a former desert bandit. Now a talented friend and ally to Goku. Yamcha is one of Earth's greatest martial artists."
+metadata/_custom_type_script = "uid://dafn65t8p7eec"

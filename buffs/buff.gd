@@ -9,6 +9,10 @@ class_name Buff extends Resource
 
 @export var til_death:bool
 
+@export var harmful:bool
+@export var friendly:bool
+@export var control_buff:bool
+
 var _owner:Character
 var move:Move
 var user:Character
@@ -36,7 +40,25 @@ func on_end_turn():
 	pass
 
 func get_message():
-	pass
+	return ""
 	
 func attacked(standee:AttackStandee):
+	return true
+
+func on_ally_death(c:Character):
+	pass
+	
+func on_user_stun(c:Character,s:Stun):
+	if user==c:
+		if move.classes.has(Move.CLASSES.Controlling) or move.classes.has(Move.CLASSES.Action):
+			if s.classes.is_empty():
+				remove()
+			else:
+				if s.classes.any(func(x):x in move.classes):
+					remove()
+
+func on_skill_use(standee:AttackStandee):
+	return true
+
+func get_altered(effect:Effect):
 	pass

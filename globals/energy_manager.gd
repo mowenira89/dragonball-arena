@@ -23,7 +23,10 @@ func check(move:Move)->bool:
 	var r = true
 	var cost_amts = [0,0,0,0,0]
 	for x in move.cost:
-		cost_amts[x]+=move.cost[x]
+		if x == 5:
+			pass
+		else:
+			cost_amts[x]+=move.cost[x]
 	for x in 4:
 		if energies[x]<cost_amts[x]:
 			r=false

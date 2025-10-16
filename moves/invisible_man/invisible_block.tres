@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="Move" load_steps=9 format=3 uid="uid://bv0dsmrdxx56e"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_x85dn"]
+[ext_resource type="Script" uid="uid://bb65yy8n4c8cp" path="res://buffs/invulnerable.gd" id="2_hhybp"]
+[ext_resource type="Script" uid="uid://urvh4504e0dy" path="res://conditions/condition.gd" id="3_jtlgn"]
+[ext_resource type="Script" uid="uid://iq6j758keyb0" path="res://effects/apply_buff.gd" id="4_72ry0"]
+[ext_resource type="Texture2D" uid="uid://c1xboe5lb4sbq" path="res://images/character_images/see_through/See-Through the Invisible Man - Visible Block.png" id="5_c8qhu"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="6_56qww"]
+
+[sub_resource type="Resource" id="Resource_mb5ch"]
+script = ExtResource("2_hhybp")
+metadata/_custom_type_script = "uid://bb65yy8n4c8cp"
+
+[sub_resource type="Resource" id="Resource_aeipf"]
+script = ExtResource("4_72ry0")
+buff = SubResource("Resource_mb5ch")
+friendly = true
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[resource]
+script = ExtResource("6_56qww")
+pic = ExtResource("5_c8qhu")
+move_name = "Invisible Block"
+description = " See-Through the Invisible Man blocks all attacks making himself invulnerable for 1 turn."
+classes = Array[int]([0, 4, 7])
+cost = Dictionary[int, int]({
+4: 1
+})
+cooldown = 4
+effects = Array[ExtResource("1_x85dn")]([SubResource("Resource_aeipf")])
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

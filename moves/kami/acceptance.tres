@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="Move" load_steps=9 format=3 uid="uid://bnhdwbh3wjrum"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_hyi3q"]
+[ext_resource type="Script" uid="uid://bb65yy8n4c8cp" path="res://buffs/invulnerable.gd" id="2_ejssi"]
+[ext_resource type="Script" uid="uid://urvh4504e0dy" path="res://conditions/condition.gd" id="3_toy8r"]
+[ext_resource type="Script" uid="uid://iq6j758keyb0" path="res://effects/apply_buff.gd" id="4_homjo"]
+[ext_resource type="Texture2D" uid="uid://m8phuuenguiy" path="res://images/character_images/kami/Kami - Acceptance.png" id="5_604rc"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="6_iadgr"]
+
+[sub_resource type="Resource" id="Resource_m601s"]
+script = ExtResource("2_ejssi")
+metadata/_custom_type_script = "uid://bb65yy8n4c8cp"
+
+[sub_resource type="Resource" id="Resource_fovxl"]
+script = ExtResource("4_homjo")
+buff = SubResource("Resource_m601s")
+friendly = true
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[resource]
+script = ExtResource("6_iadgr")
+pic = ExtResource("5_604rc")
+move_name = "Acceptance"
+description = "Kami accepts his judgment, making himself invulnerable for 1 turn."
+classes = Array[int]([0, 7])
+cost = Dictionary[int, int]({
+4: 1
+})
+cooldown = 4
+effects = Array[ExtResource("1_hyi3q")]([SubResource("Resource_fovxl")])
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="Move" load_steps=7 format=3 uid="uid://186o6t06fuq4"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_c3kl7"]
+[ext_resource type="Script" uid="uid://urvh4504e0dy" path="res://conditions/condition.gd" id="2_y1hju"]
+[ext_resource type="Script" uid="uid://by1thnikov8sl" path="res://effects/damage_effect.gd" id="2_y3gcj"]
+[ext_resource type="Texture2D" uid="uid://bwqw8avnglp5p" path="res://images/character_images/teen_bluma/Teenage Bulma - Fire!.png" id="3_y1hju"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="4_8e4gr"]
+
+[sub_resource type="Resource" id="Resource_tha6o"]
+script = ExtResource("2_y3gcj")
+amount = 10
+damage_type = 1
+metadata/_custom_type_script = "uid://by1thnikov8sl"
+
+[resource]
+script = ExtResource("4_8e4gr")
+pic = ExtResource("3_y1hju")
+move_name = "Fire!"
+description = "Teenage Bulma fires at one enemy dealing 10 piercing damage to them.
+"
+classes = Array[int]([0, 5, 7])
+cost = Dictionary[int, int]({
+4: 1
+})
+target = 1
+effects = Array[ExtResource("1_c3kl7")]([SubResource("Resource_tha6o")])
+attack = true
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Character" load_steps=9 format=3 uid="uid://bfxd5tjkvdcbl"]
+
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="1_5n1dp"]
+[ext_resource type="Resource" uid="uid://gg5wprjr6euy" path="res://moves/bandages/stretching_bridge.tres" id="2_pd155"]
+[ext_resource type="Resource" uid="uid://dpgg8gqwfc0dg" path="res://moves/bandages/mummy_knee.tres" id="3_21yc1"]
+[ext_resource type="Resource" uid="uid://c4qb5u8c7kmcj" path="res://moves/bandages/stranglehold.tres" id="4_v7s4e"]
+[ext_resource type="Resource" uid="uid://dlant3j1kvlq6" path="res://moves/bandages/mummy_dodge.tres" id="5_t0x12"]
+[ext_resource type="Texture2D" uid="uid://ceh2rfryfnx6u" path="res://images/character_images/bandages/Bandages the Mummy - Face Picture.png" id="6_4buwl"]
+[ext_resource type="Script" uid="uid://dafn65t8p7eec" path="res://characters/character.gd" id="7_1w0jf"]
+[ext_resource type="Script" uid="uid://cj02g364dn37u" path="res://buffs/buff.gd" id="8_wxrg5"]
+
+[resource]
+script = ExtResource("7_1w0jf")
+pic = ExtResource("6_4buwl")
+name = "Bandages the Mummy"
+moves = Array[ExtResource("1_5n1dp")]([ExtResource("2_pd155"), ExtResource("3_21yc1"), ExtResource("4_v7s4e"), ExtResource("5_t0x12")])
+desc = "Bandages the Mummy is a living dead who works as one of Fortuneteller Baba's fighters.
+"
+metadata/_custom_type_script = "uid://dafn65t8p7eec"

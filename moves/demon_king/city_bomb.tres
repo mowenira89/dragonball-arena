@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="Move" load_steps=9 format=3 uid="uid://debkeqep3nd5x"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_2pd7n"]
+[ext_resource type="Script" uid="uid://by1thnikov8sl" path="res://effects/damage_effect.gd" id="2_1w2ht"]
+[ext_resource type="Script" uid="uid://urvh4504e0dy" path="res://conditions/condition.gd" id="2_2pd7n"]
+[ext_resource type="Script" uid="uid://bghgm8t6njcgs" path="res://effects/revert.gd" id="3_5c3qc"]
+[ext_resource type="Texture2D" uid="uid://0ferc5i52bqc" path="res://images/character_images/demon_king/Demon King Piccolo - City Bomb.png" id="5_mkx70"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="6_ty7hw"]
+
+[sub_resource type="Resource" id="Resource_vqeep"]
+script = ExtResource("2_1w2ht")
+amount = 15
+metadata/_custom_type_script = "uid://by1thnikov8sl"
+
+[sub_resource type="Resource" id="Resource_2pd7n"]
+script = ExtResource("3_5c3qc")
+metadata/_custom_type_script = "uid://bghgm8t6njcgs"
+
+[resource]
+script = ExtResource("6_ty7hw")
+pic = ExtResource("5_mkx70")
+move_name = "City Bomb"
+description = "Demon King Piccolo unleashes a colossal blast with the power to obliterate an entire city, dealing 15 damage to all enemies. After use, this skill is permanently replaced by 'Preparations', This effect is invisible.
+"
+classes = Array[int]([1, 5, 7])
+cost = Dictionary[int, int]({
+1: 1,
+4: 1
+})
+target = 3
+effects = Array[ExtResource("1_2pd7n")]([SubResource("Resource_vqeep"), SubResource("Resource_2pd7n")])
+attack = true
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

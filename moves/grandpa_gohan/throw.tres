@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="Move" load_steps=10 format=3 uid="uid://pcb0w5aqe6m7"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_qdk6q"]
+[ext_resource type="Script" uid="uid://urvh4504e0dy" path="res://conditions/condition.gd" id="2_utgs7"]
+[ext_resource type="Script" uid="uid://by1thnikov8sl" path="res://effects/damage_effect.gd" id="3_5p26e"]
+[ext_resource type="Script" uid="uid://v5tgkue1wb2t" path="res://effects/swap_effect.gd" id="4_axel7"]
+[ext_resource type="Resource" uid="uid://b1mvr6442odfm" path="res://moves/grandpa_gohan/sky_kick.tres" id="5_2reb2"]
+[ext_resource type="Texture2D" uid="uid://6c6epr1hsc8t" path="res://images/character_images/grandpa_gohan/Grandpa Gohan - Throw.png" id="6_lcfuc"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="7_xi73l"]
+
+[sub_resource type="Resource" id="Resource_hi5me"]
+script = ExtResource("3_5p26e")
+amount = 10
+metadata/_custom_type_script = "uid://by1thnikov8sl"
+
+[sub_resource type="Resource" id="Resource_s10ix"]
+script = ExtResource("4_axel7")
+swap_to = ExtResource("5_2reb2")
+metadata/_custom_type_script = "uid://v5tgkue1wb2t"
+
+[resource]
+script = ExtResource("7_xi73l")
+pic = ExtResource("6_lcfuc")
+move_name = "Throw"
+description = "Grandpa Gohan throws one enemy dealing 10 damage to them This skill will be replaced with \"Sky Kick\" after use."
+classes = Array[int]([0, 4, 7])
+cost = Dictionary[int, int]({
+4: 1
+})
+target = 1
+effects = Array[ExtResource("1_qdk6q")]([SubResource("Resource_hi5me"), SubResource("Resource_s10ix")])
+attack = true
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

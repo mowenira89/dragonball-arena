@@ -1,0 +1,89 @@
+[gd_resource type="Resource" script_class="Move" load_steps=21 format=3 uid="uid://cl07v0c0v7wpw"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_dpl1e"]
+[ext_resource type="Script" uid="uid://c2ybrmd13277n" path="res://buffs/alter_outgoing_damage.gd" id="2_7xwjk"]
+[ext_resource type="Script" uid="uid://iq6j758keyb0" path="res://effects/apply_buff.gd" id="3_ngv1c"]
+[ext_resource type="Script" uid="uid://c6vbt8m2upd4y" path="res://buffs/alter_damage_type.gd" id="4_ox0fn"]
+[ext_resource type="Script" uid="uid://c870h4gj1j1xt" path="res://buffs/milk_delivery_buff.gd" id="5_7xwjk"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="5_laxjd"]
+[ext_resource type="Script" uid="uid://cy8kmsim7ut0b" path="res://buffs/alter_cost.gd" id="5_ngv1c"]
+[ext_resource type="Resource" uid="uid://8v05pfmsyunj" path="res://moves/master_roshi/turtle_hermit_teachings.tres" id="5_ox0fn"]
+[ext_resource type="Texture2D" uid="uid://cpaennfapnr8x" path="res://images/character_images/master_roshi/Master Roshi - Turtle Hermit Teachings.png" id="8_dml27"]
+[ext_resource type="Script" uid="uid://dex04nc1ipt45" path="res://buffs/move_stack.gd" id="9_7cecb"]
+[ext_resource type="Texture2D" uid="uid://hffhmgsldvpv" path="res://images/character_images/master_roshi/Master Roshi - Milk Delivery.png" id="10_7cecb"]
+
+[sub_resource type="Resource" id="Resource_dml27"]
+script = ExtResource("2_7xwjk")
+amount = 5
+turns = 2
+show_active = true
+stack_id = "milk_delivery"
+metadata/_custom_type_script = "uid://c2ybrmd13277n"
+
+[sub_resource type="Resource" id="Resource_7cecb"]
+script = ExtResource("3_ngv1c")
+buff = SubResource("Resource_dml27")
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[sub_resource type="Resource" id="Resource_2tb6b"]
+script = ExtResource("4_ox0fn")
+switch_to = 1
+show_active = true
+target = 5
+stack_id = "milk_delivery_2"
+metadata/_custom_type_script = "uid://c6vbt8m2upd4y"
+
+[sub_resource type="Resource" id="Resource_ataw7"]
+script = ExtResource("3_ngv1c")
+buff = SubResource("Resource_2tb6b")
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[sub_resource type="Resource" id="Resource_laxjd"]
+script = ExtResource("5_ngv1c")
+random_cost = 1
+_move = ExtResource("5_ox0fn")
+turns = 2
+stack_id = "tht change energy"
+metadata/_custom_type_script = "uid://cy8kmsim7ut0b"
+
+[sub_resource type="Resource" id="Resource_ngv1c"]
+script = ExtResource("5_7xwjk")
+alter_cost_buff = SubResource("Resource_laxjd")
+turns = 2
+show_active = true
+stack_id = "milk_delivery_3"
+metadata/_custom_type_script = "uid://c870h4gj1j1xt"
+
+[sub_resource type="Resource" id="Resource_ox0fn"]
+script = ExtResource("3_ngv1c")
+buff = SubResource("Resource_ngv1c")
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[sub_resource type="Resource" id="Resource_74ymh"]
+script = ExtResource("9_7cecb")
+affected_move = ExtResource("5_ox0fn")
+amount = 5
+show_active = true
+active_pic = ExtResource("8_dml27")
+stackable = true
+stack_id = "tht_stack"
+metadata/_custom_type_script = "uid://dex04nc1ipt45"
+
+[sub_resource type="Resource" id="Resource_eeql4"]
+script = ExtResource("3_ngv1c")
+buff = SubResource("Resource_74ymh")
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[resource]
+script = ExtResource("5_laxjd")
+pic = ExtResource("10_7cecb")
+move_name = "Milk Delivery"
+description = "For 2 turns, Master Roshi's skills will deal 5 additional damage, and his allies' skills will deal piercing damage. If Master Roshi is targeted during this time, \"Turtle Hermit\" will cost 1 random energy for the next 2 turns. If Master Roshi is not targeted, \"Stone Throw\" will transform into \"Turtle Hermit: Kamehameha\" for 2 turns."
+classes = Array[int]([0, 9])
+cost = Dictionary[int, int]({
+4: 1
+})
+cooldown = 3
+target = 6
+effects = Array[ExtResource("1_dpl1e")]([SubResource("Resource_7cecb"), SubResource("Resource_ataw7"), SubResource("Resource_ox0fn"), SubResource("Resource_eeql4")])
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

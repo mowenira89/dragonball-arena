@@ -106,7 +106,7 @@ func choose_character(box:CharacterChoiceBox):
 
 func _on_quick_game_button_pressed() -> void:
 	if box_1.character!=null and box_2.character!=null and box_3.character!=null:
-		var l = [box_1.character.duplicate(),box_2.character.duplicate(),box_3.character.duplicate()]
+		var l:Array[Character] = [box_1.character.duplicate(),box_2.character.duplicate(),box_3.character.duplicate()]
 		TargettingManager.friendlies=l
 		for x in TargettingManager.friendlies:
 			for y in x.moves:
@@ -125,7 +125,7 @@ func get_random_enemies():
 		if x!="character.gd":
 			potential_enemies.append(x)
 	var path = "res://characters/"
-	var opponents = []
+	var opponents:Array[Character] = []
 	for x in 3:
 		var p = path+potential_enemies.pick_random()
 		opponents.append(load(p).duplicate())

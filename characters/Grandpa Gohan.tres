@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Character" load_steps=9 format=3 uid="uid://4l4l82apvndr"]
+
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="1_f0lh0"]
+[ext_resource type="Resource" uid="uid://dvk2d0m6vx6kq" path="res://moves/grandpa_gohan/expert_counter.tres" id="2_8l1hw"]
+[ext_resource type="Resource" uid="uid://pcb0w5aqe6m7" path="res://moves/grandpa_gohan/throw.tres" id="3_1n07a"]
+[ext_resource type="Resource" uid="uid://cb5ji8nr06ncm" path="res://moves/grandpa_gohan/expert_kamehameha.tres" id="4_afpth"]
+[ext_resource type="Resource" uid="uid://dru5o6yku500f" path="res://moves/grandpa_gohan/mysterious_block.tres" id="5_tngik"]
+[ext_resource type="Texture2D" uid="uid://b1s5fpdtlthvb" path="res://images/character_images/grandpa_gohan/Grandpa Gohan - Face Picture.png" id="6_pki4t"]
+[ext_resource type="Script" uid="uid://dafn65t8p7eec" path="res://characters/character.gd" id="7_6g01s"]
+[ext_resource type="Script" uid="uid://cj02g364dn37u" path="res://buffs/buff.gd" id="8_8fmat"]
+
+[resource]
+script = ExtResource("7_6g01s")
+pic = ExtResource("6_pki4t")
+name = "Grandpa Gohan"
+moves = Array[ExtResource("1_f0lh0")]([ExtResource("2_8l1hw"), ExtResource("3_1n07a"), ExtResource("4_afpth"), ExtResource("5_tngik")])
+desc = "Grandpa Gohan is a martial artist who was Master Roshi's number one pupil. He is the adoptive grandfather of Goku.
+"
+metadata/_custom_type_script = "uid://dafn65t8p7eec"

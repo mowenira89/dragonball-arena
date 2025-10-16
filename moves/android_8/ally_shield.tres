@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="Move" load_steps=9 format=3 uid="uid://b765v66nvps2k"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_qhkkg"]
+[ext_resource type="Script" uid="uid://dlymb8w2ta2nc" path="res://buffs/counter_eighter.gd" id="2_6rd4p"]
+[ext_resource type="Script" uid="uid://urvh4504e0dy" path="res://conditions/condition.gd" id="3_sk7a5"]
+[ext_resource type="Script" uid="uid://iq6j758keyb0" path="res://effects/apply_buff.gd" id="4_xx1te"]
+[ext_resource type="Texture2D" uid="uid://ch4pg4fw3udm3" path="res://images/character_images/android_8/Android #8 - Ally Shield.png" id="5_bkjcj"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="6_lyc3m"]
+
+[sub_resource type="Resource" id="Resource_ijwl4"]
+script = ExtResource("2_6rd4p")
+permanent = true
+target = 4
+stack_id = "eighter_counter"
+friendly = true
+metadata/_custom_type_script = "uid://dlymb8w2ta2nc"
+
+[sub_resource type="Resource" id="Resource_uvrwx"]
+script = ExtResource("4_xx1te")
+buff = SubResource("Resource_ijwl4")
+friendly = true
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[resource]
+script = ExtResource("6_lyc3m")
+pic = ExtResource("5_bkjcj")
+move_name = "Ally Shield"
+description = "Android #8 shields one ally with his shirt. The first harmful skill used on that ally will be countered, and the countered enemy will take 15 damage. This skill is invisible.
+"
+classes = Array[int]([0, 7])
+cost = Dictionary[int, int]({
+1: 1
+})
+cooldown = 2
+target = 4
+effects = Array[ExtResource("1_qhkkg")]([SubResource("Resource_uvrwx")])
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

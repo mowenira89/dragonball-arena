@@ -22,9 +22,13 @@ func _ready():
 
 func create_button(m:Move,c:Character):
 	move=m.duplicate()
+	if move.random_energy>0:
+		move.randomize_cost()
 	move.character=c
-	texture_normal=m.pic
 	character=c
+	character.battle_moves.append(move)
+	texture_normal=m.pic
+	
 	
 func start_cooldown(m:Move):
 	if move==m:
@@ -58,7 +62,8 @@ func _on_pressed() -> void:
 	if active and EnergyManager.check(move):
 		TargettingManager.current_move=move
 		TargettingManager.currently_targetting=character
-		TargettingManager.start_targetting.emit()
+		TargettingManager.target(move)
+		#TargettingManager.start_targetting.emit(character,move)
 		TargettingManager.character_moved.emit()
 		
 

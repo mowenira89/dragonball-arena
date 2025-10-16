@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="Move" load_steps=11 format=3 uid="uid://dvk2d0m6vx6kq"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_7qqsq"]
+[ext_resource type="Script" uid="uid://urvh4504e0dy" path="res://conditions/condition.gd" id="2_g81ha"]
+[ext_resource type="Script" uid="uid://by1thnikov8sl" path="res://effects/damage_effect.gd" id="3_7euuf"]
+[ext_resource type="Script" uid="uid://b2lgt4dp8i4np" path="res://buffs/counter_g_gohan.gd" id="4_mi5xa"]
+[ext_resource type="Script" uid="uid://iq6j758keyb0" path="res://effects/apply_buff.gd" id="5_bh5x0"]
+[ext_resource type="Texture2D" uid="uid://4b7o64j48s3" path="res://images/character_images/grandpa_gohan/Grandpa Gohan - Expert Counter.png" id="6_ugvs1"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="7_ev5mn"]
+
+[sub_resource type="Resource" id="Resource_586qk"]
+script = ExtResource("3_7euuf")
+amount = 5
+metadata/_custom_type_script = "uid://by1thnikov8sl"
+
+[sub_resource type="Resource" id="Resource_w41pu"]
+script = ExtResource("4_mi5xa")
+permanent = true
+target = 1
+stack_id = "expert_counter"
+metadata/_custom_type_script = "uid://b2lgt4dp8i4np"
+
+[sub_resource type="Resource" id="Resource_wnxs7"]
+script = ExtResource("5_bh5x0")
+buff = SubResource("Resource_w41pu")
+harmful = true
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[resource]
+script = ExtResource("7_ev5mn")
+pic = ExtResource("6_ugvs1")
+move_name = "Expert Counter"
+description = " Grandpa Gohan deals 5 damage to one enemy, the next time they use a harmful skill they will be countered and dealt 15 damage."
+classes = Array[int]([0, 4, 7])
+cost = Dictionary[int, int]({
+0: 1
+})
+cooldown = 3
+target = 1
+effects = Array[ExtResource("1_7qqsq")]([SubResource("Resource_586qk"), SubResource("Resource_wnxs7")])
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

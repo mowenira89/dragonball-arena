@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Move" load_steps=10 format=3 uid="uid://dpd7y50uh316i"]
+[gd_resource type="Resource" script_class="Move" load_steps=11 format=3 uid="uid://dpd7y50uh316i"]
 
 [ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_2la78"]
+[ext_resource type="Script" uid="uid://urvh4504e0dy" path="res://conditions/condition.gd" id="2_0rtf8"]
 [ext_resource type="Texture2D" uid="uid://d1xoyvhetpvu7" path="res://images/character_images/bacterian/Bacterian - Smelly Finger.png" id="2_huarb"]
 [ext_resource type="Script" uid="uid://by1thnikov8sl" path="res://effects/damage_effect.gd" id="2_rwwm7"]
 [ext_resource type="Script" uid="uid://di04rp7xsuxvm" path="res://buffs/damage_per_turn.gd" id="3_0rtf8"]
@@ -23,11 +24,13 @@ target = 1
 stackable = true
 stack_id = "smelly_finger"
 til_death = true
+harmful = true
 metadata/_custom_type_script = "uid://di04rp7xsuxvm"
 
 [sub_resource type="Resource" id="Resource_0b0pp"]
 script = ExtResource("4_uur0f")
 buff = SubResource("Resource_vq5so")
+harmful = true
 metadata/_custom_type_script = "uid://iq6j758keyb0"
 
 [resource]
@@ -43,4 +46,5 @@ cost = Dictionary[int, int]({
 cooldown = 2
 target = 1
 effects = Array[ExtResource("1_2la78")]([SubResource("Resource_0ja3i"), SubResource("Resource_0b0pp")])
+attack = true
 metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

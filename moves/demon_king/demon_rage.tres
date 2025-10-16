@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="Move" load_steps=12 format=3 uid="uid://beblmooyuk05k"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_7iavg"]
+[ext_resource type="Script" uid="uid://iq6j758keyb0" path="res://effects/apply_buff.gd" id="2_socit"]
+[ext_resource type="Script" uid="uid://ewtut1aqk2tn" path="res://buffs/stun.gd" id="3_2sf1f"]
+[ext_resource type="Resource" uid="uid://dx1tf0hqxnsyu" path="res://moves/demon_king/demon_punch.tres" id="4_0a7e1"]
+[ext_resource type="Script" uid="uid://dex04nc1ipt45" path="res://buffs/move_stack.gd" id="5_j65yc"]
+[ext_resource type="Texture2D" uid="uid://2q2jsdc8tihq" path="res://images/character_images/demon_king/Demon King Piccolo - Demon Rage.png" id="6_xqyso"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="7_gq3lk"]
+
+[sub_resource type="Resource" id="Resource_e6vty"]
+script = ExtResource("3_2sf1f")
+turns = 1
+show_active = true
+target = 1
+stack_id = "demon_punch_stun"
+metadata/_custom_type_script = "uid://ewtut1aqk2tn"
+
+[sub_resource type="Resource" id="Resource_1nefn"]
+script = ExtResource("2_socit")
+buff = SubResource("Resource_e6vty")
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[sub_resource type="Resource" id="Resource_n4d6c"]
+script = ExtResource("5_j65yc")
+affected_move = ExtResource("4_0a7e1")
+amount = 10
+added_buffs = Array[ExtResource("2_socit")]([SubResource("Resource_1nefn")])
+show_active = true
+stackable = true
+stack_id = "demon_punch_stack"
+metadata/_custom_type_script = "uid://dex04nc1ipt45"
+
+[sub_resource type="Resource" id="Resource_0f3mi"]
+script = ExtResource("2_socit")
+buff = SubResource("Resource_n4d6c")
+friendly = true
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[resource]
+script = ExtResource("7_gq3lk")
+pic = ExtResource("6_xqyso")
+move_name = "Demon Rage"
+description = "Demon King Piccolo’s fury grants him a single stack of Demon Rage. For each 'Demon Rage' stack he has, 'Demon Punch' inflicts an additional 10 damage, stuns the target, and costs only 1 random energy. After dealing damage, his Demon Rage stacks are cleared.
+"
+classes = Array[int]([1, 4, 7])
+cost = Dictionary[int, int]({
+0: 1
+})
+effects = Array[ExtResource("1_7iavg")]([SubResource("Resource_0f3mi")])
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

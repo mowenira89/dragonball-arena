@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="Move" load_steps=10 format=3 uid="uid://chilmmagkdjxa"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_02hfn"]
+[ext_resource type="Script" uid="uid://urvh4504e0dy" path="res://conditions/condition.gd" id="2_6a857"]
+[ext_resource type="Script" uid="uid://by1thnikov8sl" path="res://effects/damage_effect.gd" id="2_k2r3h"]
+[ext_resource type="Texture2D" uid="uid://tppv7ngp15ao" path="res://images/character_images/general_blue/General Blue - Skewer.png" id="4_hctlf"]
+[ext_resource type="Script" uid="uid://dmhjtyod3x8wn" path="res://conditions/if_has_buff.gd" id="4_ysjyk"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="5_ysjyk"]
+
+[sub_resource type="Resource" id="Resource_0o4hc"]
+script = ExtResource("2_k2r3h")
+amount = 15
+metadata/_custom_type_script = "uid://by1thnikov8sl"
+
+[sub_resource type="Resource" id="Resource_mvax0"]
+script = ExtResource("4_ysjyk")
+stack_id = "psi_eye"
+target = true
+metadata/_custom_type_script = "uid://dmhjtyod3x8wn"
+
+[sub_resource type="Resource" id="Resource_1gube"]
+script = ExtResource("2_k2r3h")
+amount = 10
+conditions = Array[ExtResource("2_6a857")]([SubResource("Resource_mvax0")])
+metadata/_custom_type_script = "uid://by1thnikov8sl"
+
+[resource]
+script = ExtResource("5_ysjyk")
+pic = ExtResource("4_hctlf")
+move_name = "Skewer"
+description = "General Blue attacks one enemy with a sharpened tree, dealing 15 damage. If the target is currently stunned by 'Psychic Eyes,' they take an additional 10 damage."
+classes = Array[int]([0, 4, 7])
+cost = Dictionary[int, int]({
+0: 1
+})
+target = 1
+effects = Array[ExtResource("1_02hfn")]([SubResource("Resource_0o4hc"), SubResource("Resource_1gube")])
+attack = true
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

@@ -1,0 +1,55 @@
+[gd_resource type="Resource" script_class="Move" load_steps=15 format=3 uid="uid://f54ps1brw1og"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_jx8kf"]
+[ext_resource type="Script" uid="uid://c2ybrmd13277n" path="res://buffs/alter_outgoing_damage.gd" id="2_8m51x"]
+[ext_resource type="Script" uid="uid://urvh4504e0dy" path="res://conditions/condition.gd" id="3_sr1dt"]
+[ext_resource type="Script" uid="uid://iq6j758keyb0" path="res://effects/apply_buff.gd" id="4_osji8"]
+[ext_resource type="Script" uid="uid://56o3ldcvy1l0" path="res://buffs/revert_after_turns.gd" id="5_vu0ah"]
+[ext_resource type="Script" uid="uid://v5tgkue1wb2t" path="res://effects/swap_effect.gd" id="6_bklh6"]
+[ext_resource type="Resource" uid="uid://bb62uheluw6xx" path="res://moves/mr_popo/energy_absorb.tres" id="7_m4qex"]
+[ext_resource type="Texture2D" uid="uid://bfv0ayy44hjnt" path="res://images/character_images/mr_popo/Mr..Popo - Energy Scan.png" id="8_isdju"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="9_ppp4u"]
+
+[sub_resource type="Resource" id="Resource_iiojy"]
+script = ExtResource("2_8m51x")
+amount = 10
+turns = 3
+show_active = true
+stack_id = "energy_scan_boost"
+friendly = true
+metadata/_custom_type_script = "uid://c2ybrmd13277n"
+
+[sub_resource type="Resource" id="Resource_iu8tu"]
+script = ExtResource("4_osji8")
+buff = SubResource("Resource_iiojy")
+friendly = true
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[sub_resource type="Resource" id="Resource_vyctk"]
+script = ExtResource("5_vu0ah")
+turns = 3
+stack_id = "popo_revert"
+metadata/_custom_type_script = "uid://56o3ldcvy1l0"
+
+[sub_resource type="Resource" id="Resource_h4vvu"]
+script = ExtResource("4_osji8")
+buff = SubResource("Resource_vyctk")
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[sub_resource type="Resource" id="Resource_osyii"]
+script = ExtResource("6_bklh6")
+swap_to = ExtResource("7_m4qex")
+metadata/_custom_type_script = "uid://v5tgkue1wb2t"
+
+[resource]
+script = ExtResource("9_ppp4u")
+pic = ExtResource("8_isdju")
+move_name = "Energy Scan"
+description = "Mr. Popo scans the spiritual energy of all enemies, increasing his damage by 10 for 3 turns. During this time, this skill will be replaced by Energy Absorb for 3 turns."
+classes = Array[int]([6, 5, 7])
+cost = Dictionary[int, int]({
+4: 1
+})
+cooldown = 3
+effects = Array[ExtResource("1_jx8kf")]([SubResource("Resource_iu8tu"), SubResource("Resource_h4vvu"), SubResource("Resource_osyii")])
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

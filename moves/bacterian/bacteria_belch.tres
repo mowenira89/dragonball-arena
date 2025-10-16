@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Move" load_steps=10 format=3 uid="uid://cy75vd8fpd1pp"]
+[gd_resource type="Resource" script_class="Move" load_steps=11 format=3 uid="uid://cy75vd8fpd1pp"]
 
 [ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_47rny"]
 [ext_resource type="Script" uid="uid://by1thnikov8sl" path="res://effects/damage_effect.gd" id="2_2mlyl"]
+[ext_resource type="Script" uid="uid://urvh4504e0dy" path="res://conditions/condition.gd" id="2_cmgva"]
 [ext_resource type="Texture2D" uid="uid://c5prs4kkllom6" path="res://images/character_images/bacterian/Bacterian - Bacterian Belch.png" id="2_cqrrg"]
 [ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="3_5it31"]
 [ext_resource type="Script" uid="uid://di04rp7xsuxvm" path="res://buffs/damage_per_turn.gd" id="3_cmgva"]
@@ -21,11 +22,13 @@ turns = 1
 show_active = true
 target = 1
 stack_id = "belch"
+harmful = true
 metadata/_custom_type_script = "uid://di04rp7xsuxvm"
 
 [sub_resource type="Resource" id="Resource_i67o5"]
 script = ExtResource("4_r0fha")
 buff = SubResource("Resource_iv23h")
+harmful = true
 metadata/_custom_type_script = "uid://iq6j758keyb0"
 
 [resource]
@@ -41,4 +44,5 @@ cost = Dictionary[int, int]({
 cooldown = 1
 target = 3
 effects = Array[ExtResource("1_47rny")]([SubResource("Resource_qkj67"), SubResource("Resource_i67o5")])
+attack = true
 metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

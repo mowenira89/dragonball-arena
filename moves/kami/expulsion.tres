@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Move" load_steps=7 format=3 uid="uid://b3tqfyrhluglq"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_0w015"]
+[ext_resource type="Script" uid="uid://urvh4504e0dy" path="res://conditions/condition.gd" id="2_4wl8v"]
+[ext_resource type="Script" uid="uid://bq86mt3j55v0q" path="res://effects/cleanse.gd" id="3_rvwi8"]
+[ext_resource type="Texture2D" uid="uid://dm2t0q7du5gw7" path="res://images/character_images/kami/Kami - Expulsion.png" id="4_4wl8v"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="4_ssl83"]
+
+[sub_resource type="Resource" id="Resource_2dhkx"]
+script = ExtResource("3_rvwi8")
+friendly = true
+metadata/_custom_type_script = "uid://bq86mt3j55v0q"
+
+[resource]
+script = ExtResource("4_ssl83")
+pic = ExtResource("4_4wl8v")
+move_name = "Expulsion"
+description = "Kami expels all negative energy, removing all harmful effects from himself or one ally.
+"
+classes = Array[int]([6, 1, 7])
+cost = Dictionary[int, int]({
+4: 1
+})
+cooldown = 3
+target = 9
+effects = Array[ExtResource("1_0w015")]([SubResource("Resource_2dhkx")])
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Move" load_steps=10 format=3 uid="uid://c0i2eo6dw2b6j"]
+[gd_resource type="Resource" script_class="Move" load_steps=11 format=3 uid="uid://c0i2eo6dw2b6j"]
 
 [ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_f24mr"]
 [ext_resource type="Script" uid="uid://by1thnikov8sl" path="res://effects/damage_effect.gd" id="2_fi4oc"]
+[ext_resource type="Script" uid="uid://urvh4504e0dy" path="res://conditions/condition.gd" id="2_yud3r"]
 [ext_resource type="Script" uid="uid://8vyvnx2tdcrq" path="res://buffs/no_block.gd" id="3_yud3r"]
 [ext_resource type="Script" uid="uid://iq6j758keyb0" path="res://effects/apply_buff.gd" id="4_b0dwe"]
 [ext_resource type="Texture2D" uid="uid://41ilvw8gq2ut" path="res://images/character_images/master_roshi/Master Roshi - Turtle Hermit Kamehameha.png" id="5_kxlda"]
@@ -40,4 +41,5 @@ cost = Dictionary[int, int]({
 cooldown = 1
 target = 1
 effects = Array[ExtResource("1_f24mr")]([SubResource("Resource_vdy6p"), SubResource("Resource_yeakg")])
+attack = true
 metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

@@ -13,4 +13,6 @@ func alter_incoming_damage(amount:int,m:Move,t):
 	return amount-current_shield
 	
 func get_message():
-	return "{} points of destructible shield".format([shield_amount])
+	var message = "{} points of destructible shield".format([shield_amount])
+	if !permanent:
+		message+=" for {0} turns".format([turns])

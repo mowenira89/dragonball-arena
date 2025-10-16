@@ -95,6 +95,7 @@ offset_bottom = 42.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_v0n5k")
+expand_mode = 1
 
 [node name="Overlay" type="ColorRect" parent="Pic"]
 layout_mode = 0

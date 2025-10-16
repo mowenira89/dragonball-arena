@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Character" load_steps=8 format=3 uid="uid://bpyony7vokyjs"]
+
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="1_bupdy"]
+[ext_resource type="Resource" uid="uid://kvkokrexhigl" path="res://moves/demon_king/preparations.tres" id="2_t8ada"]
+[ext_resource type="Resource" uid="uid://beblmooyuk05k" path="res://moves/demon_king/demon_rage.tres" id="3_wm2k6"]
+[ext_resource type="Resource" uid="uid://dx1tf0hqxnsyu" path="res://moves/demon_king/demon_punch.tres" id="4_w518i"]
+[ext_resource type="Resource" uid="uid://bld01e74jtd4d" path="res://moves/demon_king/demon_block.tres" id="5_252sd"]
+[ext_resource type="Texture2D" uid="uid://di5ftogoq57x0" path="res://images/character_images/demon_king/Demon King Piccolo - Face Picture.png" id="6_gucps"]
+[ext_resource type="Script" uid="uid://dafn65t8p7eec" path="res://characters/character.gd" id="7_ej4im"]
+
+[resource]
+script = ExtResource("7_ej4im")
+pic = ExtResource("6_gucps")
+name = "Demon King Piccolo"
+moves = Array[ExtResource("1_bupdy")]([ExtResource("2_t8ada"), ExtResource("3_wm2k6"), ExtResource("4_w518i"), ExtResource("5_252sd")])
+desc = "In his pursuit for world domination Demon King Piccolo uses the dragon balls to wish to return to his prime. After doing so Demon King Piccolo kills Shenron, Demon King Piccolo was later defeated by Kid Goku."
+metadata/_custom_type_script = "uid://dafn65t8p7eec"

@@ -27,12 +27,14 @@ func _ready():
 	BattleManager.stun.connect(stun)
 	BattleManager.unstun.connect(unstun)
 	BattleManager.swap_skills.connect(swap_skills)
+	BattleManager.start_turn.connect(start_turn)
 
 func create_panel(char:Character):
 	character=char
 	populate_skills()
 	character_pic.pic.texture=char.pic
 	character_pic.character=char
+	character.setup()
 	
 
 func populate_skills():
@@ -130,6 +132,13 @@ func swap_skills(c:Character,move_name:String,new_move:Move):
 	if character==c:
 		for x in skills_container.get_children():
 			if x.move.move_name==move_name:
+				x.character.battle_moves.erase(x.move)
 				x.create_button(new_move,c)
+
+	
+func start_turn():
+	for x in skills_container.get_children():
+		if x.move.random_energy>0:
+			x.move.randomize_cost()
 
 	

@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="Move" load_steps=14 format=3 uid="uid://72qqu1lfa4dp"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_oa1ej"]
+[ext_resource type="Script" uid="uid://ewtut1aqk2tn" path="res://buffs/stun.gd" id="2_v70be"]
+[ext_resource type="Script" uid="uid://urvh4504e0dy" path="res://conditions/condition.gd" id="3_kag8d"]
+[ext_resource type="Script" uid="uid://iq6j758keyb0" path="res://effects/apply_buff.gd" id="3_oo348"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="4_ccito"]
+[ext_resource type="Script" uid="uid://by1thnikov8sl" path="res://effects/damage_effect.gd" id="4_kag8d"]
+[ext_resource type="Script" uid="uid://di04rp7xsuxvm" path="res://buffs/damage_per_turn.gd" id="5_l1cqm"]
+[ext_resource type="Texture2D" uid="uid://detsv2ba18bcj" path="res://images/character_images/yamcha/Yamcha - Wolf Fang Fist.png" id="6_m4an2"]
+
+[sub_resource type="Resource" id="Resource_kag8d"]
+script = ExtResource("2_v70be")
+classes = Array[int]([5])
+turns = 1
+show_active = true
+target = 1
+stack_id = "wff_stun"
+harmful = true
+metadata/_custom_type_script = "uid://ewtut1aqk2tn"
+
+[sub_resource type="Resource" id="Resource_l1cqm"]
+script = ExtResource("3_oo348")
+buff = SubResource("Resource_kag8d")
+harmful = true
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[sub_resource type="Resource" id="Resource_mgyi1"]
+script = ExtResource("4_kag8d")
+amount = 10
+metadata/_custom_type_script = "uid://by1thnikov8sl"
+
+[sub_resource type="Resource" id="Resource_475im"]
+script = ExtResource("5_l1cqm")
+amount = 10
+turns = 1
+show_active = true
+target = 1
+stack_id = "wff"
+metadata/_custom_type_script = "uid://di04rp7xsuxvm"
+
+[sub_resource type="Resource" id="Resource_d0drb"]
+script = ExtResource("3_oo348")
+buff = SubResource("Resource_475im")
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[resource]
+script = ExtResource("4_ccito")
+pic = ExtResource("6_m4an2")
+move_name = "Wolf Fang Fist"
+description = "Yamcha targets 1 enemy, stunning their ranged skills for 1 turn and dealing 10 damage to them for 2 turns.
+"
+classes = Array[int]([6, 4, 9])
+cost = Dictionary[int, int]({
+0: 1
+})
+cooldown = 2
+target = 1
+effects = Array[ExtResource("1_oa1ej")]([SubResource("Resource_l1cqm"), SubResource("Resource_mgyi1"), SubResource("Resource_d0drb")])
+attack = true
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

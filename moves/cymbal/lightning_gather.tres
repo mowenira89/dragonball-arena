@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="Move" load_steps=9 format=3 uid="uid://b6pipocr6xw3c"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_u2xy2"]
+[ext_resource type="Texture2D" uid="uid://bo4mykkiyjo05" path="res://images/character_images/cymbal/Cymbal - Lightning Gather.png" id="2_meid8"]
+[ext_resource type="Script" uid="uid://urvh4504e0dy" path="res://conditions/condition.gd" id="2_rfkic"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="3_kut3y"]
+[ext_resource type="Script" uid="uid://by1thnikov8sl" path="res://effects/damage_effect.gd" id="3_svi2s"]
+[ext_resource type="Script" uid="uid://dte1v8fnps5tl" path="res://effects/attack_random.gd" id="4_sw5y5"]
+
+[sub_resource type="Resource" id="Resource_x15gs"]
+script = ExtResource("3_svi2s")
+amount = 15
+damage_type = 1
+metadata/_custom_type_script = "uid://by1thnikov8sl"
+
+[sub_resource type="Resource" id="Resource_f4pwt"]
+script = ExtResource("4_sw5y5")
+num_of_targets = 1
+metadata/_custom_type_script = "uid://dte1v8fnps5tl"
+
+[resource]
+script = ExtResource("3_kut3y")
+pic = ExtResource("2_meid8")
+move_name = "Lightning Gather"
+description = "Cymbal gathers energy around him, dealing 15 piercing damage to one enemy and 15 piercing damage to a random enemy."
+classes = Array[int]([1, 4, 7])
+cost = Dictionary[int, int]({
+2: 1,
+4: 1
+})
+cooldown = 1
+target = 1
+effects = Array[ExtResource("1_u2xy2")]([SubResource("Resource_x15gs"), SubResource("Resource_f4pwt")])
+attack = true
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

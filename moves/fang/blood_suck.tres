@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="Move" load_steps=9 format=3 uid="uid://d3gimjtxteiey"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_xrxyt"]
+[ext_resource type="Script" uid="uid://dxibp5k3m7t8l" path="res://buffs/life_steal.gd" id="2_frk50"]
+[ext_resource type="Script" uid="uid://urvh4504e0dy" path="res://conditions/condition.gd" id="3_sarff"]
+[ext_resource type="Script" uid="uid://iq6j758keyb0" path="res://effects/apply_buff.gd" id="4_jbygk"]
+[ext_resource type="Texture2D" uid="uid://c4xwrdd6giu5b" path="res://images/character_images/fangs/Fangs the Vampire - Blood Suck.png" id="5_w0i2m"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="6_tnbav"]
+
+[sub_resource type="Resource" id="Resource_kmlyt"]
+script = ExtResource("2_frk50")
+amount = 10
+turns = 1
+show_active = true
+target = 1
+stack_id = "blood_suck"
+harmful = true
+metadata/_custom_type_script = "uid://dxibp5k3m7t8l"
+
+[sub_resource type="Resource" id="Resource_4m0yp"]
+script = ExtResource("4_jbygk")
+buff = SubResource("Resource_kmlyt")
+harmful = true
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[resource]
+script = ExtResource("6_tnbav")
+pic = ExtResource("5_w0i2m")
+move_name = "Blood Suck"
+description = "Fangs the Vampire latches onto one enemy, stealing 10 health from them for 2 turns. This skill can be canceled.
+"
+classes = Array[int]([0, 4, 9])
+cost = Dictionary[int, int]({
+3: 1,
+4: 1
+})
+cooldown = 2
+target = 1
+effects = Array[ExtResource("1_xrxyt")]([SubResource("Resource_4m0yp")])
+attack = true
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

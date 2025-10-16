@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="Move" load_steps=11 format=3 uid="uid://gg5wprjr6euy"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_e6b6u"]
+[ext_resource type="Script" uid="uid://urvh4504e0dy" path="res://conditions/condition.gd" id="2_ulgbg"]
+[ext_resource type="Script" uid="uid://by1thnikov8sl" path="res://effects/damage_effect.gd" id="3_f8kih"]
+[ext_resource type="Script" uid="uid://di04rp7xsuxvm" path="res://buffs/damage_per_turn.gd" id="4_vv2pb"]
+[ext_resource type="Script" uid="uid://iq6j758keyb0" path="res://effects/apply_buff.gd" id="5_ncj04"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="6_ittf3"]
+[ext_resource type="Texture2D" uid="uid://bkh7agnjg7bxc" path="res://images/character_images/bandages/Bandages the Mummy - Stretching Bridge.png" id="6_ulgbg"]
+
+[sub_resource type="Resource" id="Resource_gqr0j"]
+script = ExtResource("3_f8kih")
+amount = 10
+metadata/_custom_type_script = "uid://by1thnikov8sl"
+
+[sub_resource type="Resource" id="Resource_su74h"]
+script = ExtResource("4_vv2pb")
+amount = 10
+turns = 1
+show_active = true
+target = 1
+stack_id = "stretching_bridge"
+control_buff = true
+metadata/_custom_type_script = "uid://di04rp7xsuxvm"
+
+[sub_resource type="Resource" id="Resource_yegot"]
+script = ExtResource("5_ncj04")
+buff = SubResource("Resource_su74h")
+harmful = true
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[resource]
+script = ExtResource("6_ittf3")
+pic = ExtResource("6_ulgbg")
+move_name = "Stretching Bridge"
+description = "Bandages the Mummy stretches one enemy over his shoulders, stunning their melee skills for 1 turn and dealing 10 damage for 2 turns.
+"
+classes = Array[int]([0, 4, 8])
+cooldown = 1
+target = 1
+effects = Array[ExtResource("1_e6b6u")]([SubResource("Resource_gqr0j"), SubResource("Resource_yegot")])
+attack = true
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

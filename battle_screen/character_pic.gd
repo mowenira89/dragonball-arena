@@ -14,6 +14,8 @@ func _ready():
 	overlay.visible=false
 	TargettingManager.untarget.connect(untarget)
 	BattleManager.death.connect(death)
+	BattleManager.stun.connect(check_control_break)
+	TargettingManager.start_targetting.connect(start_targetting)
 
 func _process(delta: float) -> void:
 	progress_bar.value=character.current_hp
@@ -39,3 +41,26 @@ func _on_overlay_gui_input(event: InputEvent) -> void:
 func death(c:Character):
 	if c==character:
 		dead.visible=true
+	else:
+		if c in TargettingManager.friendlies:
+			for x in TargettingManager.friendlies:
+				if x!=c:
+					for b in x.buffs:
+						b.on_ally_death(c)
+		else:
+			for x in TargettingManager.opponents:
+				if x!=c:
+					for b in x.buffs:
+						b.on_ally_death(c)
+
+func check_control_break(c:Character,b:Stun):
+	for x in character.buffs:
+		x.on_user_stun(x.user,b)
+
+
+func start_targetting(list:Array[Character],all:bool):
+	if character in list:
+		if all:
+			target()
+		else:
+			flash_pic()

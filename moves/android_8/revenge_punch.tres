@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="Move" load_steps=7 format=3 uid="uid://bth7f6c2q7f4r"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_iqdoy"]
+[ext_resource type="Script" uid="uid://urvh4504e0dy" path="res://conditions/condition.gd" id="2_2ie16"]
+[ext_resource type="Script" uid="uid://by1thnikov8sl" path="res://effects/damage_effect.gd" id="3_axxsw"]
+[ext_resource type="Texture2D" uid="uid://d3ke0stdjfnp0" path="res://images/character_images/android_8/Android #8 - Revenge Punch.png" id="4_5o6v7"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="5_j80cv"]
+
+[sub_resource type="Resource" id="Resource_753ts"]
+script = ExtResource("3_axxsw")
+amount = 5
+damage_type = 1
+metadata/_custom_type_script = "uid://by1thnikov8sl"
+
+[resource]
+script = ExtResource("5_j80cv")
+pic = ExtResource("4_5o6v7")
+move_name = "Revenge Punch"
+description = " Android #8 deals 5 piercing damage to one enemy with this skill. For each stack of \"Revenge Punch,\" this skill deals an additional 15 damage. For each ally that is dead, Android #8 gains 1 stack of this skill. The stacks are reset once this skill is used.
+"
+classes = Array[int]([6, 7])
+cost = Dictionary[int, int]({
+4: 1
+})
+target = 1
+effects = Array[ExtResource("1_iqdoy")]([SubResource("Resource_753ts")])
+stackable_boost = true
+attack = true
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

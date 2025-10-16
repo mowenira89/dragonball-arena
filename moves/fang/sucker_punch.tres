@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="Move" load_steps=7 format=3 uid="uid://dudd5cq22lbs2"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_r34es"]
+[ext_resource type="Script" uid="uid://urvh4504e0dy" path="res://conditions/condition.gd" id="2_yt43i"]
+[ext_resource type="Script" uid="uid://by1thnikov8sl" path="res://effects/damage_effect.gd" id="3_6lx51"]
+[ext_resource type="Texture2D" uid="uid://cuxuaj2gnu3hb" path="res://images/character_images/fangs/Fangs the Vampire - Sucker Punch.png" id="4_a7xx0"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="5_y1acw"]
+
+[sub_resource type="Resource" id="Resource_siv6t"]
+script = ExtResource("3_6lx51")
+amount = 20
+metadata/_custom_type_script = "uid://by1thnikov8sl"
+
+[resource]
+script = ExtResource("5_y1acw")
+pic = ExtResource("4_a7xx0")
+move_name = "Sucker Punch"
+description = "Fangs the Vampire sucker punches one enemy, dealing 20 damage. If this skill is applied after \"Deceiving Dance,\" it will deal 15 damage instead."
+classes = Array[int]([0, 4, 7])
+cost = Dictionary[int, int]({
+1: 1
+})
+target = 1
+effects = Array[ExtResource("1_r34es")]([SubResource("Resource_siv6t")])
+attack = true
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

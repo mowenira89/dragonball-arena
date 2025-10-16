@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Move" load_steps=8 format=3 uid="uid://bg3xw05g6qfxm"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_pr7yc"]
+[ext_resource type="Script" uid="uid://c2ybrmd13277n" path="res://buffs/alter_outgoing_damage.gd" id="2_h8d7q"]
+[ext_resource type="Script" uid="uid://iq6j758keyb0" path="res://effects/apply_buff.gd" id="3_y80sb"]
+[ext_resource type="Texture2D" uid="uid://sh4vgapwnwoo" path="res://images/character_images/yamcha/Yamcha - Wolf Style!.png" id="4_nj21k"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="5_vomuu"]
+
+[sub_resource type="Resource" id="Resource_mlasl"]
+script = ExtResource("2_h8d7q")
+amount = 5
+permanent = true
+show_active = true
+stackable = true
+stack_id = "wolf_style"
+metadata/_custom_type_script = "uid://c2ybrmd13277n"
+
+[sub_resource type="Resource" id="Resource_sbw75"]
+script = ExtResource("3_y80sb")
+buff = SubResource("Resource_mlasl")
+metadata/_custom_type_script = "uid://iq6j758keyb0"
+
+[resource]
+script = ExtResource("5_vomuu")
+pic = ExtResource("4_nj21k")
+move_name = "Wolf Style!"
+description = "Yamcha harness the power of the wolf style, increasing his battle prowess, this skill will increase Yamchas damage by 5 permanently. This effect stacks.
+"
+classes = Array[int]([3, 7])
+cooldown = 2
+effects = Array[ExtResource("1_pr7yc")]([SubResource("Resource_sbw75")])
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

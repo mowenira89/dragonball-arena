@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="Move" load_steps=10 format=3 uid="uid://wqo65ufushof"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_w1eyf"]
+[ext_resource type="Script" uid="uid://urvh4504e0dy" path="res://conditions/condition.gd" id="2_p70yx"]
+[ext_resource type="Script" uid="uid://by1thnikov8sl" path="res://effects/damage_effect.gd" id="3_xv2hd"]
+[ext_resource type="Texture2D" uid="uid://xsbkfhgbwdmh" path="res://images/character_images/cymbal/Cymbal - Tail Slap.png" id="4_04o3l"]
+[ext_resource type="Resource" uid="uid://b6pipocr6xw3c" path="res://moves/cymbal/lightning_gather.tres" id="4_xv2hd"]
+[ext_resource type="Script" uid="uid://bsyun1mtbd28y" path="res://effects/alter_move.gd" id="5_04o3l"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="5_upxti"]
+
+[sub_resource type="Resource" id="Resource_u35y4"]
+script = ExtResource("3_xv2hd")
+amount = 15
+metadata/_custom_type_script = "uid://by1thnikov8sl"
+
+[sub_resource type="Resource" id="Resource_upxti"]
+script = ExtResource("5_04o3l")
+move_to_alter = ExtResource("4_xv2hd")
+alter_counterability = true
+revert = 1
+metadata/_custom_type_script = "uid://bsyun1mtbd28y"
+
+[resource]
+script = ExtResource("5_upxti")
+pic = ExtResource("4_04o3l")
+move_name = "Tail Slap"
+description = "Cymbal jumps in the air and slaps one enemy with his tail, dealing 15 damage. The following turn, \"Lightning Gather\" will be unable to be countered."
+classes = Array[int]([0, 4, 7])
+cost = Dictionary[int, int]({
+0: 1
+})
+target = 1
+effects = Array[ExtResource("1_w1eyf")]([SubResource("Resource_u35y4"), SubResource("Resource_upxti")])
+attack = true
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

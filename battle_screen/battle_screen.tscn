@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://w33su1h1nix5"]
+[gd_scene load_steps=18 format=3 uid="uid://w33su1h1nix5"]
 
 [ext_resource type="Texture2D" uid="uid://brkkcpd0mq6pc" path="res://images/battle_scene/battle_bg.png" id="1_0qo23"]
 [ext_resource type="Script" uid="uid://vsg3ehk7xpoq" path="res://battle_screen/battle_screen.gd" id="1_gkcfa"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://g3fbq27pwigv" path="res://battle_screen/skill_panel.tscn" id="10_jxrew"]
 [ext_resource type="PackedScene" uid="uid://bxd7oq8xd4nab" path="res://battle_screen/opponent.tscn" id="11_obs7w"]
 [ext_resource type="Texture2D" uid="uid://cx0bdx651fjqf" path="res://images/battle_scene/button_surrender.png" id="13_obs7w"]
+[ext_resource type="Script" uid="uid://c6lvw2cc8s4ui" path="res://battle_screen/message_window.gd" id="14_5jksw"]
 [ext_resource type="PackedScene" uid="uid://m3qfcceh6b1s" path="res://battle_screen/exchange_window.tscn" id="14_obs7w"]
 [ext_resource type="Texture2D" uid="uid://bqxs7f4q8sncm" path="res://images/battle_scene/button_volume.png" id="14_ylh1x"]
 [ext_resource type="PackedScene" uid="uid://c31wct5735560" path="res://battle_screen/end_turn_screen.tscn" id="15_ylh1x"]
@@ -39,6 +40,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_bottom = 20
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer"]
 layout_mode = 2
@@ -235,6 +237,17 @@ theme_override_constants/margin_left = 20
 [node name="Volume" type="TextureButton" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 texture_normal = ExtResource("14_ylh1x")
+
+[node name="MessageWindow" type="HBoxContainer" parent="TextureRect/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+script = ExtResource("14_5jksw")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/MarginContainer/MessageWindow"]
+layout_mode = 2
+
+[node name="Tag" type="VBoxContainer" parent="TextureRect/MarginContainer/MessageWindow"]
+layout_mode = 2
 
 [node name="ExchangeWindow" parent="." instance=ExtResource("14_obs7w")]
 visible = false

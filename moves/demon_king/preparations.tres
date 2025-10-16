@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Move" load_steps=7 format=3 uid="uid://kvkokrexhigl"]
+
+[ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_83qph"]
+[ext_resource type="Script" uid="uid://v5tgkue1wb2t" path="res://effects/swap_effect.gd" id="2_3x81r"]
+[ext_resource type="Texture2D" uid="uid://bvselqf8jsps8" path="res://images/character_images/demon_king/Demon King Piccolo - Preparations.png" id="2_su8q5"]
+[ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="3_3x81r"]
+[ext_resource type="Resource" uid="uid://debkeqep3nd5x" path="res://moves/demon_king/city_bomb.tres" id="3_ph7lr"]
+
+[sub_resource type="Resource" id="Resource_ph7lr"]
+script = ExtResource("2_3x81r")
+swap_to = ExtResource("3_ph7lr")
+metadata/_custom_type_script = "uid://v5tgkue1wb2t"
+
+[resource]
+script = ExtResource("3_3x81r")
+pic = ExtResource("2_su8q5")
+move_name = "Preparations"
+description = "Demon King Piccolo readies a massive blast, which causes this skill to be permanently replaced by 'City Bomb.' This effect is invisible.
+"
+classes = Array[int]([1, 4, 7])
+cooldown = 1
+effects = Array[ExtResource("1_83qph")]([SubResource("Resource_ph7lr")])
+metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

@@ -188,7 +188,9 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="FacePic" type="TextureRect" parent="MarginContainer/CharacterSelectionVBox/CharacterSkillPanel/SkillContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
+expand_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/CharacterSelectionVBox/CharacterSkillPanel/SkillContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -261,8 +263,9 @@ placeholder_text = "Search for Character"
 [node name="CharactersContainer" type="GridContainer" parent="MarginContainer/CharacterSelectionVBox/CharacterPanel/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(500, 200)
 layout_mode = 2
-size_flags_horizontal = 0
-columns = 8
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 10
+columns = 6
 
 [node name="CharacterScreenLeft" type="TextureButton" parent="MarginContainer/CharacterSelectionVBox/CharacterPanel"]
 layout_mode = 1

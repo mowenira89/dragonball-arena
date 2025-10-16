@@ -36,6 +36,8 @@ func _ready():
 func populate_energy():
 	for x in haves:
 		x.text=str(EnergyManager.energies[haves.find(x)])
+	for x in usedes:
+		x.text=str(0)
 
 func _on_cancel_pressed() -> void:
 	visible=false
