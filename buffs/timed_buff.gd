@@ -7,5 +7,5 @@ class_name TimedBuff extends Buff
 func on_end_turn():
 	if !permanent:
 		turns-=1
-		if turns+1==0:
+		if turns+1<=0:
 			remove()

@@ -23,7 +23,7 @@ func apply(character:Character,move:Move):
 func remove():
 	TargettingManager.remove_active_buff.emit(self)
 	_owner.buffs.erase(self)
-
+	
 func alter_outgoing_damage(amt:int,m:Move,damage_type:DamageEffect.DAMAGES)->int:
 	return amt
 

@@ -1,12 +1,10 @@
-[gd_resource type="Resource" script_class="Move" load_steps=14 format=3 uid="uid://dpgg8gqwfc0dg"]
+[gd_resource type="Resource" script_class="Move" load_steps=9 format=3 uid="uid://dpgg8gqwfc0dg"]
 
 [ext_resource type="Script" uid="uid://b5een2e3610pv" path="res://effects/effect.gd" id="1_hod8m"]
 [ext_resource type="Script" uid="uid://urvh4504e0dy" path="res://conditions/condition.gd" id="2_uawym"]
 [ext_resource type="Script" uid="uid://by1thnikov8sl" path="res://effects/damage_effect.gd" id="3_m5ljc"]
 [ext_resource type="Script" uid="uid://bsyun1mtbd28y" path="res://effects/alter_move.gd" id="4_ivkvf"]
-[ext_resource type="Script" uid="uid://ca8ayxskyeaw6" path="res://buffs/timed_event.gd" id="5_m5ljc"]
 [ext_resource type="Texture2D" uid="uid://ceh2rfryfnx6u" path="res://images/character_images/bandages/Bandages the Mummy - Face Picture.png" id="5_qkewl"]
-[ext_resource type="Script" uid="uid://iq6j758keyb0" path="res://effects/apply_buff.gd" id="6_ivkvf"]
 [ext_resource type="Script" uid="uid://dqoyc5k1wvixu" path="res://moves/move.gd" id="6_t5iwn"]
 
 [sub_resource type="Resource" id="Resource_vxux8"]
@@ -19,24 +17,9 @@ script = ExtResource("4_ivkvf")
 change_damage = 5
 change_type = 1
 do_change_type = true
+revert = 1
 friendly = true
 metadata/_custom_type_script = "uid://bsyun1mtbd28y"
-
-[sub_resource type="Resource" id="Resource_qkewl"]
-script = ExtResource("4_ivkvf")
-change_damage = 15
-do_change_type = true
-metadata/_custom_type_script = "uid://bsyun1mtbd28y"
-
-[sub_resource type="Resource" id="Resource_t5iwn"]
-script = ExtResource("5_m5ljc")
-event = SubResource("Resource_qkewl")
-metadata/_custom_type_script = "uid://ca8ayxskyeaw6"
-
-[sub_resource type="Resource" id="Resource_osue2"]
-script = ExtResource("6_ivkvf")
-buff = SubResource("Resource_t5iwn")
-metadata/_custom_type_script = "uid://iq6j758keyb0"
 
 [resource]
 script = ExtResource("6_t5iwn")
@@ -49,5 +32,5 @@ cost = Dictionary[int, int]({
 1: 1
 })
 target = 1
-effects = Array[ExtResource("1_hod8m")]([SubResource("Resource_vxux8"), SubResource("Resource_p2ucp"), SubResource("Resource_osue2")])
+effects = Array[ExtResource("1_hod8m")]([SubResource("Resource_vxux8"), SubResource("Resource_p2ucp")])
 metadata/_custom_type_script = "uid://dqoyc5k1wvixu"

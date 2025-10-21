@@ -8,7 +8,7 @@ const SKILL_WINDOW = preload("res://battle_screen/skill_view_panel.tscn")
 
 var move:Move
 var character:Character
-
+var cooling_down:int=0
 var active:bool=true
 
 signal unselect
@@ -34,6 +34,7 @@ func start_cooldown(m:Move):
 	if move==m:
 		cooldown.visible=true
 		cooldown_label.text=str(m.cooldown)
+		cooling_down=m.cooldown
 		
 func stunned_move():
 	stunned.visible=true
@@ -50,7 +51,11 @@ func change_cooldown(amt:int):
 		else: 
 			cooldown_label.text=str(new_amt)
 		
-
+func decrease_cooldown(amount:int=1):
+	cooling_down-=amount
+	cooldown_label.text=str(cooling_down+1)
+	if cooling_down<0:
+		cooldown.visible=false
 
 func _on_mouse_entered() -> void:
 	send_move_data.emit(move)
@@ -80,8 +85,6 @@ func _on_in_use_gui_input(event: InputEvent) -> void:
 		TargettingManager.remove_from_attack_queue(move)
 		TargettingManager.remove_active_moves.emit(move)
 
-	
-	
 
 
 func _on_gui_input(event: InputEvent) -> void:

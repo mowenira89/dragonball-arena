@@ -19,8 +19,11 @@ func apply(standee:AttackStandee,t:Character):
 	original_move=move
 	var damage_effect:DamageEffect
 	for x in standee.user.moves:
+		if !move_to_alter:
+			move_to_alter=standee.move
 		if x.move_name==move_to_alter.move_name:
 			move=x
+			original_move=x
 	if change_damage!=0:
 		for x in move.effects:
 			if x is DamageEffect:
@@ -53,7 +56,7 @@ func apply(standee:AttackStandee,t:Character):
 		if change_damage!=0:
 			if damage_effect!=null:
 				var new_damage=change_damage*-1
-				new_alter_move.cange_damage=new_damage
+				new_alter_move.change_damage=new_damage
 		if do_change_type:
 			if damage_effect!=null:
 				var original_damage:DamageEffect=original_move.get_damage()

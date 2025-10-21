@@ -12,15 +12,15 @@ var buffs:Array[Buff]
 
 func add_buff(buff:Buff,move:Move,u:Character):
 	if current_hp>0:
-		var new_buff = buff.duplicate()
-		if !new_buff.stackable:
+		print(name+" "+buff.stack_id)
+		if !buff.stackable:
 			for x in buffs:
-				if new_buff.stack_id==x.stack_id:
+				if buff.stack_id==x.stack_id:
 					return false	
-			register_buff(new_buff,move,u)
+			register_buff(buff,move,u)
 		else:
 			for x in buffs:
-				if x.stack_id==new_buff.stack_id:
+				if x.stack_id==buff.stack_id:
 					x.stack()
 					return true
 			register_buff(buff,move,u)
@@ -67,6 +67,7 @@ func take_damage(amount,damage_type,move):
 		
 
 func move_opponent():
+	print('opponent moving')
 	if randi()%101>2:
 		
 		var new_move:Move=moves.pick_random()

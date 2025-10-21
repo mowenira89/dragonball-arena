@@ -26,7 +26,6 @@ var character:Character
 
 func use_move(standee:AttackStandee):
 	var targets = TargettingManager.get_target(standee)
-	
 	if !ignore_invulnerable:
 		var remove = []
 		for chara in targets:
@@ -35,7 +34,8 @@ func use_move(standee:AttackStandee):
 					pass
 				else:
 					remove.append(chara)
-		remove.any(func(r):targets.erase(r))
+		for x in remove:
+			targets.erase(x)
 	var used:bool
 	for x in standee.user.buffs:
 		used=x.on_skill_use(standee)

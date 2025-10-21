@@ -12,5 +12,6 @@ func on_end_turn():
 	turns-=1
 	if turns+1<=0:
 		var target = TargettingManager.get_target(standee)
-		event.apply(standee,target)
+		for x in target:
+			event.apply(standee,x)
 		remove()
