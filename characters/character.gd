@@ -56,6 +56,7 @@ func take_damage(amount,damage_type,move):
 	if current_hp<=0:
 		BattleManager.death.emit(self)
 		if TargettingManager.friendlies.any(func(c):c.current_hp>0):
+			print(TargettingManager.friendlies)
 			pass
 		else:
 			BattleManager.gameover.emit("Lose")

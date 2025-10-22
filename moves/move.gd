@@ -52,7 +52,7 @@ func use_move(standee:AttackStandee):
 			if !y.conditions.is_empty():
 				if !y.check_condition(standee):
 					proceed=false
-			if y is not DamageEffect and y.harmful and standee.target.buffs.any(func(b):b is NoHarm):
+			if y is not DamageEffect and y.harmful and x.buffs.any(func(b):b is NoHarm):
 				proceed=false
 			
 						

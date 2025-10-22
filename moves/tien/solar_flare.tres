@@ -20,6 +20,7 @@ metadata/_custom_type_script = "uid://ewtut1aqk2tn"
 [sub_resource type="Resource" id="Resource_slxg7"]
 script = ExtResource("3_vgp5n")
 buff = SubResource("Resource_eignp")
+harmful = true
 metadata/_custom_type_script = "uid://iq6j758keyb0"
 
 [sub_resource type="Resource" id="Resource_vgp5n"]

@@ -135,12 +135,8 @@ func swap_skills(c:Character,move_name:String,new_move:Move):
 				x.character.battle_moves.erase(x.move)
 				x.create_button(new_move,c)
 
-	
 func start_turn():
 	for x in skills_container.get_children():
 		if x.move.random_energy>0:
 			x.move.randomize_cost()
 		x.decrease_cooldown()
-			
-
-	

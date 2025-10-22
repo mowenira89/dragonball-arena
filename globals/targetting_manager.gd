@@ -110,9 +110,9 @@ func target(move:Move):
 				potential_targets=opponents.duplicate()
 		Move.TARGETS.Random:
 			if friendlies.has(move.character):
-				potential_targets.append(opponents.pick_random())
+				potential_targets=opponents
 			else:
-				potential_targets.append(friendlies.pick_random())
+				potential_targets=friendlies
 	start_targetting.emit(potential_targets,all)	
 			
 			
@@ -197,6 +197,8 @@ func buff_targetting(standee:AttackStandee,b:Buff):
 				return f
 			Move.TARGETS.AnyAlly:
 				return friendlies
+			Move.TARGETS.Random:
+				return [opponents.pick_random()]
 				
 	elif opponents.has(standee.user):
 		if standee.user.buffs.any(check_aoe) and standee.move.target==Move.TARGETS.Opponent:
@@ -220,6 +222,8 @@ func buff_targetting(standee:AttackStandee,b:Buff):
 				return f
 			Move.TARGETS.AnyAlly:
 				return opponents
+			Move.TARGETS.Random:
+				return [friendlies.pick_random()]
 				
 func get_buff(stack_id:String,c:Character):
 	for b in c.buffs:
