@@ -29,11 +29,14 @@ func use_move(standee:AttackStandee):
 	if !ignore_invulnerable:
 		var remove = []
 		for chara in targets:
-			if chara.buffs.any(func(b):b is Invulnerable):
-				if chara.buffs.any(func(b):return b is NoBlock):
-					pass
-				else:
-					remove.append(chara)
+			for x in chara.buffs:
+				if x is Invulnerable:
+					var noblock=false
+					for y in chara.buffs:
+						if y is NoBlock:
+							noblock=true
+					if !noblock:
+						remove.append(chara)
 		for x in remove:
 			targets.erase(x)
 	var used:bool
@@ -47,12 +50,12 @@ func use_move(standee:AttackStandee):
 		if attack:
 			for b in x.buffs:
 				var r = b.attacked(standee)
-		
+				if r==false: return false
 		for y in effects:
 			if !y.conditions.is_empty():
 				if !y.check_condition(standee):
 					proceed=false
-			if y is not DamageEffect and y.harmful and x.buffs.any(func(b):b is NoHarm):
+			if y is not DamageEffect and y.harmful and x.buffs.any(func(b):return b is NoHarm):
 				proceed=false
 			
 						
@@ -69,7 +72,10 @@ func randomize_cost():
 		cost[x]=unrandom_energy[x]
 	for x in random_energy:
 		var i = randi_range(0,4)
-		cost[x]=1
+		if i not in cost:
+			cost[i]=1
+		else:
+			cost[i]+=1
 			
 func get_damage():
 	var damage:DamageEffect

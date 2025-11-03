@@ -16,3 +16,4 @@ func get_message():
 	var message = "{} points of destructible shield".format([shield_amount])
 	if !permanent:
 		message+=" for {0} turns".format([turns])
+	return message

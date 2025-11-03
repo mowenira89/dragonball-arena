@@ -31,7 +31,7 @@ func register_buff(b:Buff,move:Move,u:Character):
 	b.user=u
 	buffs.append(b)
 	b.apply(self,move)
-	if b.show_active or buffs.any(func(b):return b is ForceVisible):
+	if b.show_active or buffs.any(func(f):return f is ForceVisible):
 		TargettingManager.attach_active_buff.emit(self,b)	
 
 func setup():
@@ -42,7 +42,7 @@ func heal(amount:int):
 	current_hp+=amount
 
 func take_damage(amount,damage_type,move):
-	if buffs.any(func(b):b is ImmuneToDamage):
+	if buffs.any(func(b):return b is ImmuneToDamage):
 		return false
 	var dmg=amount
 	for x in buffs:
@@ -55,20 +55,18 @@ func take_damage(amount,damage_type,move):
 	
 	if current_hp<=0:
 		BattleManager.death.emit(self)
-		if TargettingManager.friendlies.any(func(c):c.current_hp>0):
-			print(TargettingManager.friendlies)
+		if TargettingManager.friendlies.any(func(c):return c.current_hp>0):
 			pass
 		else:
 			BattleManager.gameover.emit("Lose")
 			return
-		if TargettingManager.opponents.any(func(c):c.current_hp>0):
+		if TargettingManager.opponents.any(func(c):return c.current_hp>0):
 			pass
 		else:
 			BattleManager.gameover.emit("Win")
 		
 
 func move_opponent():
-	print('opponent moving')
 	if randi()%101>2:
 		
 		var new_move:Move=moves.pick_random()
@@ -101,7 +99,7 @@ func check_stun(move_class:Array[Move.CLASSES]):
 			if move_class.is_empty():
 				return true
 			else:
-				if b.classes.any(func(a):a in move_class):
+				if b.classes.any(func(a):return a in move_class):
 					return true
 					
 

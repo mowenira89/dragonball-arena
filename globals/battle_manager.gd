@@ -15,7 +15,6 @@ var player_turn:bool=true
 var queue:Array[AttackStandee]=[]
 
 func execute_turn():
-	print(TargettingManager.opponents)
 	if player_turn:
 		for x in TargettingManager.friendlies:
 			for y in x.buffs:
